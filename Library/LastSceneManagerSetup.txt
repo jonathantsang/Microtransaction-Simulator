@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/_scenes/Open_Crate.unity
+  isLoaded: 1
+  isActive: 1
