@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - banner
+  - cardInformationStorage
+  - cards
   layers:
   - Default
   - TransparentFX
@@ -41,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 2142933945
+    locked: 0
+  - name: foreground
+    uniqueID: 1190712145
     locked: 0

@@ -53,6 +53,8 @@
   <ItemGroup>
      <Compile Include="Assets\_scripts\button\ClickButton.cs" />
      <Compile Include="Assets\_scripts\button\OpenButton.cs" />
+     <Compile Include="Assets\_scripts\cards\Card.cs" />
+     <Compile Include="Assets\_scripts\cards\cardInformationStorage.cs" />
      <Compile Include="Assets\_scripts\logic\GameController.cs" />
      <Compile Include="Assets\_scripts\logic\gameUI.cs" />
      <Compile Include="Assets\_scripts\opening_effects\OpenEffects.cs" />

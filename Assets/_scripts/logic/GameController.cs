@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Random.InitState ((int)(Time.deltaTime * Time.time));
+
 		// Singleton Behaviour
 		if (instance == null)
 			instance = this;
