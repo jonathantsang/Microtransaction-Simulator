@@ -14,6 +14,8 @@ public class Card : MonoBehaviour {
 	private SpriteRenderer onesDigit;
 	private cardInformationStorage cDS;
 
+	bool left = true;
+
 	// Use this for initialization
 	void Start () {
 		initializeCard ();
@@ -31,7 +33,18 @@ public class Card : MonoBehaviour {
 
 	// Get the value and shake if it is 80+
 	void OnMouseOver(){
+		print (Time.time);
+		if (left) {
+			transform.Translate (-0.1f, 0, 0);
+			left = false;
+		} else {
+			transform.Translate(0.1f,0,0);
+			left = true;
+		}
+	}
 
+	void OnMouseExit(){
+		
 	}
 
 	void initializeCard(){
@@ -49,14 +62,9 @@ public class Card : MonoBehaviour {
 		rarity = rarities[chooseRarity];
 		value = (int)Mathf.Ceil (Random.Range (50, 99));
 
-		print (rarity);
-		print (value);
-
 		// For some reason it can only find it for one card
 
 		// Initialize the back and front
-		print(chooseRarity);
-		print (cDS.colours.Length);
 		frontSprite.sprite = cDS.colours [chooseRarity];
 		backSprite.sprite = cDS.back;
 		tensDigit.sprite = cDS.numbers[value / 10];
