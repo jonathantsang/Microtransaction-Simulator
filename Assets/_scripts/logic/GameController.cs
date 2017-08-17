@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Random.InitState ((int)(Time.deltaTime * Time.time));
+		Random.InitState ((int)(System.Environment.TickCount));
 
 		// Singleton Behaviour
 		if (instance == null)

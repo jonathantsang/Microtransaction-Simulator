@@ -7,6 +7,7 @@ TagManager:
   - banner
   - cardInformationStorage
   - cards
+  - counter
   layers:
   - Default
   - TransparentFX

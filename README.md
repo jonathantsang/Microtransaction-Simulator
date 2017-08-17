@@ -11,13 +11,22 @@ still need:
 - graphic that shows the rarity scale
 
 Dates:
-August 14th: Basic concept
+August 14th: 
+- Basic concept
 
-simple.
+August 15th:
+- concept
+
+August 16th:
+- colours have different spawn rates (common white 30%, brown 20%, etc
+.)
+- make cards have a points value that is counted up when all 6 have been revealed
+- card effects when opened (particle effects)
+
+August 17th:
+- inventory to view the cards
 
 extension:
-- colours have different spawn rates (common white 30%, brown 20%, etc.)
-- inventory system
 - get currency to buy loot boxes through simple games (ex. tower defense, rare loot are rare tower type variants)
 
 plan:
