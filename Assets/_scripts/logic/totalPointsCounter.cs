@@ -46,21 +46,23 @@ public class totalPointsCounter : MonoBehaviour {
 	}
 
 	void countUpScore(){
-		float timer = 0;
-		float delay = 1f;
-		int score = 0;
 		pointsText.text = "0";
-		while (score < totalPoints) {
-			if (timer > delay) {
-				score++;
-				pointsText.text = score.ToString();
-				timer = 0;
-			}
-			timer += Time.deltaTime;
-		}
+		StartCoroutine (Counter());
 	}
 
-	public void setup(){
 
+	IEnumerator Counter()
+	{
+		int score = 0;
+		while (score < totalPoints)
+		{
+			if (score + 100 > totalPoints) {
+				score += (totalPoints - score);
+			} else {
+				score += 100;
+			}
+			pointsText.text = score.ToString();
+			yield return new WaitForSeconds(1/totalPoints);
+		}
 	}
 }

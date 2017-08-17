@@ -21,6 +21,9 @@ public class Card : MonoBehaviour {
 	private cardInformationStorage cDS;
 	private totalPointsCounter tPS;
 
+	// Effect
+	public ParticleSystem ps;
+
 	// Use this for initialization
 	void Start () {
 		initializeCard ();
@@ -131,7 +134,6 @@ public class Card : MonoBehaviour {
 
 		tensDigit.sprite = cDS.numbers[value / 10];
 		onesDigit.sprite = cDS.numbers[value % 10];
-
 	}
 
 	void flipCard(){
@@ -140,5 +142,6 @@ public class Card : MonoBehaviour {
 		backSprite.sortingLayerName = "background";
 		tensDigit.sortingLayerName = "foreground";
 		onesDigit.sortingLayerName = "foreground";
+		Instantiate (ps, transform);
 	}
 }

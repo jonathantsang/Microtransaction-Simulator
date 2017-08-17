@@ -24,18 +24,15 @@ public class OpenButton : ClickButton {
 
 		int leng = cardList.Count;
 		for (int i = 0; i < leng; i++) {
-			print ("deleted");
 			Destroy (cardList [i]);
 		}
 		cardList.Clear ();
 		tPS.notify("clear");
 
-		print ("open");
 		// Create the cards here
 		Transform spawnPoints = transform.GetChild(0);
 		int amountofSpawnPoints = spawnPoints.childCount;
 		for (int i = 0; i < amountofSpawnPoints; i++) {
-			print ("make card");
 			GameObject newCard = Instantiate (card, spawnPoints.transform.GetChild (i).position, Quaternion.identity);
 			cardList.Add (newCard);
 			GameObject parent = GameObject.FindGameObjectWithTag ("cards");
@@ -44,9 +41,7 @@ public class OpenButton : ClickButton {
 
 		print (cardList.Count);
 
-		print ("setup");
 		// Notify the totalPointsCounter to initialize the tracking of the flipped cards
-		tPS.setup();
 
 	}
 }
