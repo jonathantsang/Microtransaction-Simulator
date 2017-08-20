@@ -8,6 +8,9 @@ TagManager:
   - cardInformationStorage
   - cards
   - counter
+  - menu
+  - inventoryStorage
+  - inventory
   layers:
   - Default
   - TransparentFX

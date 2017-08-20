@@ -40,8 +40,5 @@ public class OpenButton : ClickButton {
 		}
 
 		print (cardList.Count);
-
-		// Notify the totalPointsCounter to initialize the tracking of the flipped cards
-
 	}
 }

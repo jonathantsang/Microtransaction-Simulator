@@ -5,9 +5,6 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 
 	[Header("GameData")]
-	private int money;
-	private int crates;
-	private int keys;
 
 	public static GameController instance;
 

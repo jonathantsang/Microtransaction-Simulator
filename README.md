@@ -24,10 +24,23 @@ August 16th:
 - card effects when opened (particle effects)
 
 August 17th:
-- inventory to view the cards
+- card effects when opened (particle effects)
+
+August 18th:
+- menu to start game
+- exit game gameobject
+
+August 19th:
+- inventory to view the cards (figure out if it is persistent)
+- limit at 10 crates every 2 hours, show timer
+
+August 20th:
+- inventory
+- steamworks api
 
 extension:
 - get currency to buy loot boxes through simple games (ex. tower defense, rare loot are rare tower type variants)
+- Cards have letters (A, B, D) denoting type
 
 plan:
 - simulate opening a card pack/crate
