@@ -25,21 +25,25 @@ public class inventoryController : MonoBehaviour {
 	}
 
 	void setupInventory(){
-		int leng = iS.cardInfoList.Count;
-		// For each card in the cardInfo List
-		for (int i = 0; i < leng; i++) {
-			int childIndex = 0;
-			// Find the index of the child counter
-			for(int j = 0; j < rarities.Length; j++){
-				if (iS.cardInfoList [i].getRarity() == rarities [j]) {
-					childIndex = j;
-					break;
+		if (inventory) {
+			int leng = iS.cardInfoList.Count;
+			// For each card in the cardInfo List
+			for (int i = 0; i < leng; i++) {
+				int childIndex = 0;
+				// Find the index of the child counter
+				for (int j = 0; j < rarities.Length; j++) {
+					if (iS.cardInfoList [i].getRarity () == rarities [j]) {
+						childIndex = j;
+						break;
+					}
 				}
+				Text childText = inventory.transform.GetChild (childIndex).transform.GetChild (1).GetComponent<Text> ();
+				int amount = System.Int16.Parse (childText.text);
+				amount++;
+				// Set the dictionary to the correct amount of the card
+				iS.storeCards [childIndex] = amount;
+				childText.text = amount.ToString ();
 			}
-			Text childText = inventory.transform.GetChild (childIndex).transform.GetChild (1).GetComponent<Text>();
-			int amount = System.Int16.Parse (childText.text);
-			amount++;
-			childText.text = amount.ToString();
 		}
 	}
 }

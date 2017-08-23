@@ -47,13 +47,14 @@ public class Card : MonoBehaviour {
 
 	// Get the value and shake if it is 80+
 	void OnMouseOver(){
+		/*
 		if (left && value > 90 && !flipped) {
 			transform.Translate (-0.2f, 0, 0);
 			left = false;
 		} else if (value > 90 && !flipped) {
 			transform.Translate(0.2f,0,0);
 			left = true;
-		}
+		}*/
 	}
 
 	void OnMouseExit(){

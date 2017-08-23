@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-	[Header("GameData")]
-
 	public static GameController instance;
 
 	// Use this for initialization

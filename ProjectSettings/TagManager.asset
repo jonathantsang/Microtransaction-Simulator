@@ -11,6 +11,7 @@ TagManager:
   - menu
   - inventoryStorage
   - inventory
+  - balance
   layers:
   - Default
   - TransparentFX

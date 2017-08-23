@@ -51,9 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_scripts\balance\balanceController.cs" />
      <Compile Include="Assets\_scripts\button\BackButton.cs" />
+     <Compile Include="Assets\_scripts\button\BalanceButton.cs" />
      <Compile Include="Assets\_scripts\button\ClickButton.cs" />
+     <Compile Include="Assets\_scripts\button\InventoryButton.cs" />
      <Compile Include="Assets\_scripts\button\OpenButton.cs" />
+     <Compile Include="Assets\_scripts\button\SellButton.cs" />
      <Compile Include="Assets\_scripts\cards\Card.cs" />
      <Compile Include="Assets\_scripts\cards\cardInformationStorage.cs" />
      <Compile Include="Assets\_scripts\classes\cardInfo.cs" />
@@ -64,6 +68,8 @@
      <Compile Include="Assets\_scripts\logic\totalPointsCounter.cs" />
      <Compile Include="Assets\_scripts\MainMenu\mainMenuInput.cs" />
      <Compile Include="Assets\_scripts\opening_effects\OpenEffects.cs" />
+     <Compile Include="Assets\_scripts\save_load\Game.cs" />
+     <Compile Include="Assets\_scripts\save_load\SaveLoad.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

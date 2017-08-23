@@ -18,6 +18,16 @@ public class ClickButton : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
+		print ("down");
+		StartCoroutine (growClick());
 		buttonEffects ();
+	}
+
+	IEnumerator growClick()
+	{
+		Vector3 original = transform.parent.GetChild (0).transform.localScale; // Hardcode the sibling above it
+		transform.parent.GetChild (0).transform.localScale += new Vector3(0.1f, 0.1f, 0);
+		yield return new WaitForSeconds(0.4f);
+		transform.parent.GetChild (0).transform.localScale = original;
 	}
 }

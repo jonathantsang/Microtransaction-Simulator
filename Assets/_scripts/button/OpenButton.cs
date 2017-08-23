@@ -7,11 +7,13 @@ public class OpenButton : ClickButton {
 	public GameObject card;
 	private List<GameObject> cardList;
 	private totalPointsCounter tPS;
+	private inventoryStorage iS;
 
 	// Use this for initialization
 	void Start () {
 		cardList = new List<GameObject> ();
 		tPS = GameObject.FindGameObjectWithTag ("counter").GetComponent<totalPointsCounter>();
+		iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage> ();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +22,8 @@ public class OpenButton : ClickButton {
 	}
 
 	override public void buttonEffects(){
+		iS.purchaseCards ();
+
 		// Clear the old cards, if they exist
 
 		int leng = cardList.Count;
@@ -38,7 +42,5 @@ public class OpenButton : ClickButton {
 			GameObject parent = GameObject.FindGameObjectWithTag ("cards");
 			newCard.transform.parent = parent.transform;
 		}
-
-		print (cardList.Count);
 	}
 }
