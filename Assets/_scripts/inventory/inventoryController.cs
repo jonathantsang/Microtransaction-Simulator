@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class inventoryController : MonoBehaviour {
 
-	GameObject inventory;
-	inventoryStorage iS;
+	private GameObject inventory;
+	private inventoryStorage iS;
+	private inventorySpriteHolder iSH;
+	private GameObject placements;
 
-	private string[] rarities = {"white", "brown", "blue", "purple", "red", "green", "turquoise", "fuzz"};
+	public GameObject inventoryCard;
 
 	// Use this for initialization
 	void Start () {
 		inventory = GameObject.FindGameObjectWithTag ("inventory");
+		placements = inventory.transform.GetChild (0).gameObject; // Hard code fine placements
+		iSH = GameObject.FindGameObjectWithTag ("inventorySpriteHolder").GetComponent<inventorySpriteHolder>();
 		iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage>();
 		// Since the inventoryController is only in this, it can run only when start is run. (Not when scene is loaded,
 		// since it is not persistent like inventoryStorage
@@ -26,22 +30,24 @@ public class inventoryController : MonoBehaviour {
 
 	void setupInventory(){
 		if (inventory) {
-			int leng = iS.cardInfoList.Count;
-			// For each card in the cardInfo List
-			for (int i = 0; i < leng; i++) {
-				int childIndex = 0;
-				// Find the index of the child counter
-				for (int j = 0; j < rarities.Length; j++) {
-					if (iS.cardInfoList [i].getRarity () == rarities [j]) {
-						childIndex = j;
-						break;
-					}
-				}
-				Text childText = inventory.transform.GetChild (childIndex).transform.GetChild (1).GetComponent<Text> ();
-				int amount = System.Int16.Parse (childText.text);
-				amount++;
-				// Set the dictionary to the correct amount of the card
-				iS.storeCards [childIndex] = amount;
+
+			// Set up card prefabs for each card
+			int placementLeng = placements.transform.childCount;
+			for (int i = 0; i < placementLeng; i++) {
+				GameObject newCard = Instantiate (inventoryCard, placements.transform.GetChild (i).transform);
+				newCard.transform.parent = inventory.transform;
+				// Change card to correct one
+				newCard.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = iSH.sprites[i];
+				// Set cardIndex to correct rarity
+				newCard.transform.GetChild(2).GetChild(1).GetComponent<SellButton>().cardIndex = i; // Hard code
+			}
+	
+			// For each card in the dictionary
+			int cardDictionaryLength = 7;
+			// i+1 for child because placement is the first child
+			for (int i = 0; i < cardDictionaryLength; i++) {
+				Text childText = inventory.transform.GetChild (i+1).transform.GetChild (1).GetComponent<Text> ();
+				int amount = iS.storeCards [i];
 				childText.text = amount.ToString ();
 			}
 		}

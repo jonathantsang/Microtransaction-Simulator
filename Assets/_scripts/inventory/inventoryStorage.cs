@@ -10,7 +10,7 @@ public class inventoryStorage : MonoBehaviour {
 	public float Balance; // Stores the amount
 	public float priceofPack;
 	public List<cardInfo> cardInfoList;
-	public Dictionary<int, int> storeCards; // Keep track of cards in list and dictionary
+	public Dictionary<int, int> storeCards; // Keep track of cards in list and dictionary using key as cardIndex and amount as value
 
 	public static inventoryStorage instance;
 
@@ -19,6 +19,10 @@ public class inventoryStorage : MonoBehaviour {
 		priceofPack = 3.99f;
 
 		storeCards = new Dictionary<int, int>();
+		for (int i = 0; i < 8; i++) {
+			storeCards [i] = 0;
+		}
+
 		cardInfoList = new List<cardInfo>();
 		// Singleton Behaviour
 		if (instance == null)
@@ -35,19 +39,11 @@ public class inventoryStorage : MonoBehaviour {
 
 	public void addCard(cardInfo card){
 		cardInfoList.Add (card);
-		print ("added card");
+		storeCards [card.getCardIndex ()] += 1;
 	}
 
 	public void purchaseCards(){
 		Balance -= priceofPack;
-	}
-
-	public void sellCard(int index){
-		for (int i = 0; i < cardInfoList.Count; i++) {
-			if (cardInfoList [i].getRarity () == rarities [index]) {
-				cardInfoList.Remove (cardInfoList [i]);
-			}
-		}
 	}
 
 	public void decreaseCardAmount(int index){

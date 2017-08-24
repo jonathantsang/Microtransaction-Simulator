@@ -12,6 +12,7 @@ TagManager:
   - inventoryStorage
   - inventory
   - balance
+  - inventorySpriteHolder
   layers:
   - Default
   - TransparentFX

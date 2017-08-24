@@ -1,17 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_scripts/save_load/SaveLoad.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_scripts/Steam/SteamScript.cs">
     <Files>
       <File FileName="Assets/_scripts/logic/GameController.cs" Line="6" Column="2" />
-      <File FileName="Assets/_scripts/button/OpenButton.cs" Line="21" Column="2" />
-      <File FileName="Assets/_scripts/cards/Card.cs" Line="12" Column="24" />
-      <File FileName="Assets/_scripts/logic/totalPointsCounter.cs" Line="62" Column="16" />
+      <File FileName="Assets/_scripts/button/OpenButton.cs" Line="23" Column="2" />
+      <File FileName="Assets/_scripts/cards/Card.cs" Line="40" Column="18" />
+      <File FileName="Assets/_scripts/logic/totalPointsCounter.cs" Line="67" Column="3" />
       <File FileName="Assets/_scripts/MainMenu/mainMenuInput.cs" Line="34" Column="19" />
-      <File FileName="Assets/_scripts/inventory/inventoryController.cs" Line="42" Column="39" />
-      <File FileName="Assets/_scripts/inventory/inventoryStorage.cs" Line="7" Column="37" />
+      <File FileName="Assets/_scripts/inventory/inventoryController.cs" Line="15" Column="10" />
+      <File FileName="Assets/_scripts/inventory/inventoryStorage.cs" Line="60" Column="24" />
       <File FileName="Assets/_scripts/classes/cardInfo.cs" Line="16" Column="16" />
-      <File FileName="Assets/_scripts/save_load/SaveLoad.cs" Line="26" Column="3" />
-      <File FileName="Assets/_scripts/save_load/Game.cs" Line="8" Column="29" />
+      <File FileName="Assets/_scripts/button/ClickButton.cs" Line="29" Column="79" />
+      <File FileName="Assets/_scripts/balance/balanceController.cs" Line="28" Column="10" />
+      <File FileName="Assets/_scripts/button/SellButton.cs" Line="27" Column="80" />
+      <File FileName="Assets/_scripts/Steam/SteamScript.cs" Line="14" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

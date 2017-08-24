@@ -10,6 +10,7 @@ public class Card : MonoBehaviour {
 	private string[] rarities = {"white", "brown", "blue", "purple", "red", "green", "turquoise", "fuzz"};
 	private int[] colourValues = { 100, 200, 500, 1000, 2000, 4000, 8000, 10000 };
 	private string rarity;
+	private int rarityIndex;
 
 	private bool left = true;
 	public bool flipped = false;
@@ -80,7 +81,7 @@ public class Card : MonoBehaviour {
 		// Here the different colours have different possibilities
 
 		// White has 30% chance
-		int rarityIndex = 0;
+		rarityIndex = 0;
 		totalValue = 0;
 		if (chooseRarity < 30) {
 			rarityIndex = 0;
@@ -150,7 +151,7 @@ public class Card : MonoBehaviour {
 			Instantiate (ps, transform);
 		}
 		// Store the card information in the inventory Storage
-		cardInfo newCard= new cardInfo(value, totalValue, rarity);
+		cardInfo newCard= new cardInfo(value, totalValue, rarity, rarityIndex);
 		iS.addCard(newCard);
 	}
 }

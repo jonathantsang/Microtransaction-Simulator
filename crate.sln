@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crate", "Assembly-CSharp-firstpass.csproj", "{AF602161-6634-4C9D-9C8D-055898549DEB}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crate", "Assembly-CSharp.csproj", "{A3DA10B0-B9EC-9F09-37B6-6BB4A478E4C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crate", "Assembly-CSharp-Editor.csproj", "{09C4EB22-971E-0915-DA69-DB562D234BE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF602161-6634-4C9D-9C8D-055898549DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF602161-6634-4C9D-9C8D-055898549DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF602161-6634-4C9D-9C8D-055898549DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF602161-6634-4C9D-9C8D-055898549DEB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A3DA10B0-B9EC-9F09-37B6-6BB4A478E4C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A3DA10B0-B9EC-9F09-37B6-6BB4A478E4C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3DA10B0-B9EC-9F09-37B6-6BB4A478E4C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3DA10B0-B9EC-9F09-37B6-6BB4A478E4C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09C4EB22-971E-0915-DA69-DB562D234BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09C4EB22-971E-0915-DA69-DB562D234BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09C4EB22-971E-0915-DA69-DB562D234BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09C4EB22-971E-0915-DA69-DB562D234BE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

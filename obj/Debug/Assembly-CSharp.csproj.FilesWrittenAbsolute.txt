@@ -21,3 +21,5 @@
 /Users/Jon/GitHub/crate/Temp/bin/Debug/Assembly-CSharp.dll
 /Users/Jon/GitHub/crate/obj/Debug/Assembly-CSharp.dll
 /Users/Jon/GitHub/crate/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/Jon/GitHub/crate/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/Jon/GitHub/crate/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb

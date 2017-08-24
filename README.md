@@ -12,6 +12,7 @@ hook:
 
 goal:
 - lose $1 million dollars
+- gamble cards
 - get pink cards
 
 effort:
@@ -59,11 +60,35 @@ August 22th:
 - money counter, sell cards in inventory
 
 August 23st:
+- set inventory to be created by positions and a for loop to set index of card automatically
 - upgrade shop
 - button click sound
 
 August 24th:
+- show balance in main screen
+- gamble microtransactions
+
+August 25th:
 - steamworks api
+- achievements
+
+August 26th:
+- steamworks api
+- achievements
+
+upgrades:
+- better luck next time
+
+achievements:
+- -$100 dollars
+- secret
+- first one is free
+- oh what a feeling
+- dancing on the ceiling
+
+real extension:
+- sparkle sound on rare cards
+- move inventory interface to the main screen instead of a new scene
 
 extension:
 - get opening crates by playing simple games
