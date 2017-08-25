@@ -51,14 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_prefabs\shop\assets\avocadoController.cs" />
      <Compile Include="Assets\_scripts\balance\balanceController.cs" />
      <Compile Include="Assets\_scripts\buttons\BackButton.cs" />
      <Compile Include="Assets\_scripts\buttons\BalanceButton.cs" />
+     <Compile Include="Assets\_scripts\buttons\casinoButton.cs" />
      <Compile Include="Assets\_scripts\buttons\ClickButton.cs" />
      <Compile Include="Assets\_scripts\buttons\InventoryButton.cs" />
      <Compile Include="Assets\_scripts\buttons\OpenButton.cs" />
      <Compile Include="Assets\_scripts\buttons\SellButton.cs" />
      <Compile Include="Assets\_scripts\buttons\shopButton.cs" />
+     <Compile Include="Assets\_scripts\buttons\TropyButton.cs" />
+     <Compile Include="Assets\_scripts\buttons\winButton.cs" />
      <Compile Include="Assets\_scripts\cards\Card.cs" />
      <Compile Include="Assets\_scripts\cards\cardInformationStorage.cs" />
      <Compile Include="Assets\_scripts\classes\cardInfo.cs" />
@@ -66,6 +70,7 @@
      <Compile Include="Assets\_scripts\inventory\inventoryController.cs" />
      <Compile Include="Assets\_scripts\inventory\inventorySpriteHolder.cs" />
      <Compile Include="Assets\_scripts\inventory\inventoryStorage.cs" />
+     <Compile Include="Assets\_scripts\logic\checkWon.cs" />
      <Compile Include="Assets\_scripts\logic\GameController.cs" />
      <Compile Include="Assets\_scripts\logic\gameUI.cs" />
      <Compile Include="Assets\_scripts\logic\totalPointsCounter.cs" />
@@ -73,6 +78,9 @@
      <Compile Include="Assets\_scripts\opening_effects\OpenEffects.cs" />
      <Compile Include="Assets\_scripts\save_load\Game.cs" />
      <Compile Include="Assets\_scripts\save_load\SaveLoad.cs" />
+     <Compile Include="Assets\_scripts\shop\assets\avocadoTextMovement.cs" />
+     <Compile Include="Assets\_scripts\shop\assets\clickAvocado.cs" />
+     <Compile Include="Assets\_scripts\shop\assets\spinAvocado.cs" />
      <Compile Include="Assets\_scripts\shop\quitShopButton.cs" />
      <Compile Include="Assets\_scripts\shop\shopController.cs" />
      <Compile Include="Assets\_scripts\shop\shopHolder.cs" />

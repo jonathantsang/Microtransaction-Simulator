@@ -43,4 +43,8 @@ public class shopStorage : MonoBehaviour {
 	public void turnOffFlag(int index){
 		shopUpgradeFlags [index] = 0;
 	}
+
+	void checkWon(){
+		
+	}
 }

@@ -53,4 +53,5 @@ public class inventoryStorage : MonoBehaviour {
 	public void increaseBalance(int index){
 		Balance += index * 1;
 	}
+
 }

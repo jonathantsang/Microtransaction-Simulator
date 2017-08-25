@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class quitShopButton : ClickButton {
 
-	GameObject shop;
-	GameObject shopMenu;
+	private GameObject shop;
+	private GameObject shopMenu;
 	public GameObject counter;
+
+	// Used to check whether to create casino button
+	public GameObject casinoButton;
+	private shopController sC;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +19,7 @@ public class quitShopButton : ClickButton {
 		// Disable background and quit of shop
 		shopMenu = GameObject.FindGameObjectWithTag ("shopMenu").gameObject;
 		// counter = GameObject.FindGameObjectWithTag ("counter").gameObject;
+		sC = GameObject.FindGameObjectWithTag ("shopController").GetComponent<shopController>();
 	}
 	
 	// Update is called once per frame
@@ -28,5 +33,9 @@ public class quitShopButton : ClickButton {
 		shopMenu.SetActive (false);
 		// Also close totalPointsCounter
 		counter.SetActive(true);
+
+		// Update the upgrades
+		sC.applyUpgrades();
+
 	}
 }

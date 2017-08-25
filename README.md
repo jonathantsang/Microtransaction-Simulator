@@ -73,21 +73,22 @@ August 25th:
 - trophy room
 - button click sound
 - get shop to work with better upgrades
-- start steamworks api and achievements
+- win condition
+- steamworks api and achievements
 
 August 26th:
 - steamworks api
 - achievements
 
 upgrades: (8)
-- meaninglessUpgrade 25 - nothing?
-- Card Trick 60 - 
-- betterLuckNextTime 200 - luck upgrade
-- Mayan2012 300 - clickable avocado
-- SCOGLotto 1000 - casino
-- TrophyRoom 1997 - trophy room
-- Architect 4000 - Not sure yet
-- SpeedRunZ 9999 - Speedrun button
+- meaninglessUpgrade 25 - nothing? (done)
+- Card Trick 60 - (nothing right now)
+- betterLuckNextTime 200 - luck upgrade (done)
+- Mayan2012 300 - clickable avocado (done)
+- SCOGLotto 1000 - casino (doneish)
+- TrophyRoom 1997 - trophy room (done poorly)
+- Architect 4000 - open it with -1000 dollars (fake?)
+- SpeedRunZ 9999 - Speedrun button (fake)
 
 achievements:
 - Negative 100 dollars

@@ -17,6 +17,8 @@ TagManager:
   - shop
   - shopMenu
   - shopHolder
+  - casino
+  - shopController
   layers:
   - Default
   - TransparentFX
