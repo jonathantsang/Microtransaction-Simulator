@@ -65,8 +65,8 @@ August 23st:
 - button click sound
 
 August 24th:
-- show balance in main screen?
-- gamble microtransactions
+- show balance in main screen? (no)
+- gamble microtransactions (possibly)
 
 August 25th:
 - steamworks api
@@ -77,10 +77,14 @@ August 26th:
 - achievements
 
 upgrades: (8)
-- better luck next time
-- meaningless upgrade
-- SCOG Lotto
-- 
+- betterLuckNextTime
+- meaninglessUpgrade
+- SCOGLotto
+- SpeedRunZ
+- Mayan2012
+- Architect
+- Mixtape
+- Card Trick
 
 achievements:
 - -$100 dollars

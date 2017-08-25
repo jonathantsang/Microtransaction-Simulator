@@ -484,11 +484,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224615308163145986, guid: af689216599cd4263853aec94380a373,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af689216599cd4263853aec94380a373, type: 2}
   m_IsPrefabParent: 0
@@ -561,14 +556,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e597d84f6fba249df851b82efca99dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  betterLuckNextTime: {fileID: 0}
-  meaninglessUpgrade: {fileID: 0}
-  SCOGLotto: {fileID: 0}
-  SpeedRunZ: {fileID: 0}
-  Mayan2012: {fileID: 0}
-  Architect: {fileID: 0}
-  TwoTwoTwo: {fileID: 0}
-  OhBabyATriple: {fileID: 0}
+  betterLuckNextTime: {fileID: 21300000, guid: 737e016c3e429412e9681744cce1f760, type: 3}
+  meaninglessUpgrade: {fileID: 21300000, guid: 26780245327af49479fc6d5122bf7acd, type: 3}
+  SCOGLotto: {fileID: 21300000, guid: 387e74dcf5abe4aa68cfd47aee1a4002, type: 3}
+  SpeedRunZ: {fileID: 21300000, guid: 237ee8472cf15446585c0b63dc55d53c, type: 3}
+  Mayan2012: {fileID: 21300000, guid: 5f738ac091ab243b5bed395cfda9aa30, type: 3}
+  Architect: {fileID: 21300000, guid: 1981bda23c9fa4f1696962afa62bc740, type: 3}
+  Mixtape: {fileID: 21300000, guid: 976158122d1ed41398a3e33ab5987e52, type: 3}
+  CardTrick: {fileID: 21300000, guid: 4ed2d1ba25a1c47bc8785a723f2fe8ea, type: 3}
   upgradeSprites: []
 --- !u!1001 &1180107970
 Prefab:

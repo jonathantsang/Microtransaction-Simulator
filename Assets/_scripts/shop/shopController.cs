@@ -33,6 +33,7 @@ public class shopController : MonoBehaviour {
 			visibleUpgrade.transform.GetChild (1).GetComponent<Text> ().text = sS.Upgrades [i].getTitle();
 			visibleUpgrade.transform.GetChild (2).GetComponent<Text> ().text = sS.Upgrades [i].getDescription ();
 			visibleUpgrade.transform.GetChild (3).GetComponent<Text> ().text = "$" + sS.Upgrades [i].getPrice ().ToString ();
+			visibleUpgrade.transform.GetChild (0).GetComponent<SpriteRenderer> ().sprite = sS.upgradeSprites [i];
 			// Set the sprites
 			visibleUpgrade.transform.parent = shop.transform;
 		}
