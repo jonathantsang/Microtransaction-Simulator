@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4270845109162554}
+  - component: {fileID: 114330353008619342}
   m_Layer: 0
   m_Name: inventoryController
   m_TagString: Untagged
@@ -39,3 +40,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114330353008619342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179214896242050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf5ee31cab934d30a4f4915c75f986e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryCard: {fileID: 1097240110466068, guid: 95c8fb213b35343f38ec97314258f2f0,
+    type: 2}

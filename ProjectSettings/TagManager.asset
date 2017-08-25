@@ -16,6 +16,7 @@ TagManager:
   - shopStorage
   - shop
   - shopMenu
+  - shopHolder
   layers:
   - Default
   - TransparentFX

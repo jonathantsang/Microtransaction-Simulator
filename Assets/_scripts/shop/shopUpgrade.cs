@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class shopUpgrade : MonoBehaviour {
 
+	public upgrade myData;
+
 	// Use this for initialization
 	void Start () {
 		

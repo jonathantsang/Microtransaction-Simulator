@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1028151860871370}
+  m_IsPrefabParent: 1
+--- !u!1 &1028151860871370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4642348356637476}
+  - component: {fileID: 114312050013813424}
+  m_Layer: 0
+  m_Name: shopHolder
+  m_TagString: shopHolder
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4642348356637476
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1028151860871370}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114312050013813424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1028151860871370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e597d84f6fba249df851b82efca99dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  betterLuckNextTime: {fileID: 21300000, guid: 737e016c3e429412e9681744cce1f760, type: 3}
+  meaninglessUpgrade: {fileID: 21300000, guid: 26780245327af49479fc6d5122bf7acd, type: 3}
+  SCOGLotto: {fileID: 21300000, guid: 387e74dcf5abe4aa68cfd47aee1a4002, type: 3}
+  SpeedRunZ: {fileID: 21300000, guid: 237ee8472cf15446585c0b63dc55d53c, type: 3}
+  Mayan2012: {fileID: 21300000, guid: 5f738ac091ab243b5bed395cfda9aa30, type: 3}
+  Architect: {fileID: 21300000, guid: 1981bda23c9fa4f1696962afa62bc740, type: 3}
+  TrophyRoom: {fileID: 21300000, guid: 775b0153e3a9f4b64809f066758eb3e1, type: 3}
+  CardTrick: {fileID: 21300000, guid: 4ed2d1ba25a1c47bc8785a723f2fe8ea, type: 3}
+  upgradeSprites: []

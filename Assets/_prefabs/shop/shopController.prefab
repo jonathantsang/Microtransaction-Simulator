@@ -53,3 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopUpgrade: {fileID: 1419396367319606, guid: af689216599cd4263853aec94380a373,
     type: 2}
+  shopPlacements: {fileID: 0}

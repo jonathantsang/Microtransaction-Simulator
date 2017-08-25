@@ -37,8 +37,6 @@ public class totalPointsCounter : MonoBehaviour {
 
 			}
 			// If they are all flipped, count up the score
-			print ("all flipped");
-			print ("total" + totalPoints);
 			countUpScore ();
 		} else if (type == "clear") {
 			pointsText.text = "0";

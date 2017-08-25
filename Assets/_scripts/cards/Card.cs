@@ -76,56 +76,57 @@ public class Card : MonoBehaviour {
 		onesDigit = transform.GetChild(2).GetChild(1).GetComponent<SpriteRenderer>();
 
 		// Get random value and rarity
-		int probability = 99;
+		int probability = 999;
 		int chooseRarity = Random.Range(0, 1000) % probability;
 		// Here the different colours have different possibilities
 
-		// White has 30% chance
+		// cDS.getChance(<number>) gives a THREE digit number out of 999
 		rarityIndex = 0;
 		totalValue = 0;
-		if (chooseRarity < 30) {
+		// White
+		if (chooseRarity < cDS.getChance(0)) {
 			rarityIndex = 0;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (0, 30));
 			totalValue = colourValues [rarityIndex] + value;
-			// Brown has 20% chance
-		} else if (chooseRarity < 50) {
+			// Brown
+		} else if (chooseRarity < cDS.getChance(1)) {
 			rarityIndex = 1;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (0, 50));
 			totalValue = colourValues [rarityIndex] + value;
-			// Blue has 15% chance
-		} else if (chooseRarity < 65) {
+			// Blue
+		} else if (chooseRarity < cDS.getChance(2)) {
 			rarityIndex = 2;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (30, 65));
 			totalValue = colourValues [rarityIndex] + value;
-			// Purple has 10% chance
-		} else if (chooseRarity < 75) {
+			// Purple
+		} else if (chooseRarity < cDS.getChance(3)) {
 			rarityIndex = 3;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (50, 75));
 			totalValue = colourValues [rarityIndex] + value;
-			// Red has 8% chance
-		} else if (chooseRarity < 83) {
+			// Red
+		} else if (chooseRarity < cDS.getChance(4)) {
 			rarityIndex = 4;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (65, 83));
 			totalValue = colourValues [rarityIndex] + value;
-			// Green has 7% chance
-		} else if (chooseRarity < 90) {
+			// Green
+		} else if (chooseRarity < cDS.getChance(5)) {
 			rarityIndex = 5;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (75, 90));
 			totalValue = colourValues [rarityIndex] + value;
-			// Turqoise has 5% chance
-		} else if (chooseRarity < 97) {
+			// Turqoise
+		} else if (chooseRarity < cDS.getChance(6)) {
 			rarityIndex = 6;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (83, 97));
 			totalValue = colourValues [rarityIndex] + value;
-		// Fuzz has 3% chance
-		} else if (chooseRarity < 100) {
+		// Fuzz
+		} else if (chooseRarity < cDS.getChance(7)) {
 			rarityIndex = 7;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (90, 99));
@@ -147,7 +148,7 @@ public class Card : MonoBehaviour {
 		tensDigit.sortingLayerName = "foreground";
 		onesDigit.sortingLayerName = "foreground";
 		// Opening effect
-		if (value > 80) {
+		if (rarityIndex > 4) {
 			Instantiate (ps, transform);
 		}
 		// Store the card information in the inventory Storage

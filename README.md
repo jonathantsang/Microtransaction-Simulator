@@ -65,33 +65,37 @@ August 23st:
 - button click sound
 
 August 24th:
+- upgrade shop
 - show balance in main screen? (no)
 - gamble microtransactions (possibly)
 
 August 25th:
-- steamworks api
-- achievements
+- trophy room
+- button click sound
+- get shop to work with better upgrades
+- start steamworks api and achievements
 
 August 26th:
 - steamworks api
 - achievements
 
 upgrades: (8)
-- betterLuckNextTime
-- meaninglessUpgrade
-- SCOGLotto
-- SpeedRunZ
-- Mayan2012
-- Architect
-- Mixtape
-- Card Trick
+- meaninglessUpgrade 25 - nothing?
+- Card Trick 60 - 
+- betterLuckNextTime 200 - luck upgrade
+- Mayan2012 300 - clickable avocado
+- SCOGLotto 1000 - casino
+- TrophyRoom 1997 - trophy room
+- Architect 4000 - Not sure yet
+- SpeedRunZ 9999 - Speedrun button
 
 achievements:
-- -$100 dollars
-- secret
+- Negative 100 dollars
+- tricks are for kids
 - first one is free
 - oh what a feeling
 - dancing on the ceiling
+- lack of content
 
 real extension:
 - sparkle sound on rare cards

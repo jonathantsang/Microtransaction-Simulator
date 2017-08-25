@@ -75,6 +75,7 @@
      <Compile Include="Assets\_scripts\save_load\SaveLoad.cs" />
      <Compile Include="Assets\_scripts\shop\quitShopButton.cs" />
      <Compile Include="Assets\_scripts\shop\shopController.cs" />
+     <Compile Include="Assets\_scripts\shop\shopHolder.cs" />
      <Compile Include="Assets\_scripts\shop\shopStorage.cs" />
      <Compile Include="Assets\_scripts\shop\shopUpgrade.cs" />
      <Compile Include="Assets\_scripts\shop\shopUpgradeCollider.cs" />
