@@ -7,12 +7,15 @@ public class shopController : MonoBehaviour {
 
 	public GameObject shopUpgrade;
 
-	private GameObject shopPlacements;
+	public GameObject shopPlacements;
 	private GameObject shop;
+
+	private shopStorage sS;
 
 	// Use this for initialization
 	void Start () {
-		shopPlacements = GameObject.FindGameObjectWithTag ("shopMenu").transform.GetChild (2).gameObject;
+		// shopPlacements = GameObject.FindGameObjectWithTag ("shopMenu").transform.GetChild (2).gameObject;
+		sS = GameObject.FindGameObjectWithTag("shopStorage").GetComponent<shopStorage>();
 		shop = GameObject.FindGameObjectWithTag ("shop");
 		showUpgrades ();
 	}
@@ -27,7 +30,10 @@ public class shopController : MonoBehaviour {
 		int upgradeCount = shopPlacements.transform.childCount;
 		for (int i = 0; i < upgradeCount; i++) {
 			GameObject visibleUpgrade = Instantiate (shopUpgrade, shopPlacements.transform.GetChild (i));
-			visibleUpgrade.transform.GetChild (1).GetComponent<Text> ().text = "This message should wrap around and make it work.";
+			visibleUpgrade.transform.GetChild (1).GetComponent<Text> ().text = sS.Upgrades [i].getTitle();
+			visibleUpgrade.transform.GetChild (2).GetComponent<Text> ().text = sS.Upgrades [i].getDescription ();
+			visibleUpgrade.transform.GetChild (3).GetComponent<Text> ().text = "$" + sS.Upgrades [i].getPrice ().ToString ();
+			// Set the sprites
 			visibleUpgrade.transform.parent = shop.transform;
 		}
 	}

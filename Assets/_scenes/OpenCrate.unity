@@ -352,7 +352,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 786e79055764342ee8aca088957340c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &311844170
+--- !u!1 &342413727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 342413728}
+  m_Layer: 0
+  m_Name: spawnCards
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &342413728
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 342413727}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 163064226}
+  - {fileID: 1492205112}
+  - {fileID: 2115323707}
+  - {fileID: 1909960943}
+  m_Father: {fileID: 1519156484}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &368797184 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1475072113034246, guid: 50558ad9a0fa44ef18a0090ad10b5085,
+    type: 2}
+  m_PrefabInternal: {fileID: 772335843}
+--- !u!1 &662194428 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1411071065366324, guid: 50558ad9a0fa44ef18a0090ad10b5085,
+    type: 2}
+  m_PrefabInternal: {fileID: 772335843}
+--- !u!1001 &772335843
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -392,48 +434,17 @@ Prefab:
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1475072113034246, guid: 50558ad9a0fa44ef18a0090ad10b5085, type: 2}
-      propertyPath: m_TagString
-      value: shopMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857948540510284, guid: 50558ad9a0fa44ef18a0090ad10b5085, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114226051910848638, guid: 50558ad9a0fa44ef18a0090ad10b5085,
+        type: 2}
+      propertyPath: counter
+      value: 
+      objectReference: {fileID: 222606878}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50558ad9a0fa44ef18a0090ad10b5085, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &342413727
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 342413728}
-  m_Layer: 0
-  m_Name: spawnCards
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &342413728
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 342413727}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 163064226}
-  - {fileID: 1492205112}
-  - {fileID: 2115323707}
-  - {fileID: 1909960943}
-  m_Father: {fileID: 1519156484}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &780780467
 Prefab:
   m_ObjectHideFlags: 0
@@ -473,15 +484,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114050028796244508, guid: af689216599cd4263853aec94380a373,
+    - target: {fileID: 224615308163145986, guid: af689216599cd4263853aec94380a373,
         type: 2}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114050028796244508, guid: af689216599cd4263853aec94380a373,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 3
+      propertyPath: m_AnchoredPosition.y
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af689216599cd4263853aec94380a373, type: 2}
@@ -525,6 +531,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114851083299556970, guid: 8ede5f9fa777a41838ba70847cb334de,
+        type: 2}
+      propertyPath: shopMenu
+      value: 
+      objectReference: {fileID: 368797184}
     m_RemovedComponents:
     - {fileID: 212656540620393708, guid: 8ede5f9fa777a41838ba70847cb334de, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8ede5f9fa777a41838ba70847cb334de, type: 2}
@@ -534,6 +545,31 @@ Transform:
   m_PrefabParentObject: {fileID: 4960646986619678, guid: af689216599cd4263853aec94380a373,
     type: 2}
   m_PrefabInternal: {fileID: 780780467}
+--- !u!1 &1167939081 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1275255994292526, guid: 12d9de9e2dcc244b8b1f0db31495d5dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 137393956}
+--- !u!114 &1167939082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1167939081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e597d84f6fba249df851b82efca99dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  betterLuckNextTime: {fileID: 0}
+  meaninglessUpgrade: {fileID: 0}
+  SCOGLotto: {fileID: 0}
+  SpeedRunZ: {fileID: 0}
+  Mayan2012: {fileID: 0}
+  Architect: {fileID: 0}
+  TwoTwoTwo: {fileID: 0}
+  OhBabyATriple: {fileID: 0}
+  upgradeSprites: []
 --- !u!1001 &1180107970
 Prefab:
   m_ObjectHideFlags: 0
@@ -657,6 +693,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 114906947545021530, guid: 941e0bb0524a24a47b5b9cd14a8656c4,
+        type: 2}
+      propertyPath: shopPlacements
+      value: 
+      objectReference: {fileID: 662194428}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 941e0bb0524a24a47b5b9cd14a8656c4, type: 2}
   m_IsPrefabParent: 0
@@ -1191,7 +1232,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2142933945
-  m_SortingLayer: 1
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dbfed1d51415d487fbf999df5c78cb71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

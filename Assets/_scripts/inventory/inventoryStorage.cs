@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class inventoryStorage : MonoBehaviour {
 
-	private string[] rarities = {"white", "brown", "blue", "purple", "red", "green", "turquoise", "fuzz"};
-
 	// Stores most of the game's data and variables
 	public float Balance; // Stores the amount
 	public float priceofPack;
