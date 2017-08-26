@@ -77,8 +77,15 @@ August 25th:
 - steamworks api and achievements
 
 August 26th:
-- steamworks api
+- steamworks api (done)
+- achievements (one done)
+
+August 31st:
 - achievements
+- clean up
+- google analytics
+- EULA
+- graphics
 
 upgrades: (8)
 - meaninglessUpgrade 25 - nothing? (done)
@@ -93,7 +100,7 @@ upgrades: (8)
 achievements:
 - Negative 100 dollars
 - tricks are for kids
-- first one is free
+- first one is free (done)
 - oh what a feeling
 - dancing on the ceiling
 - lack of content

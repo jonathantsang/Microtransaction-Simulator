@@ -39,7 +39,7 @@ public class mainMenuInput : MonoBehaviour {
 			if (selected == 0) {
 				// Start game
 				print("start game");
-				SceneManager.LoadScene("Open_Crate");
+				SceneManager.LoadScene("OpenCrate");
 			} else if (selected == 1) {
 				print ("quit game");
 				Application.Quit();

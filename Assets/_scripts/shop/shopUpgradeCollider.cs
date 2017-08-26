@@ -30,7 +30,6 @@ public class shopUpgradeCollider : MonoBehaviour {
 			print ("turned on");
 			// Destroy the shopUpgrade
 			Destroy(wholeShopUpgrade);
-
 		} else {
 			print ("can't purchase");
 		}
