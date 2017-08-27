@@ -81,6 +81,7 @@ August 26th:
 - achievements (one done)
 
 August 31st:
+- fill out checklist
 - achievements
 - clean up
 - google analytics
@@ -98,12 +99,16 @@ upgrades: (8)
 - SpeedRunZ 9999 - Speedrun button (fake)
 
 achievements:
-- Negative 100 dollars
-- tricks are for kids
+- Negative 100 dollars (get -$100)
+- tricks are for kids (card trick in shop)
 - first one is free (done)
-- oh what a feeling
-- dancing on the ceiling
-- lack of content
+- oh what a feeling (open 50 packs)
+- dancing on the ceiling (open 100 packs)
+- lack of content (DLC in DLC)
+- Guacamole (click avocado at least once)
+- casino, old habits die hard (buy casino in shop)
+- Schooled, some people graduate but they still stupid (buy degree in shop)
+- time well spend (get $1000)
 
 real extension:
 - sparkle sound on rare cards

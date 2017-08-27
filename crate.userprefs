@@ -1,19 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Steamworks.NET/SteamAchivements.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Steamworks.NET/SteamAchievements.cs">
     <Files>
       <File FileName="Assets/_scripts/MainMenu/mainMenuInput.cs" Line="42" Column="33" />
-      <File FileName="Assets/_scripts/logic/GameController.cs" Line="22" Column="3" />
+      <File FileName="Assets/_scripts/logic/GameController.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/cards/Card.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/logic/totalPointsCounter.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/buttons/BalanceButton.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/logic/checkWon.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/shop/assets/avocadoTextMovement.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/shop/shopStorage.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/shop/shopController.cs" Line="42" Column="32" />
-      <File FileName="Assets/_scripts/shop/shopUpgradeCollider.cs" Line="32" Column="30" />
-      <File FileName="Assets/Scripts/Steamworks.NET/SteamAchivements.cs" Line="78" Column="21" />
-      <File FileName="Assets/Scripts/Steamworks.NET/SteamManager.cs" Line="99" Column="28" />
+      <File FileName="Assets/_scripts/shop/shopController.cs" Line="1" Column="1" />
+      <File FileName="Assets/_scripts/shop/shopUpgradeCollider.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Steamworks.NET/SteamAchievements.cs" Line="93" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
