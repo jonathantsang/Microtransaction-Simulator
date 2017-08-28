@@ -82,7 +82,7 @@ August 26th:
 
 August 31st:
 - fill out checklist
-- achievements
+- achievements (implementing)
 - clean up
 - google analytics
 - EULA
@@ -99,16 +99,24 @@ upgrades: (8)
 - SpeedRunZ 9999 - Speedrun button (fake)
 
 achievements:
+
+implemented:
+
+none:
+- first one is free (open a pack)
+- casino, old habits die hard (buy casino in shop)
+- Schooled, some people graduate but they still stupid (buy degree in shop)
+
 - Negative 100 dollars (get -$100)
+- time well spend (get $1000)
 - tricks are for kids (card trick in shop)
-- first one is free (done)
+
 - oh what a feeling (open 50 packs)
 - dancing on the ceiling (open 100 packs)
 - lack of content (DLC in DLC)
 - Guacamole (click avocado at least once)
-- casino, old habits die hard (buy casino in shop)
-- Schooled, some people graduate but they still stupid (buy degree in shop)
-- time well spend (get $1000)
+
+
 
 real extension:
 - sparkle sound on rare cards
