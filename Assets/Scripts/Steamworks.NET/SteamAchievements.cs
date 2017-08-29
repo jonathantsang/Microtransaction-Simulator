@@ -6,11 +6,15 @@ using Steamworks;
 // This is a port of StatsAndAchievements.cpp from SpaceWar, the official Steamworks Example.
 class SteamAchievements : MonoBehaviour {
 	private enum Achievement : int {
-		ACH_FIRST_ONE_IS_FREE
+		ACH_FIRST_ONE_IS_FREE,
+		ACH_THE_HOUSE_ALWAYS_WINS,
+		ACH_SCHOOLED
 	};
 
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
-		new Achievement_t(Achievement.ACH_FIRST_ONE_IS_FREE, "First One is Free", "Sometimes there is a free lunch.")
+		new Achievement_t(Achievement.ACH_FIRST_ONE_IS_FREE, "First One is Free", "Sometimes there is a free lunch"),
+		new Achievement_t(Achievement.ACH_THE_HOUSE_ALWAYS_WINS, "The House Always Wins", "Old habits die hard"),
+		new Achievement_t(Achievement.ACH_SCHOOLED, "SCHOOLED", "Some people graduate but they still stupid"),
 	};
 
 	// Our GameID
@@ -23,11 +27,6 @@ class SteamAchievements : MonoBehaviour {
 	// Should we store stats this frame?
 	private bool m_bStoreStats;
 
-	// Current Stat details
-	private float m_flGameFeetTraveled;
-	private float m_ulTickCountGameStart;
-	private double m_flGameDurationSeconds;
-
 	// Persisted Stat details
 	private int m_nTotalGamesPlayed;
 	private int m_nTotalNumWins;
@@ -39,6 +38,11 @@ class SteamAchievements : MonoBehaviour {
 	protected Callback<UserStatsReceived_t> m_UserStatsReceived;
 	protected Callback<UserStatsStored_t> m_UserStatsStored;
 	protected Callback<UserAchievementStored_t> m_UserAchievementStored;
+
+	// Look for the inventory storage with the game data
+	inventoryStorage iS;
+	// shop storage with the shop data
+	shopStorage sS;
 
 	void OnEnable() {
 		if (!SteamManager.Initialized)
@@ -54,6 +58,9 @@ class SteamAchievements : MonoBehaviour {
 		// These need to be reset to get the stats upon an Assembly reload in the Editor.
 		m_bRequestedStats = false;
 		m_bStatsValid = false;
+
+		iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage>();
+		sS = GameObject.FindGameObjectWithTag ("shopStorage").GetComponent<shopStorage>();
 	}
 
 	private void Update() {
@@ -82,17 +89,31 @@ class SteamAchievements : MonoBehaviour {
 
 		// Evaluate achievements
 		foreach (Achievement_t achievement in m_Achievements) {
+			int achievementIndex = 0;
 			if (achievement.m_bAchieved)
 				continue;
 
 			switch (achievement.m_eAchievementID) {
-			case Achievement.ACH_FIRST_ONE_IS_FREE:
-
-				// Temporary just get achievement
-				if (m_nTotalNumWins != 0) {
-					UnlockAchievement (achievement);
-				}
-				break;
+				case Achievement.ACH_FIRST_ONE_IS_FREE:
+					// Check if the inventory storage has more than 1 opened pack
+					if (iS.getPacksOpened() > 1) {
+						UnlockAchievement (achievement);
+					}
+					break;
+				case Achievement.ACH_THE_HOUSE_ALWAYS_WINS:
+					// Check in the shop storage has the casino flag is on
+					achievementIndex = 4; // TODO casino index is hardcoded
+					if (sS.checkFlag(achievementIndex) == 1) {
+						UnlockAchievement (achievement);
+					}
+					break;
+				case Achievement.ACH_SCHOOLED:
+					// Check in the shop storage has the architect flag is on
+					achievementIndex = 6; // TODO architect index is hardcoded
+					if (sS.checkFlag(achievementIndex) == 1) {
+						UnlockAchievement (achievement);
+					}
+					break;
 			}
 		}
 
@@ -106,8 +127,6 @@ class SteamAchievements : MonoBehaviour {
 			SteamUserStats.SetStat("NumLosses", m_nTotalNumLosses);
 			SteamUserStats.SetStat("FeetTraveled", m_flTotalFeetTraveled);
 			SteamUserStats.SetStat("MaxFeetTraveled", m_flMaxFeetTraveled);
-			// Update average feet / second stat
-			SteamUserStats.UpdateAvgRateStat("AverageSpeed", m_flGameFeetTraveled, m_flGameDurationSeconds);
 			// The averaged result is calculated for us
 			SteamUserStats.GetStat("AverageSpeed", out m_flAverageSpeed);
 
@@ -116,13 +135,6 @@ class SteamAchievements : MonoBehaviour {
 			// again later.
 			m_bStoreStats = !bSuccess;
 		}
-	}
-
-	//-----------------------------------------------------------------------------
-	// Purpose: Accumulate distance traveled
-	//-----------------------------------------------------------------------------
-	public void AddDistanceTraveled(float flDistance) {
-		m_flGameFeetTraveled += flDistance;
 	}
 
 	//-----------------------------------------------------------------------------
@@ -230,10 +242,6 @@ class SteamAchievements : MonoBehaviour {
 			GUILayout.Label("Steamworks not Initialized");
 			return;
 		}
-
-		GUILayout.Label("m_ulTickCountGameStart: " + m_ulTickCountGameStart);
-		GUILayout.Label("m_flGameDurationSeconds: " + m_flGameDurationSeconds);
-		GUILayout.Label("m_flGameFeetTraveled: " + m_flGameFeetTraveled);
 		GUILayout.Space(10);
 		GUILayout.Label("NumGames: " + m_nTotalGamesPlayed);
 		GUILayout.Label("NumWins: " + m_nTotalNumWins);

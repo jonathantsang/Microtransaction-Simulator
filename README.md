@@ -80,10 +80,17 @@ August 26th:
 - steamworks api (done)
 - achievements (one done)
 
+August 28th:
+- submit app
+- get first one free, casino, and schooled achievements to work
+
+
+August 29th:
+- chlsea games
+
+
 August 31st:
-- fill out checklist
 - achievements (implementing)
-- clean up
 - google analytics
 - EULA
 - graphics
@@ -101,18 +108,20 @@ upgrades: (8)
 achievements:
 
 implemented:
-
-none:
 - first one is free (open a pack)
-- casino, old habits die hard (buy casino in shop)
+- the house always wins, old habits die hard (buy casino in shop)
 - Schooled, some people graduate but they still stupid (buy degree in shop)
 
+in progress:
+- oh what a feeling (open 50 packs)
+- dancing on the ceiling (open 100 packs) 
+
+not yet implemented:
 - Negative 100 dollars (get -$100)
 - time well spend (get $1000)
 - tricks are for kids (card trick in shop)
 
-- oh what a feeling (open 50 packs)
-- dancing on the ceiling (open 100 packs)
+
 - lack of content (DLC in DLC)
 - Guacamole (click avocado at least once)
 
@@ -121,6 +130,9 @@ none:
 real extension:
 - sparkle sound on rare cards
 - move inventory interface to the main screen instead of a new scene
+- more card types: gold, silver, etc.
+- more upgrades in the shop
+
 
 extension:
 - get opening crates by playing simple games

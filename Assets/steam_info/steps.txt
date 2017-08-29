@@ -2,6 +2,8 @@
 
 2. login <steam_username> (auto login if on steam)
 
+3. Check /Users/Jon/Downloads/sdk/tools/ContentBuilder/scripts
+
 3. run_app_build_http /Users/Jon/Downloads/sdk/tools/ContentBuilder/scripts/app_build_689090.vdf
 
-4. Change the depot name for mac and windows (need to change both app_build and depot_build files)
+4. Change the depot name for mac and windows

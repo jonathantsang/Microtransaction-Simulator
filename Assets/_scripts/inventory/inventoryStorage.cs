@@ -10,6 +10,8 @@ public class inventoryStorage : MonoBehaviour {
 	public List<cardInfo> cardInfoList;
 	public Dictionary<int, int> storeCards; // Keep track of cards in list and dictionary using key as cardIndex and amount as value
 
+	private int packsOpened = 0;
+
 	public static inventoryStorage instance;
 
 	// Use this for initialization
@@ -42,6 +44,7 @@ public class inventoryStorage : MonoBehaviour {
 
 	public void purchaseCards(){
 		Balance -= priceofPack;
+		packsOpened += 1;
 	}
 
 	public void decreaseCardAmount(int index){
@@ -52,6 +55,10 @@ public class inventoryStorage : MonoBehaviour {
 
 	public void increaseBalance(int index){
 		Balance += index * 1;
+	}
+
+	public int getPacksOpened(){
+		return packsOpened;
 	}
 
 }

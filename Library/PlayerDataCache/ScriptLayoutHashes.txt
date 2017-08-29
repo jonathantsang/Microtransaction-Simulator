@@ -1,4 +1,4 @@
-WindowsStandalone
+OSXStandalone
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BackButton
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -121,6 +121,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.totalPointsCounter
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.mainMenuInput
 5aa5cabbcb8bd3b6665beca9208b307f Assembly-CSharp.dll:.OpenButton
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamAchievements
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ClickButton
 be4a3263102ebb9b2a7eba62b839956f Assembly-CSharp.dll:.Card
 c32f1bb1a778092eda26809a0710e0fa Assembly-CSharp.dll:.quitShopButton
@@ -163,4 +164,3 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.avocadoTextMovement
 47c8cfad6c40bf8c10a63ee886057bbf Assembly-CSharp.dll:.shopHolder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamManager
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamAchievements
