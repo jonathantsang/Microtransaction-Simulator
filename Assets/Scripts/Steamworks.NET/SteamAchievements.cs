@@ -8,13 +8,19 @@ class SteamAchievements : MonoBehaviour {
 	private enum Achievement : int {
 		ACH_FIRST_ONE_IS_FREE,
 		ACH_THE_HOUSE_ALWAYS_WINS,
-		ACH_SCHOOLED
+		ACH_SCHOOLED,
+		ACH_FEELING,
+		ACH_CEILING,
+		ACH_GUACAMOLE
 	};
 
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
 		new Achievement_t(Achievement.ACH_FIRST_ONE_IS_FREE, "First One is Free", "Sometimes there is a free lunch"),
 		new Achievement_t(Achievement.ACH_THE_HOUSE_ALWAYS_WINS, "The House Always Wins", "Old habits die hard"),
 		new Achievement_t(Achievement.ACH_SCHOOLED, "SCHOOLED", "Some people graduate but they still stupid"),
+		new Achievement_t(Achievement.ACH_FEELING, "Oh What a Feeling", "Open 50 packs"),
+		new Achievement_t(Achievement.ACH_CEILING, "We're dancing on the ceiling", "Open 100 packs"),
+		new Achievement_t(Achievement.ACH_GUACAMOLE, "Guacamole", "Yum")
 	};
 
 	// Our GameID
@@ -94,27 +100,40 @@ class SteamAchievements : MonoBehaviour {
 				continue;
 
 			switch (achievement.m_eAchievementID) {
-				case Achievement.ACH_FIRST_ONE_IS_FREE:
+			case Achievement.ACH_FIRST_ONE_IS_FREE:
 					// Check if the inventory storage has more than 1 opened pack
-					if (iS.getPacksOpened() > 1) {
-						UnlockAchievement (achievement);
-					}
-					break;
-				case Achievement.ACH_THE_HOUSE_ALWAYS_WINS:
+				if (iS.getPacksOpened () > 1) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_THE_HOUSE_ALWAYS_WINS:
 					// Check in the shop storage has the casino flag is on
-					achievementIndex = 4; // TODO casino index is hardcoded
-					if (sS.checkFlag(achievementIndex) == 1) {
-						UnlockAchievement (achievement);
-					}
-					break;
-				case Achievement.ACH_SCHOOLED:
+				achievementIndex = 4; // TODO casino index is hardcoded
+				if (sS.checkFlag (achievementIndex) == 1) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_SCHOOLED:
 					// Check in the shop storage has the architect flag is on
-					achievementIndex = 6; // TODO architect index is hardcoded
-					if (sS.checkFlag(achievementIndex) == 1) {
-						UnlockAchievement (achievement);
-					}
-					break;
+				achievementIndex = 6; // TODO architect index is hardcoded
+				if (sS.checkFlag (achievementIndex) == 1) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_FEELING:
+				// Check if the inventory storage has 50 opened packs
+				if (iS.getPacksOpened () >= 50) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_CEILING:
+				// Check if the inventory storage has 100 opened packs
+				if (iS.getAvocadoClicked()) {
+					UnlockAchievement (achievement);
+				}
+				break;
 			}
+
 		}
 
 		//Store stats in the Steam database if necessary

@@ -75,6 +75,7 @@
      <Compile Include="Assets\_scripts\logic\gameUI.cs" />
      <Compile Include="Assets\_scripts\logic\totalPointsCounter.cs" />
      <Compile Include="Assets\_scripts\MainMenu\mainMenuInput.cs" />
+     <Compile Include="Assets\_scripts\MainMenu\menuChlseaTransition.cs" />
      <Compile Include="Assets\_scripts\opening_effects\OpenEffects.cs" />
      <Compile Include="Assets\_scripts\save_load\Game.cs" />
      <Compile Include="Assets\_scripts\save_load\SaveLoad.cs" />

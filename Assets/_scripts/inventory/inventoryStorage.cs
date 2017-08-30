@@ -10,7 +10,9 @@ public class inventoryStorage : MonoBehaviour {
 	public List<cardInfo> cardInfoList;
 	public Dictionary<int, int> storeCards; // Keep track of cards in list and dictionary using key as cardIndex and amount as value
 
+	// Other information used for achievements
 	private int packsOpened = 0;
+	private bool clickedAvocado = false;
 
 	public static inventoryStorage instance;
 
@@ -61,4 +63,11 @@ public class inventoryStorage : MonoBehaviour {
 		return packsOpened;
 	}
 
+	public void clickAvocado(){
+		clickedAvocado = true;
+	}
+
+	public bool getAvocadoClicked(){
+		return clickedAvocado;
+	}
 }

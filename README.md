@@ -83,11 +83,11 @@ August 26th:
 August 28th:
 - submit app
 - get first one free, casino, and schooled achievements to work
-
+- chlsea logo
 
 August 29th:
-- chlsea games
-
+- implement 3 more achievements
+- implement loading screen
 
 August 31st:
 - achievements (implementing)
@@ -111,20 +111,18 @@ implemented:
 - first one is free (open a pack)
 - the house always wins, old habits die hard (buy casino in shop)
 - Schooled, some people graduate but they still stupid (buy degree in shop)
+- oh what a feeling (open 50 packs)
+- dancing on the ceiling (open 100 packs)
+- Guacamole (click avocado at least once)
 
 in progress:
-- oh what a feeling (open 50 packs)
-- dancing on the ceiling (open 100 packs) 
 
 not yet implemented:
 - Negative 100 dollars (get -$100)
 - time well spend (get $1000)
 - tricks are for kids (card trick in shop)
 
-
 - lack of content (DLC in DLC)
-- Guacamole (click avocado at least once)
-
 
 
 real extension:
