@@ -8,6 +8,8 @@ public class balanceController : MonoBehaviour {
 	private Text balanceText;
 	private inventoryStorage iS;
 
+	float old = 0;
+
 	// Use this for initialization
 	void Start () {
 		balanceText = GameObject.FindGameObjectWithTag ("balance").GetComponent<Text> ();
@@ -17,7 +19,7 @@ public class balanceController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		setBalanceText ();
 	}
 
 	void setBalanceText(){
@@ -29,5 +31,6 @@ public class balanceController : MonoBehaviour {
 		}
 		balanceString += balance.ToString ();
 		balanceText.text = balanceString;
+		old = iS.Balance;
 	}
 }

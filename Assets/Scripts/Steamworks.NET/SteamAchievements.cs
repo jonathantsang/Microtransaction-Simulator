@@ -101,20 +101,20 @@ class SteamAchievements : MonoBehaviour {
 
 			switch (achievement.m_eAchievementID) {
 			case Achievement.ACH_FIRST_ONE_IS_FREE:
-					// Check if the inventory storage has more than 1 opened pack
+				// Check if the inventory storage has more than 1 opened pack
 				if (iS.getPacksOpened () > 1) {
 					UnlockAchievement (achievement);
 				}
 				break;
 			case Achievement.ACH_THE_HOUSE_ALWAYS_WINS:
-					// Check in the shop storage has the casino flag is on
+				// Check in the shop storage has the casino flag is on
 				achievementIndex = 4; // TODO casino index is hardcoded
 				if (sS.checkFlag (achievementIndex) == 1) {
 					UnlockAchievement (achievement);
 				}
 				break;
 			case Achievement.ACH_SCHOOLED:
-					// Check in the shop storage has the architect flag is on
+				// Check in the shop storage has the architect flag is on
 				achievementIndex = 6; // TODO architect index is hardcoded
 				if (sS.checkFlag (achievementIndex) == 1) {
 					UnlockAchievement (achievement);
@@ -128,6 +128,12 @@ class SteamAchievements : MonoBehaviour {
 				break;
 			case Achievement.ACH_CEILING:
 				// Check if the inventory storage has 100 opened packs
+				if (iS.getPacksOpened() >= 100) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_GUACAMOLE:
+				// Check in the inventory storage has the guacamole flag is on
 				if (iS.getAvocadoClicked()) {
 					UnlockAchievement (achievement);
 				}

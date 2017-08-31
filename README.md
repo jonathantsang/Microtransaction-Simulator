@@ -89,6 +89,9 @@ August 29th:
 - implement 3 more achievements
 - implement loading screen
 
+August 30th:
+- casino
+
 August 31st:
 - achievements (implementing)
 - google analytics
