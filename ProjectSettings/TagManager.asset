@@ -19,6 +19,7 @@ TagManager:
   - shopHolder
   - casino
   - shopController
+  - audioStorage
   layers:
   - Default
   - TransparentFX

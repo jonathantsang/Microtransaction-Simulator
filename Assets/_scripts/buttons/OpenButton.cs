@@ -10,7 +10,8 @@ public class OpenButton : ClickButton {
 	private inventoryStorage iS;
 
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
+		base.Start();
 		cardList = new List<GameObject> ();
 		tPS = GameObject.FindGameObjectWithTag ("counter").GetComponent<totalPointsCounter>();
 		iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage> ();

@@ -119,8 +119,19 @@ implemented:
 - Guacamole (click avocado at least once)
 
 in progress:
+- peach fuzz (pull a fuzz colour)
+- turquoise turquoise (pull a turquoise colour)
+- green pea (pull a green colour)
+- red beet (pull a red colour)
+- purple grape (pull a purple colour)
+- blue berry (pull a blue colour)
+- brown bag (pull a brown colour)
+- white onion (pull a white colour)
 
 not yet implemented:
+- the year is 2017 (get more than 2017 value in 4 cards)
+- holy moly (get more than 10k value in 4 cards)
+
 - Negative 100 dollars (get -$100)
 - time well spend (get $1000)
 - tricks are for kids (card trick in shop)
@@ -129,6 +140,7 @@ not yet implemented:
 
 
 real extension:
+- each colour card has a use (blue ocean, etc.)
 - sparkle sound on rare cards
 - move inventory interface to the main screen instead of a new scene
 - more card types: gold, silver, etc.

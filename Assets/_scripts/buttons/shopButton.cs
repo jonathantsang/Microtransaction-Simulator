@@ -9,7 +9,8 @@ public class shopButton : ClickButton {
 	GameObject counter;
 
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
+		base.Start();
 		// Disable text of shop
 		shop = GameObject.FindGameObjectWithTag ("shop").gameObject;
 		shop.SetActive (false);

@@ -9,9 +9,11 @@ public class totalPointsCounter : MonoBehaviour {
 	private GameObject cardHolder;
 
 	private int totalPoints;
+	private audioStorage aS;
 
 	// Use this for initialization
 	void Start () {
+		aS = GameObject.FindGameObjectWithTag ("audioStorage").GetComponent<audioStorage> ();
 		// Find the pointsText
 		pointsText = GetComponent<Text>();
 		cardHolder = GameObject.FindGameObjectWithTag ("cards");
@@ -62,5 +64,7 @@ public class totalPointsCounter : MonoBehaviour {
 			pointsText.text = score.ToString();
 			yield return new WaitForSeconds(1/totalPoints);
 		}
+		int cashSound = 1; // TODO hardcoded 1 for cashSound
+		aS.playAudio (cashSound);
 	}
 }

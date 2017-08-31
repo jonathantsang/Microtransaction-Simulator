@@ -10,7 +10,8 @@ public class SellButton : ClickButton {
 	private Text countText;
 
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
+		base.Start();
 		iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage> ();
 		countText = transform.parent.parent.GetChild (1).GetComponent<Text> ();
 	}

@@ -70,4 +70,8 @@ public class inventoryStorage : MonoBehaviour {
 	public bool getAvocadoClicked(){
 		return clickedAvocado;
 	}
+
+	public int checkCard(int cardIndex){
+		return storeCards [cardIndex];
+	}
 }

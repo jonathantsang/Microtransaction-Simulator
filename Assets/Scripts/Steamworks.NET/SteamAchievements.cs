@@ -11,7 +11,15 @@ class SteamAchievements : MonoBehaviour {
 		ACH_SCHOOLED,
 		ACH_FEELING,
 		ACH_CEILING,
-		ACH_GUACAMOLE
+		ACH_GUACAMOLE,
+		ACH_FUZZ,
+		ACH_TURQUOISE,
+		ACH_GREEN,
+		ACH_RED,
+		ACH_PURPLE,
+		ACH_BLUE,
+		ACH_BROWN,
+		ACH_WHITE
 	};
 
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
@@ -20,7 +28,16 @@ class SteamAchievements : MonoBehaviour {
 		new Achievement_t(Achievement.ACH_SCHOOLED, "SCHOOLED", "Some people graduate but they still stupid"),
 		new Achievement_t(Achievement.ACH_FEELING, "Oh What a Feeling", "Open 50 packs"),
 		new Achievement_t(Achievement.ACH_CEILING, "We're dancing on the ceiling", "Open 100 packs"),
-		new Achievement_t(Achievement.ACH_GUACAMOLE, "Guacamole", "Yum")
+		new Achievement_t(Achievement.ACH_GUACAMOLE, "Guacamole", "Yum"),
+		new Achievement_t(Achievement.ACH_FUZZ, "Peach Fuzz", ""),
+		new Achievement_t(Achievement.ACH_TURQUOISE, "Turquoise Turquoise", ""),
+		new Achievement_t(Achievement.ACH_GREEN, "Green Peas", ""),
+		new Achievement_t(Achievement.ACH_RED, "Red Beet", ""),
+		new Achievement_t(Achievement.ACH_PURPLE, "Purple Grape", ""),
+		new Achievement_t(Achievement.ACH_BLUE, "Blue Berry", ""),
+		new Achievement_t(Achievement.ACH_BROWN, "Brown Bagel", ""),
+		new Achievement_t(Achievement.ACH_WHITE, "White Onion", ""),
+
 	};
 
 	// Our GameID
@@ -96,6 +113,7 @@ class SteamAchievements : MonoBehaviour {
 		// Evaluate achievements
 		foreach (Achievement_t achievement in m_Achievements) {
 			int achievementIndex = 0;
+			int cardIndex = 0;
 			if (achievement.m_bAchieved)
 				continue;
 
@@ -138,8 +156,55 @@ class SteamAchievements : MonoBehaviour {
 					UnlockAchievement (achievement);
 				}
 				break;
+			case Achievement.ACH_FUZZ:
+				cardIndex = 7; // TODO hardcoded cardIndex for colour
+				if (iS.checkCard(cardIndex) > 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_TURQUOISE:
+				cardIndex = 6; // TODO hardcoded cardIndex for colour
+				if (iS.checkCard(cardIndex) > 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_GREEN:
+				cardIndex = 5; // TODO hardcoded cardIndex for colour
+				if (iS.checkCard(cardIndex) > 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_RED:
+				cardIndex = 4; // TODO hardcoded cardIndex for colour
+				if (iS.checkCard(cardIndex) > 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_PURPLE:
+				cardIndex = 3; // TODO hardcoded cardIndex for colour
+				if (iS.checkCard(cardIndex) > 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_BLUE:
+				cardIndex = 2; // TODO hardcoded cardIndex for colour
+				if (iS.checkCard(cardIndex) > 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_BROWN:
+				cardIndex = 1; // TODO hardcoded cardIndex for colour
+				if (iS.checkCard(cardIndex) > 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_WHITE:
+				cardIndex = 0; // TODO hardcoded cardIndex for colour
+				if (iS.checkCard(cardIndex) > 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
 			}
-
 		}
 
 		//Store stats in the Steam database if necessary

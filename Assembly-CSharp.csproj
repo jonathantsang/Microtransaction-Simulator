@@ -59,6 +59,7 @@
      <Compile Include="Assets\_scripts\buttons\ClickButton.cs" />
      <Compile Include="Assets\_scripts\buttons\InventoryButton.cs" />
      <Compile Include="Assets\_scripts\buttons\OpenButton.cs" />
+     <Compile Include="Assets\_scripts\buttons\quitShopButton.cs" />
      <Compile Include="Assets\_scripts\buttons\SellButton.cs" />
      <Compile Include="Assets\_scripts\buttons\shopButton.cs" />
      <Compile Include="Assets\_scripts\buttons\TropyButton.cs" />
@@ -82,13 +83,12 @@
      <Compile Include="Assets\_scripts\shop\assets\avocadoTextMovement.cs" />
      <Compile Include="Assets\_scripts\shop\assets\clickAvocado.cs" />
      <Compile Include="Assets\_scripts\shop\assets\spinAvocado.cs" />
-     <Compile Include="Assets\_scripts\shop\quitShopButton.cs" />
      <Compile Include="Assets\_scripts\shop\shopController.cs" />
      <Compile Include="Assets\_scripts\shop\shopHolder.cs" />
      <Compile Include="Assets\_scripts\shop\shopStorage.cs" />
      <Compile Include="Assets\_scripts\shop\shopUpgrade.cs" />
      <Compile Include="Assets\_scripts\shop\shopUpgradeCollider.cs" />
-     <Compile Include="Assets\_scripts\sounds\soundStorage.cs" />
+     <Compile Include="Assets\_scripts\sounds\audioStorage.cs" />
      <Compile Include="Assets\Scripts\Steamworks.NET\SteamAchievements.cs" />
      <Compile Include="Assets\Scripts\Steamworks.NET\SteamManager.cs" />
      <None Include="Assets\Plugins\Steamworks.NET\redist\steam_appid.txt" />
