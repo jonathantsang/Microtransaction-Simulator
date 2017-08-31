@@ -1,5 +1,7 @@
 1. Configure app_build and depot_build scripts in sdk/tools/Content_Builder
 
+2. Go to ~/Steam and ./steamcmd.sh
+
 2. login <steam_username> (auto login if on steam)
 
 3. Check /Users/Jon/Downloads/sdk/tools/ContentBuilder/scripts

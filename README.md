@@ -90,9 +90,11 @@ August 29th:
 - implement loading screen
 
 August 30th:
-- casino
+- more achievements
+- intro logo
 
 August 31st:
+- casino
 - achievements (implementing)
 - google analytics
 - EULA
@@ -117,8 +119,6 @@ implemented:
 - oh what a feeling (open 50 packs)
 - dancing on the ceiling (open 100 packs)
 - Guacamole (click avocado at least once)
-
-in progress:
 - peach fuzz (pull a fuzz colour)
 - turquoise turquoise (pull a turquoise colour)
 - green pea (pull a green colour)
@@ -127,6 +127,9 @@ in progress:
 - blue berry (pull a blue colour)
 - brown bag (pull a brown colour)
 - white onion (pull a white colour)
+
+in progress:
+
 
 not yet implemented:
 - the year is 2017 (get more than 2017 value in 4 cards)

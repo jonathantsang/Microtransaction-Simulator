@@ -60,7 +60,7 @@ public class mainMenuInput : MonoBehaviour {
 	void updateChoice(){
 		// selected is already updated to the new choice index
 		choices [selected].color = new Color (1, 0, 0);
-		// Hard coded to turn the other one to black
+		// TODO hardcoded to turn the other one to black
 		choices[Mathf.Abs(selected - 1)].color = new Color(0,0,0);
 	}
 }

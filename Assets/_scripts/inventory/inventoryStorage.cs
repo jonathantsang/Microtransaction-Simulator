@@ -9,6 +9,7 @@ public class inventoryStorage : MonoBehaviour {
 	public float priceofPack;
 	public List<cardInfo> cardInfoList;
 	public Dictionary<int, int> storeCards; // Keep track of cards in list and dictionary using key as cardIndex and amount as value
+	private Dictionary<string, int> otherFlags;
 
 	// Other information used for achievements
 	private int packsOpened = 0;
@@ -20,8 +21,15 @@ public class inventoryStorage : MonoBehaviour {
 	void Start () {
 		priceofPack = 3.99f;
 
+		otherFlags = new Dictionary<string, int>();
+		// TODO hardcoded strings
+		otherFlags["avocado"] = 0;
+		otherFlags ["packsOpened"] = 0;
+		otherFlags ["logo"] = 0;
+
+
 		storeCards = new Dictionary<int, int>();
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 8; i++) { // TODO Hardcoded amount
 			storeCards [i] = 0;
 		}
 
@@ -46,7 +54,7 @@ public class inventoryStorage : MonoBehaviour {
 
 	public void purchaseCards(){
 		Balance -= priceofPack;
-		packsOpened += 1;
+		otherFlags ["packsOpened"] += 1;
 	}
 
 	public void decreaseCardAmount(int index){
@@ -60,18 +68,26 @@ public class inventoryStorage : MonoBehaviour {
 	}
 
 	public int getPacksOpened(){
-		return packsOpened;
+		return otherFlags ["packsOpened"];
 	}
 
 	public void clickAvocado(){
-		clickedAvocado = true;
+		otherFlags ["avocado"] = 1;
 	}
 
-	public bool getAvocadoClicked(){
-		return clickedAvocado;
+	public int getAvocadoClicked(){
+		return otherFlags ["avocado"];
 	}
 
 	public int checkCard(int cardIndex){
-		return storeCards [cardIndex];
+		return otherFlags ["packsOpened"];
+	}
+
+	public int checkFlag(string key){
+		return otherFlags[key];
+	}
+
+	public void setFlag(string key){
+		otherFlags [key] = 1;
 	}
 }

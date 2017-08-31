@@ -19,7 +19,8 @@ class SteamAchievements : MonoBehaviour {
 		ACH_PURPLE,
 		ACH_BLUE,
 		ACH_BROWN,
-		ACH_WHITE
+		ACH_WHITE,
+		ACH_CHLSEA
 	};
 
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
@@ -37,6 +38,7 @@ class SteamAchievements : MonoBehaviour {
 		new Achievement_t(Achievement.ACH_BLUE, "Blue Berry", ""),
 		new Achievement_t(Achievement.ACH_BROWN, "Brown Bagel", ""),
 		new Achievement_t(Achievement.ACH_WHITE, "White Onion", ""),
+		new Achievement_t(Achievement.ACH_CHLSEA, "chlsea", "")
 
 	};
 
@@ -152,7 +154,7 @@ class SteamAchievements : MonoBehaviour {
 				break;
 			case Achievement.ACH_GUACAMOLE:
 				// Check in the inventory storage has the guacamole flag is on
-				if (iS.getAvocadoClicked()) {
+				if (iS.getAvocadoClicked() == 1) {
 					UnlockAchievement (achievement);
 				}
 				break;
@@ -201,6 +203,11 @@ class SteamAchievements : MonoBehaviour {
 			case Achievement.ACH_WHITE:
 				cardIndex = 0; // TODO hardcoded cardIndex for colour
 				if (iS.checkCard(cardIndex) > 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_CHLSEA:
+				if (iS.checkFlag ("logo") == 1) {
 					UnlockAchievement (achievement);
 				}
 				break;

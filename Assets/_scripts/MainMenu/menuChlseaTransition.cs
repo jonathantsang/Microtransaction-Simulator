@@ -15,7 +15,7 @@ public class menuChlseaTransition : MonoBehaviour {
 	}
 
 	IEnumerator Fade(){
-		yield return new WaitForSeconds (3);
+		yield return new WaitForSeconds (1.5f);
 		this.gameObject.SetActive (false);
 
 	}

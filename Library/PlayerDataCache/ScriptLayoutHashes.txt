@@ -49,7 +49,6 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-a98ea49d65b3f18f2e650b5702690490 Assembly-CSharp.dll:.soundStorage
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -124,6 +123,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamAchievements
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ClickButton
 be4a3263102ebb9b2a7eba62b839956f Assembly-CSharp.dll:.Card
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.menuChlseaTransition
 c32f1bb1a778092eda26809a0710e0fa Assembly-CSharp.dll:.quitShopButton
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GameController
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -164,3 +164,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.avocadoTextMovement
 47c8cfad6c40bf8c10a63ee886057bbf Assembly-CSharp.dll:.shopHolder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamManager
+a98ea49d65b3f18f2e650b5702690490 Assembly-CSharp.dll:.audioStorage
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.clickLogo
