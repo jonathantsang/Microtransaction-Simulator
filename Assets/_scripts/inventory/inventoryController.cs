@@ -43,7 +43,7 @@ public class inventoryController : MonoBehaviour {
 			}
 	
 			// For each card in the dictionary
-			int cardDictionaryLength = 7;
+			int cardDictionaryLength = 8; // TODO fix hardcode
 			// i+1 for child because placement is the first child
 			for (int i = 0; i < cardDictionaryLength; i++) {
 				Text childText = inventory.transform.GetChild (i+1).transform.GetChild (1).GetComponent<Text> ();

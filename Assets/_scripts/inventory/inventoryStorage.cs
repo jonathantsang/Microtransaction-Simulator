@@ -12,8 +12,6 @@ public class inventoryStorage : MonoBehaviour {
 	private Dictionary<string, int> otherFlags;
 
 	// Other information used for achievements
-	private int packsOpened = 0;
-	private bool clickedAvocado = false;
 
 	public static inventoryStorage instance;
 
@@ -22,7 +20,7 @@ public class inventoryStorage : MonoBehaviour {
 		priceofPack = 3.99f;
 
 		otherFlags = new Dictionary<string, int>();
-		// TODO hardcoded strings
+		// TODO fix hardcoded strings
 		otherFlags["avocado"] = 0;
 		otherFlags ["packsOpened"] = 0;
 		otherFlags ["logo"] = 0;
@@ -49,7 +47,7 @@ public class inventoryStorage : MonoBehaviour {
 
 	public void addCard(cardInfo card){
 		cardInfoList.Add (card);
-		storeCards [card.getCardIndex ()] += 1;
+		storeCards [card.getCardIndex()] += 1;
 	}
 
 	public void purchaseCards(){
@@ -79,8 +77,8 @@ public class inventoryStorage : MonoBehaviour {
 		return otherFlags ["avocado"];
 	}
 
-	public int checkCard(int cardIndex){
-		return otherFlags ["packsOpened"];
+	public int checkCard(int cardRarity){
+		return storeCards [cardRarity];
 	}
 
 	public int checkFlag(string key){

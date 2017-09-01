@@ -152,7 +152,11 @@ public class Card : MonoBehaviour {
 			Instantiate (ps, transform);
 		}
 		// Store the card information in the inventory Storage
-		cardInfo newCard= new cardInfo(value, totalValue, rarity, rarityIndex);
+		cardInfo newCard = new cardInfo(value, totalValue, rarity, rarityIndex);
 		iS.addCard(newCard);
+	}
+
+	string getRarity(){
+		return rarity;
 	}
 }

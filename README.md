@@ -95,10 +95,11 @@ August 30th:
 
 August 31st:
 - casino
-- achievements (implementing)
+- fix peach fuzz etc.
+- fix screenshot for crate simulator
 - google analytics
-- EULA
-- graphics
+- EULA?
+- graphics options
 
 upgrades: (8)
 - meaninglessUpgrade 25 - nothing? (done)
