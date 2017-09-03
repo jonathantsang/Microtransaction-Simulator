@@ -49,8 +49,8 @@ public class SaveData {
 				Debug.LogErrorFormat("File: '{0}' is empty. Returning default SaveData");
 				return new SaveData();
 			}
-
 			// Otherwise we can just use JsonUtility to convert the string to a new SaveData object.
+			Debug.Log(contents);
 			return JsonUtility.FromJson<SaveData>(contents);
 		}
 	}
