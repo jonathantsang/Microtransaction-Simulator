@@ -6,7 +6,6 @@ public class shopStorage : MonoBehaviour {
 
 	public static shopStorage instance;
 
-
 	// Keeps track of which upgrades are on
 	// 1 on, 0 means off
 	Dictionary<int, int> shopUpgradeFlags;

@@ -111,7 +111,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 e2b62fab5fe783bb8bdef36262b7d8bd Assembly-CSharp.dll:.shopController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.winButton
 b37ee07fa302d26b41ebfa62a87160a3 Assembly-CSharp.dll:.checkWon
-c9c0decccb894df00cb155394bcdf1ac Assembly-CSharp.dll:.inventoryStorage
+6d0298f1f458e630dc86e84b1ff57c66 Assembly-CSharp.dll:.inventoryStorage
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -147,6 +147,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 5f2ad81aa8994e8fbe25d1e57afe6773 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TropyButton
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.clickLogo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.shopUpgrade
 11c86b6d58945955f6d9508093fcbe4f Assembly-CSharp.dll:.avocadoController
 c754dbcc6f73cca695e0836764e1c310 Assembly-CSharp.dll:.clickAvocado
@@ -160,9 +161,9 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BalanceButton
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.shopUpgradeCollider
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.InventoryButton
+a98ea49d65b3f18f2e650b5702690490 Assembly-CSharp.dll:.audioStorage
 6229f8ad489dd41454a471c875e19028 Assembly-CSharp.dll:.cardInformationStorage
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.avocadoTextMovement
 47c8cfad6c40bf8c10a63ee886057bbf Assembly-CSharp.dll:.shopHolder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamManager
-a98ea49d65b3f18f2e650b5702690490 Assembly-CSharp.dll:.audioStorage
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.clickLogo
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DataService

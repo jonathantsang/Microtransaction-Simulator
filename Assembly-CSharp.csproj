@@ -79,7 +79,9 @@
      <Compile Include="Assets\_scripts\mainmenu\mainMenuInput.cs" />
      <Compile Include="Assets\_scripts\mainmenu\menuChlseaTransition.cs" />
      <Compile Include="Assets\_scripts\opening_effects\OpenEffects.cs" />
+     <Compile Include="Assets\_scripts\save_load\DataService.cs" />
      <Compile Include="Assets\_scripts\save_load\Game.cs" />
+     <Compile Include="Assets\_scripts\save_load\SaveData.cs" />
      <Compile Include="Assets\_scripts\save_load\SaveLoad.cs" />
      <Compile Include="Assets\_scripts\shop\assets\avocadoTextMovement.cs" />
      <Compile Include="Assets\_scripts\shop\assets\clickAvocado.cs" />

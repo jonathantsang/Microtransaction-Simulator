@@ -23,7 +23,7 @@ public class balanceController : MonoBehaviour {
 	}
 
 	void setBalanceText(){
-		float balance = iS.Balance;
+		float balance = iS.getBalance();
 		string balanceString = "$";
 		if (balance < 0) {
 			balanceString = "-$";
@@ -31,6 +31,6 @@ public class balanceController : MonoBehaviour {
 		}
 		balanceString += balance.ToString ();
 		balanceText.text = balanceString;
-		old = iS.Balance;
+		old = iS.getBalance();
 	}
 }

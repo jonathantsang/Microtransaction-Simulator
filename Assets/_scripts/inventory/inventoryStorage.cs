@@ -5,7 +5,7 @@ using UnityEngine;
 public class inventoryStorage : MonoBehaviour {
 
 	// Stores most of the game's data and variables
-	public float Balance; // Stores the amount
+	private float Balance; // Stores the amount
 	public float priceofPack;
 	public List<cardInfo> cardInfoList;
 	public Dictionary<int, int> storeCards; // Keep track of cards in list and dictionary using key as cardIndex and amount as value
@@ -88,4 +88,14 @@ public class inventoryStorage : MonoBehaviour {
 	public void setFlag(string key){
 		otherFlags [key] = 1;
 	}
+
+	public void changeBalance(float change){
+		Balance += change;
+		System.Math.Round (Balance, 2);
+	}
+
+	public float getBalance(){
+		return Balance;
+	}
 }
+

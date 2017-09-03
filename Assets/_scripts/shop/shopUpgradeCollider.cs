@@ -23,7 +23,7 @@ public class shopUpgradeCollider : MonoBehaviour {
 	}
 		
 	void OnMouseDown(){
-		if (upgradeInfo.getPrice () <= iS.Balance) {
+		if (upgradeInfo.getPrice () <= iS.getBalance()) {
 			print ("can purchase");
 			print ("execute " + upgradeInfo.getTitle());
 			sS.turnOnFlag (upgradeInfo.getUpgradeIndex ());

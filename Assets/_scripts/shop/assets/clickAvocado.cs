@@ -20,7 +20,7 @@ public class clickAvocado : MonoBehaviour {
 
 	void OnMouseDown(){
 		// Play cash music
-		iS.Balance += 300;
+		iS.changeBalance(300);
 		iS.clickAvocado ();
 		Instantiate (floatingText, transform.position, Quaternion.identity);
 		Disappear ();

@@ -19,7 +19,7 @@ public class checkWon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (timer < timeLength) {
-			if (iS.Balance > 9999){
+			if (iS.getBalance() > 9999){
 				if (winSpawned == null) {
 					winSpawned = Instantiate (winButton, new Vector2 (0, 0), Quaternion.identity);
 				}

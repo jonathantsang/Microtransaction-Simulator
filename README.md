@@ -11,7 +11,7 @@ hook:
 - opening card packs, lose money
 
 goal:
-- lose $1 million dollars
+- lose $10,000 dollars
 - gamble cards
 - get pink cards
 
@@ -94,11 +94,17 @@ August 30th:
 - intro logo
 
 August 31st:
-- casino
 - fix peach fuzz etc.
 - fix screenshot for crate simulator
+
+Sept 2nd:
 - google analytics
-- EULA?
+- EULA (no)
+
+Sept 3rd:
+- save progress
+- casino
+- fix screen resolution issue on windows
 - graphics options
 
 upgrades: (8)
