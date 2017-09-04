@@ -4,19 +4,29 @@ using UnityEngine;
 using System.IO;
 
 [System.Serializable]
-public class cardInfoArray
+public class cardInfoList
 {
 	public int testing = 1;
 
 	// TODO fix hardcoded storage
-	public List<cardInfo> cardsList;
+	public List<cardInfo> cardsTotal;
 	public Dictionary<int, int> cardDict;
 
-	public cardInfoArray() {
-		cardsList = new List<cardInfo>() { new cardInfo() };
+	public cardInfoList() {
+		cardsTotal = new List<cardInfo>() { new cardInfo() };
 	}
-	public cardInfoArray(int one, int two, int three){
-		cardsList = new List<cardInfo>() { new cardInfo(one), new cardInfo(two), new cardInfo(three)};
+}
+
+[System.Serializable]
+public class cardOpenList
+{
+	public int testing = 1;
+
+	// TODO fix hardcoded storage
+	public List<cardOpen> cardsOpened;
+
+	public cardOpenList() {
+		cardsOpened = new List<cardOpen>() { new cardOpen() };
 	}
 }
 
@@ -25,7 +35,8 @@ public class SaveData {
 	public int DEBUG = 1;
 	public float Balance = 0;
 	public float priceOfPack = 0;
-	public cardInfoArray cards;
+	public cardInfoList cardsInfoList;
+	public cardOpenList cardsOpenList;
 
 	public void WriteToFile(string filePath){
 		// Convert the instance ('this') of this class to a JSON string with "pretty print" (nice indenting).

@@ -20,7 +20,11 @@ class SteamAchievements : MonoBehaviour {
 		ACH_BLUE,
 		ACH_BROWN,
 		ACH_WHITE,
-		ACH_CHLSEA
+		ACH_CHLSEA,
+		ACH_YEARIS20XX,
+		ACH_RICH,
+		ACH_HOLYMOLY,
+		ACH_AGAINSTALLODDS
 	};
 
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
@@ -38,8 +42,11 @@ class SteamAchievements : MonoBehaviour {
 		new Achievement_t(Achievement.ACH_BLUE, "Blue Berry", "Get a blue"),
 		new Achievement_t(Achievement.ACH_BROWN, "Brown Bagel", "Get a brown"),
 		new Achievement_t(Achievement.ACH_WHITE, "White Onion", "Get a white"),
-		new Achievement_t(Achievement.ACH_CHLSEA, "chlsea", "It's a secret to everybody")
-
+		new Achievement_t(Achievement.ACH_CHLSEA, "chlsea", "It's a secret to everybody"),
+		new Achievement_t(Achievement.ACH_YEARIS20XX, "The Year is 20XX", "2017"),
+		new Achievement_t(Achievement.ACH_RICH, "Riches", "A small loan of 1 million dollars"),
+		new Achievement_t(Achievement.ACH_HOLYMOLY, "Holy Moly", "Unrelated"),
+		new Achievement_t(Achievement.ACH_AGAINSTALLODDS, "Against All Odds", "Take a look at me now")
 	};
 
 	// Our GameID
@@ -59,6 +66,8 @@ class SteamAchievements : MonoBehaviour {
 	private float m_flTotalFeetTraveled;
 	private float m_flMaxFeetTraveled;
 	private float m_flAverageSpeed;
+
+	private int m_nHighScore;
 
 	protected Callback<UserStatsReceived_t> m_UserStatsReceived;
 	protected Callback<UserStatsStored_t> m_UserStatsStored;
@@ -211,13 +220,37 @@ class SteamAchievements : MonoBehaviour {
 					UnlockAchievement (achievement);
 				}
 				break;
-			}
+			case Achievement.ACH_YEARIS20XX:
+				foreach (cardOpen cardOpenInformation in iS.cardOpenList) {
+					if (cardOpenInformation.totalCardOpenValue > 2017) {
+						UnlockAchievement (achievement);
+					}
+				}
+				break;
+			case Achievement.ACH_RICH:
+				if (iS.getBalance() > 5000) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_HOLYMOLY:
+				foreach (cardOpen cardOpenInformation in iS.cardOpenList) {
+					if (cardOpenInformation.totalCardOpenValue > 24000) {
+						UnlockAchievement (achievement);
+					}
+				}
+				break;
+			case Achievement.ACH_AGAINSTALLODDS:
+				foreach (cardOpen cardOpenInformation in iS.cardOpenList) {
+					if (cardOpenInformation.totalCardOpenValue > 10000) {
+						UnlockAchievement (achievement);
+					}
+				}
+				break;
 		}
+	}
 
 		//Store stats in the Steam database if necessary
 		if (m_bStoreStats) {
-			// already set any achievements in UnlockAchievement
-
 			// set stats
 			SteamUserStats.SetStat("NumGames", m_nTotalGamesPlayed);
 			SteamUserStats.SetStat("NumWins", m_nTotalNumWins);
@@ -330,39 +363,7 @@ class SteamAchievements : MonoBehaviour {
 			}
 		}
 	}
-
-	//-----------------------------------------------------------------------------
-	// Purpose: Display the user's stats and achievements
-	//-----------------------------------------------------------------------------
-	public void Render() {
-		if (!SteamManager.Initialized) {
-			GUILayout.Label("Steamworks not Initialized");
-			return;
-		}
-		GUILayout.Space(10);
-		GUILayout.Label("NumGames: " + m_nTotalGamesPlayed);
-		GUILayout.Label("NumWins: " + m_nTotalNumWins);
-		GUILayout.Label("NumLosses: " + m_nTotalNumLosses);
-		GUILayout.Label("FeetTraveled: " + m_flTotalFeetTraveled);
-		GUILayout.Label("MaxFeetTraveled: " + m_flMaxFeetTraveled);
-		GUILayout.Label("AverageSpeed: " + m_flAverageSpeed);
-
-		GUILayout.BeginArea(new Rect(Screen.width - 300, 0, 300, 800));
-		foreach(Achievement_t ach in m_Achievements) {
-			GUILayout.Label(ach.m_eAchievementID.ToString());
-			GUILayout.Label(ach.m_strName + " - " + ach.m_strDescription);
-			GUILayout.Label("Achieved: " + ach.m_bAchieved);
-			GUILayout.Space(20);
-		}
-
-		// FOR TESTING PURPOSES ONLY!
-		if (GUILayout.Button("RESET STATS AND ACHIEVEMENTS")) {
-			SteamUserStats.ResetAllStats(true);
-			SteamUserStats.RequestCurrentStats();
-		}
-		GUILayout.EndArea();
-	}
-
+		
 	private class Achievement_t {
 		public Achievement m_eAchievementID;
 		public string m_strName;

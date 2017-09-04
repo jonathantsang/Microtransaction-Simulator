@@ -67,6 +67,7 @@
      <Compile Include="Assets\_scripts\cards\Card.cs" />
      <Compile Include="Assets\_scripts\cards\cardInformationStorage.cs" />
      <Compile Include="Assets\_scripts\classes\cardInfo.cs" />
+     <Compile Include="Assets\_scripts\classes\cardOpen.cs" />
      <Compile Include="Assets\_scripts\classes\upgrade.cs" />
      <Compile Include="Assets\_scripts\inventory\inventoryController.cs" />
      <Compile Include="Assets\_scripts\inventory\inventorySpriteHolder.cs" />

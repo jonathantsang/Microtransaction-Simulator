@@ -8,6 +8,9 @@ public class inventoryStorage : MonoBehaviour {
 	private float Balance; // Stores the amount
 	public float priceOfPack;
 	public List<cardInfo> cardInfoList;
+	// Also do cardComboes later
+	public List<cardOpen> cardOpenList;
+
 	public Dictionary<int, int> storeCards; // Keep track of cards in list and dictionary using key as cardIndex and amount as value
 	private Dictionary<string, int> otherFlags;
 
@@ -18,6 +21,9 @@ public class inventoryStorage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		priceOfPack = 3.99f;
+
+		// Used to keep track which cards were opened together
+		cardOpenList = new List<cardOpen> ();
 
 		otherFlags = new Dictionary<string, int>();
 		// TODO fix hardcoded strings
@@ -96,6 +102,11 @@ public class inventoryStorage : MonoBehaviour {
 
 	public float getBalance(){
 		return Balance;
+	}
+
+	// Used for loading from file
+	public void setBalance(float newBalance){
+		Balance = newBalance;
 	}
 }
 

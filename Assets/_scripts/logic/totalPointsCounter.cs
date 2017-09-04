@@ -10,10 +10,13 @@ public class totalPointsCounter : MonoBehaviour {
 
 	private int totalPoints;
 	private audioStorage aS;
+	private inventoryStorage iS;
 
 	// Use this for initialization
 	void Start () {
 		aS = GameObject.FindGameObjectWithTag ("audioStorage").GetComponent<audioStorage> ();
+		iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage> ();
+
 		// Find the pointsText
 		pointsText = GetComponent<Text>();
 		cardHolder = GameObject.FindGameObjectWithTag ("cards");
@@ -38,7 +41,9 @@ public class totalPointsCounter : MonoBehaviour {
 				}
 
 			}
-			// If they are all flipped, count up the score
+			// TODO technically totalPointsCounter shouldn't add to cardOpenList, but it can
+			addToCardOpenList();
+			// If they are all add to the cardOpenList and flipped count up the score and make it increase text amount
 			countUpScore ();
 		} else if (type == "clear") {
 			pointsText.text = "0";
@@ -48,6 +53,18 @@ public class totalPointsCounter : MonoBehaviour {
 	void countUpScore(){
 		pointsText.text = "0";
 		StartCoroutine (Counter());
+	}
+
+	void addToCardOpenList(){
+		cardOpen cardOpenCollection = new cardOpen();
+		for (int i = 0; i < cardHolder.transform.childCount; i++) {
+			// Add each card's "cardInfo" to the list for the cardOpen
+			cardOpenCollection.addToCardsOpened (cardHolder.transform.GetChild (i).GetComponent<Card> ().getCardInfo ());
+			print (cardHolder.transform.GetChild (i).GetComponent<Card> ().getCardInfo ().totalValue);
+		}
+		// Add the final card collection and total value to the list
+		cardOpenCollection.totalCardOpenValue = totalPoints;
+		iS.cardOpenList.Add (cardOpenCollection);
 	}
 
 

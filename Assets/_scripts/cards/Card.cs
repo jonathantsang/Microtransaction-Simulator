@@ -2,22 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public enum colour {white, brown, blue, purple, red, green, turquoise, fuzz};
+
 public class Card : MonoBehaviour {
 
 	// Numerical value and total card value in points
 	private int value;
 	public int totalValue;
 
-	enum colours {white, brown, blue, purple, red, green, turquoise, fuzz};
-
 	private string[] rarities = {"white", "brown", "blue", "purple", "red", "green", "turquoise", "fuzz"};
 	private int[] colourValues = { 100, 200, 500, 1000, 2000, 4000, 8000, 10000 };
-
 
 	private string rarity;
 	private int rarityIndex;
 
 	private bool left = true;
+	private cardInfo information;
+
 	public bool flipped = false;
 
 	private SpriteRenderer frontSprite;
@@ -144,6 +146,9 @@ public class Card : MonoBehaviour {
 
 		tensDigit.sprite = cDS.numbers[value / 10];
 		onesDigit.sprite = cDS.numbers[value % 10];
+
+		// Initialize the card's info
+		information = new cardInfo(value, totalValue, rarity, (colour)rarityIndex);
 	}
 
 	void flipCard(){
@@ -157,11 +162,14 @@ public class Card : MonoBehaviour {
 			Instantiate (ps, transform);
 		}
 		// Store the card information in the inventory Storage
-		cardInfo newCard = new cardInfo(value, totalValue, rarity, rarityIndex);
-		iS.addCard(newCard);
+		iS.addCard(information);
 	}
 
-	string getRarity(){
+	private string getRarity(){
 		return rarity;
+	}
+
+	public cardInfo getCardInfo(){
+		return information;
 	}
 }

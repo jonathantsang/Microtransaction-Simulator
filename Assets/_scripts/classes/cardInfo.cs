@@ -6,35 +6,31 @@ using UnityEngine;
 public class cardInfo {
 	public int value;
 	public int totalValue;
-	public string rarity;
-	public int cardIndex;
+	public colour rarity;
 
-	public cardInfo(int v, int tV, string r, int cI){
+	public cardInfo(int v, int tV, string r, colour colourInput){
 		value = v; 
 		totalValue = tV;
-		rarity = r;
-		cardIndex = cI;
+		rarity = colourInput;
 	}
 
 	public cardInfo(int num){
 		value = num;
 		totalValue = num;
-		rarity = num.ToString();
-		cardIndex = num;
+		rarity = (colour)num;
 	}
 
 	public cardInfo(){
 		value = 2;
 		totalValue = 2;
-		rarity = 2.ToString();
-		cardIndex = 2;
+		rarity = colour.white;
 	}
 
-	public string getRarity(){
+	public colour getRarity(){
 		return rarity;
 	}
 
 	public int getCardIndex(){
-		return cardIndex;
+		return (int)rarity;
 	}
 }

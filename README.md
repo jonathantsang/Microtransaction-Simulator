@@ -105,9 +105,21 @@ Sept 3rd:
 - save progress (do it for shop and inventory) (done)
 - save progress cash balance
 - fix achievement text for the description
-- casino
 - fix screen resolution issue on windows (done)
 - graphics options
+
+Sept 4th:
+- enumerator (done)
+- post an annoucement (done)
+- save load (finish up ALL data)
+- turn down ka-ching sound (too loud)
+- achievements (done)
+- rehaul cardOpenList and cardInfoList (done)
+- combos (done-basic)
+
+Sept 5th:
+- more features
+- complex combos
 
 upgrades: (8)
 - meaninglessUpgrade 25 - nothing? (done)
@@ -136,18 +148,18 @@ implemented:
 - blue berry (pull a blue colour)
 - brown bag (pull a brown colour)
 - white onion (pull a white colour)
+- the year is 2017 (get more than 2017 value in 4 cards)
+- holy moly (get more than 10k value in 4 cards)
+- rich (get $5000)
+- against all odds (get more than 24k value in 4 cards)
 
 in progress:
 
 
 not yet implemented:
-- the year is 2017 (get more than 2017 value in 4 cards)
-- holy moly (get more than 10k value in 4 cards)
-
 - Negative 100 dollars (get -$100)
-- time well spend (get $1000)
+- time well spent (get $1000)
 - tricks are for kids (card trick in shop)
-
 - lack of content (DLC in DLC)
 
 
