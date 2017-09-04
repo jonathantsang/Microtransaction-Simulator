@@ -23,6 +23,13 @@ public class DataService : MonoBehaviour {
 		if (SaveData != null) {
 			Debug.Log ("preloaded");
 			Debug.Log (SaveData.cards.cardsList.Count);
+			// This will fail if the object exists, but doesn't have the correct components
+			if(SaveData.cards.cardsList == null){
+				Debug.Log ("corruption");
+
+				SaveData = new SaveData ();
+				SaveData.cards = new cardInfoArray ();
+			}
 			iS.cardInfoList = SaveData.cards.cardsList;
 
 			Dictionary<int, int> newDict = new Dictionary<int, int> ();
@@ -32,31 +39,32 @@ public class DataService : MonoBehaviour {
 				newDict [i] = 0;
 			}
 			// For now, since serialization doesn't work with dict, TODO hardcode new dictionary 
-			for(int i = 0; i < SaveData.cards.cardsList.Count; i++){
+			for (int i = 0; i < SaveData.cards.cardsList.Count; i++) {
 				// Create new dictionary using the cardInfoList
-				newDict[iS.cardInfoList[i].cardIndex] += 1;
+				newDict [iS.cardInfoList [i].cardIndex] += 1;
 			}
 			iS.storeCards = newDict;
+			// Balance should be default 0
+			iS.changeBalance (SaveData.Balance);
 		} else {
-			Debug.Log ("no pre load");
+			Debug.Log ("no preload");
 
 			SaveData = new SaveData ();
-			SaveData.cards = new cardInfoArray();	
+			SaveData.cards = new cardInfoArray ();
 		}
-
-
-
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (timer > timeLength) {
-			print ("saved");
 			// Hide with functions
 
 			SaveData.cards.cardsList = iS.cardInfoList;
-			SaveData.cards.cardDict = iS.storeCards;
+			SaveData.Balance = iS.getBalance ();
+			SaveData.priceOfPack = iS.priceOfPack;
+			// TODO fix later with the dictionary fix hardcoded
+			// SaveData.cards.cardDict = iS.storeCards;
 
 			SaveData.WriteToFile ("catch.gd");
 			timer = 0;

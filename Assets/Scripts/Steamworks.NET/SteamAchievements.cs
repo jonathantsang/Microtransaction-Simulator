@@ -30,15 +30,15 @@ class SteamAchievements : MonoBehaviour {
 		new Achievement_t(Achievement.ACH_FEELING, "Oh What a Feeling", "Open 50 packs"),
 		new Achievement_t(Achievement.ACH_CEILING, "We're dancing on the ceiling", "Open 100 packs"),
 		new Achievement_t(Achievement.ACH_GUACAMOLE, "Guacamole", "Yum"),
-		new Achievement_t(Achievement.ACH_FUZZ, "Peach Fuzz", ""),
-		new Achievement_t(Achievement.ACH_TURQUOISE, "Turquoise Turquoise", ""),
-		new Achievement_t(Achievement.ACH_GREEN, "Green Peas", ""),
-		new Achievement_t(Achievement.ACH_RED, "Red Beet", ""),
-		new Achievement_t(Achievement.ACH_PURPLE, "Purple Grape", ""),
-		new Achievement_t(Achievement.ACH_BLUE, "Blue Berry", ""),
-		new Achievement_t(Achievement.ACH_BROWN, "Brown Bagel", ""),
-		new Achievement_t(Achievement.ACH_WHITE, "White Onion", ""),
-		new Achievement_t(Achievement.ACH_CHLSEA, "chlsea", "")
+		new Achievement_t(Achievement.ACH_FUZZ, "Peach Fuzz", "Get a fuzz"),
+		new Achievement_t(Achievement.ACH_TURQUOISE, "Turquoise Turquoise", "Get a turquoise"),
+		new Achievement_t(Achievement.ACH_GREEN, "Green Peas", "Get a green"),
+		new Achievement_t(Achievement.ACH_RED, "Red Beet", "Get a red"),
+		new Achievement_t(Achievement.ACH_PURPLE, "Purple Grape", "Get a purple"),
+		new Achievement_t(Achievement.ACH_BLUE, "Blue Berry", "Get a blue"),
+		new Achievement_t(Achievement.ACH_BROWN, "Brown Bagel", "Get a brown"),
+		new Achievement_t(Achievement.ACH_WHITE, "White Onion", "Get a white"),
+		new Achievement_t(Achievement.ACH_CHLSEA, "chlsea", "It's a secret to everybody")
 
 	};
 

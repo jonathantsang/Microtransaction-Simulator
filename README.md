@@ -102,9 +102,11 @@ Sept 2nd:
 - EULA (no)
 
 Sept 3rd:
-- save progress
+- save progress (do it for shop and inventory) (done)
+- save progress cash balance
+- fix achievement text for the description
 - casino
-- fix screen resolution issue on windows
+- fix screen resolution issue on windows (done)
 - graphics options
 
 upgrades: (8)

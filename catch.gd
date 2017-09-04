@@ -1,5 +1,7 @@
 {
     "DEBUG": 1,
+    "Balance": -3.990000009536743,
+    "priceOfPack": 3.990000009536743,
     "cards": {
         "testing": 1,
         "cardsList": [
@@ -74,6 +76,102 @@
                 "totalValue": 203,
                 "rarity": "brown",
                 "cardIndex": 1
+            },
+            {
+                "value": 15,
+                "totalValue": 115,
+                "rarity": "white",
+                "cardIndex": 0
+            },
+            {
+                "value": 62,
+                "totalValue": 1062,
+                "rarity": "purple",
+                "cardIndex": 3
+            },
+            {
+                "value": 26,
+                "totalValue": 126,
+                "rarity": "white",
+                "cardIndex": 0
+            },
+            {
+                "value": 2,
+                "totalValue": 102,
+                "rarity": "white",
+                "cardIndex": 0
+            },
+            {
+                "value": 6,
+                "totalValue": 106,
+                "rarity": "white",
+                "cardIndex": 0
+            },
+            {
+                "value": 36,
+                "totalValue": 236,
+                "rarity": "brown",
+                "cardIndex": 1
+            },
+            {
+                "value": 10,
+                "totalValue": 210,
+                "rarity": "brown",
+                "cardIndex": 1
+            },
+            {
+                "value": 37,
+                "totalValue": 237,
+                "rarity": "brown",
+                "cardIndex": 1
+            },
+            {
+                "value": 15,
+                "totalValue": 115,
+                "rarity": "white",
+                "cardIndex": 0
+            },
+            {
+                "value": 17,
+                "totalValue": 217,
+                "rarity": "brown",
+                "cardIndex": 1
+            },
+            {
+                "value": 15,
+                "totalValue": 115,
+                "rarity": "white",
+                "cardIndex": 0
+            },
+            {
+                "value": 62,
+                "totalValue": 1062,
+                "rarity": "purple",
+                "cardIndex": 3
+            },
+            {
+                "value": 48,
+                "totalValue": 548,
+                "rarity": "blue",
+                "cardIndex": 2
+            },
+            {
+                "value": 80,
+                "totalValue": 2080,
+                "rarity": "red",
+                "cardIndex": 4
+            },
+            {
+                "value": 10,
+                "totalValue": 210,
+                "rarity": "brown",
+                "cardIndex": 1
+            },
+            {
+                "value": 11,
+                "totalValue": 111,
+                "rarity": "white",
+                "cardIndex": 0
             }
         ]
     }

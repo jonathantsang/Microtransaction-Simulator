@@ -7,8 +7,13 @@ public class Card : MonoBehaviour {
 	// Numerical value and total card value in points
 	private int value;
 	public int totalValue;
+
+	enum colours {white, brown, blue, purple, red, green, turquoise, fuzz};
+
 	private string[] rarities = {"white", "brown", "blue", "purple", "red", "green", "turquoise", "fuzz"};
 	private int[] colourValues = { 100, 200, 500, 1000, 2000, 4000, 8000, 10000 };
+
+
 	private string rarity;
 	private int rarityIndex;
 
