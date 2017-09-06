@@ -116,12 +116,13 @@ Sept 4th:
 
 Sept 5th:
 - persist shopFlags (done)
-- improve the upgrades ( and architect->hangman)
+- improve the upgrades (architect->hangman)
 - adventures and prestiging (write doc specs) (done)
-- flip cards effect
-- shine when hover over cards
+
 
 Sept 6th:
+- flip cards effect
+- shine when hover over cards
 - prestiging
 - speedrun->one click button
 - complex combos
