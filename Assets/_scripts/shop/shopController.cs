@@ -37,7 +37,6 @@ public class shopController : MonoBehaviour {
 		// Get placements from shopMenu
 		int upgradeCount = shopPlacements.transform.childCount;
 		for (int i = 0; i < upgradeCount; i++) {
-			
 			// Only spawn if it hasn't been bought
 			if (sS.checkFlag (i) == 0) {
 				GameObject visibleUpgrade = Instantiate (shopUpgrade, shopPlacements.transform.GetChild (i));
@@ -55,6 +54,9 @@ public class shopController : MonoBehaviour {
 		}
 	}
 
+	void loadUpgradesFromJSON (){
+
+	}
 
 
 	// Apply the upgrades from the shopStorage

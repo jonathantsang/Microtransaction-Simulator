@@ -23,8 +23,10 @@ public class SellButton : ClickButton {
 
 	override public void buttonEffects(){
 		// Sell one of the card type of it
-		iS.decreaseCardAmount (cardIndex);
-		iS.increaseBalance (cardIndex); // TODO adds a default amount based on rarity
-		countText.text = iS.storeCards [cardIndex].ToString (); // Hardcode change text of sibling above
+		if(iS.canSell(cardIndex)){
+			iS.decreaseCardAmount (cardIndex);
+			iS.increaseBalance (cardIndex); // TODO adds a default amount based on rarity
+			countText.text = iS.storeCards [cardIndex].ToString (); // Hardcode change text of sibling above
+		}
 	}
 }

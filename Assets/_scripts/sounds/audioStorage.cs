@@ -6,8 +6,9 @@ public class audioStorage : MonoBehaviour {
 
 	public static audioStorage instance;
 
-	public AudioClip Click;
+	public AudioClip clickSound;
 	public AudioClip cashSound;
+	public AudioClip shineSound;
 	public AudioClip[] audioFiles;
 
 	private AudioSource audioS;
@@ -22,7 +23,7 @@ public class audioStorage : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 
 		audioS = GetComponent<AudioSource> ();
-		audioFiles = new AudioClip[] { Click, cashSound };
+		audioFiles = new AudioClip[] {clickSound, cashSound, shineSound};
 	}
 	
 	// Update is called once per frame
@@ -31,7 +32,10 @@ public class audioStorage : MonoBehaviour {
 	}
 
 	public void playAudio(int index){
-		audioS.clip = audioFiles [index];
-		audioS.Play ();
+		int audioFilesLength = audioFiles.Length;
+		if(index < audioFilesLength && index >= 0){
+			audioS.clip = audioFiles [index];
+			audioS.Play ();
+		}
 	}
 }

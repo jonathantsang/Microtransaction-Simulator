@@ -8,7 +8,7 @@ public class shopStorage : MonoBehaviour {
 
 	// Keeps track of which upgrades are on
 	// 1 on, 0 means off
-	Dictionary<int, int> shopUpgradeFlags;
+	public List<int> shopUpgradeFlags;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +20,9 @@ public class shopStorage : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 
 		const int numberOfUpgrades = 8;
-		shopUpgradeFlags = new Dictionary<int, int> ();
+		shopUpgradeFlags = new List<int> ();
 		for (int i = 0; i < numberOfUpgrades; i++) {
-			shopUpgradeFlags [i] = 0;
+			shopUpgradeFlags.Add (0);
 		}
 	}
 	
@@ -32,7 +32,11 @@ public class shopStorage : MonoBehaviour {
 	}
 
 	public int checkFlag(int index){
-		return shopUpgradeFlags[index];
+		int shopUpgradeFlagsLength = shopUpgradeFlags.Count;
+		if (index < shopUpgradeFlagsLength && index >= 0) {
+			return shopUpgradeFlags [index];
+		}
+		return 0;
 	}
 
 	public void turnOnFlag(int index){

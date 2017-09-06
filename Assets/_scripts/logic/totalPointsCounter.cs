@@ -60,7 +60,6 @@ public class totalPointsCounter : MonoBehaviour {
 		for (int i = 0; i < cardHolder.transform.childCount; i++) {
 			// Add each card's "cardInfo" to the list for the cardOpen
 			cardOpenCollection.addToCardsOpened (cardHolder.transform.GetChild (i).GetComponent<Card> ().getCardInfo ());
-			print (cardHolder.transform.GetChild (i).GetComponent<Card> ().getCardInfo ().totalValue);
 		}
 		// Add the final card collection and total value to the list
 		cardOpenCollection.totalCardOpenValue = totalPoints;

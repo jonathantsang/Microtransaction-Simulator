@@ -69,6 +69,11 @@
      <Compile Include="Assets\_scripts\classes\cardInfo.cs" />
      <Compile Include="Assets\_scripts\classes\cardOpen.cs" />
      <Compile Include="Assets\_scripts\classes\upgrade.cs" />
+     <Compile Include="Assets\_scripts\hangman\Blanks.cs" />
+     <Compile Include="Assets\_scripts\hangman\hangmanController.cs" />
+     <Compile Include="Assets\_scripts\hangman\hangmanStorage.cs" />
+     <Compile Include="Assets\_scripts\hangman\playerInput.cs" />
+     <Compile Include="Assets\_scripts\hangman\wordsUsed.cs" />
      <Compile Include="Assets\_scripts\inventory\inventoryController.cs" />
      <Compile Include="Assets\_scripts\inventory\inventorySpriteHolder.cs" />
      <Compile Include="Assets\_scripts\inventory\inventoryStorage.cs" />

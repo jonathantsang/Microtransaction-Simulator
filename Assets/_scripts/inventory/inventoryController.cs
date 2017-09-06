@@ -30,7 +30,6 @@ public class inventoryController : MonoBehaviour {
 
 	void setupInventory(){
 		if (inventory) {
-
 			// Set up card prefabs for each card
 			int placementLeng = placements.transform.childCount;
 			for (int i = 0; i < placementLeng; i++) {

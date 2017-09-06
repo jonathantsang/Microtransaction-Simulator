@@ -11,7 +11,8 @@ public class inventoryStorage : MonoBehaviour {
 	// Also do cardComboes later
 	public List<cardOpen> cardOpenList;
 
-	public Dictionary<int, int> storeCards; // Keep track of cards in list and dictionary using key as cardIndex and amount as value
+	// Uses a list to serialize
+	public List<int> storeCards; // Keep track of cards in list and dictionary using key as cardIndex and amount as value
 	private Dictionary<string, int> otherFlags;
 
 	// Other information used for achievements
@@ -32,9 +33,9 @@ public class inventoryStorage : MonoBehaviour {
 		otherFlags ["logo"] = 0;
 
 
-		storeCards = new Dictionary<int, int>();
+		storeCards = new List<int> ();
 		for (int i = 0; i < 8; i++) { // TODO Hardcoded amount
-			storeCards [i] = 0;
+			storeCards.Add(0);
 		}
 
 		cardInfoList = new List<cardInfo>();
@@ -107,6 +108,10 @@ public class inventoryStorage : MonoBehaviour {
 	// Used for loading from file
 	public void setBalance(float newBalance){
 		Balance = newBalance;
+	}
+
+	public bool canSell(int cardIndex){
+		return storeCards [cardIndex] > 0;
 	}
 }
 

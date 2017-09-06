@@ -29,57 +29,86 @@ public class DataService : MonoBehaviour {
 		// At the start try to read from the file
 		SaveData = SaveData.ReadFromFile ("catch.gd");
 		if (SaveData != null) {
-			Debug.Log ("preloaded");
 			// This will fail if the object exists, but doesn't have the correct components
-			if(SaveData.cardsInfoList.cardsTotal == null){
+			if (SaveData.cardsInfoList.cardsTotal == null) {
 				Debug.Log ("corruption");
-
-				SaveData = new SaveData ();
-				SaveData.cardsInfoList = new cardInfoList ();
+				createNewFile ();
+			} else {
+				Debug.Log ("preloaded");
+				loadDataFromJSON ();
 			}
-			iS.cardInfoList = SaveData.cardsInfoList.cardsTotal;
-
-			// This makes a new dictionary based on the catch.gd file
-			Dictionary<int, int> newDict = new Dictionary<int, int> ();
-			// Make a new dictionary with 8 possible colours
-			int numColours = 8;
-			for (int i = 0; i < numColours; i++) {
-				newDict [i] = 0;
-			}
-			// For now, since serialization doesn't work with dict, TODO hardcode new dictionary 
-			for (int i = 0; i < SaveData.cardsInfoList.cardsTotal.Count; i++) {
-				// Create new dictionary using the cardInfoList
-				newDict [iS.cardInfoList [i].getCardIndex()] += 1;
-			}
-			iS.storeCards = newDict;
-			// Balance should be default 0
-			iS.setBalance (SaveData.Balance);
 		} else {
 			Debug.Log ("no preload");
-
-			SaveData = new SaveData ();
-			SaveData.cardsInfoList = new cardInfoList ();
+			createNewFile ();
 		}
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (timer > timeLength) {
-			// Hide with functions
-
-			// TODO hardcoded saves
-			SaveData.cardsInfoList.cardsTotal = iS.cardInfoList;
-			SaveData.Balance = iS.getBalance ();
-			SaveData.priceOfPack = iS.priceOfPack;
-			SaveData.cardsOpenList.cardsOpened = iS.cardOpenList;
+			updateFile();
 			// TODO fix later with the dictionary fix hardcoded
 			// SaveData.cards.cardDict = iS.storeCards;
-
-			SaveData.WriteToFile ("catch.gd");
+			writeToFile();
 			timer = 0;
 		}
 		timer += Time.deltaTime;
 	}
 
+	// Stores data from JSON into the inventoryStorage and shopStorage (reverse of updateFile())
+	void loadDataFromJSON(){
+		iS.cardInfoList = SaveData.cardsInfoList.cardsTotal;
+		iS.setBalance (SaveData.Balance);
+		iS.priceOfPack = SaveData.priceOfPack;
+		iS.cardOpenList = SaveData.cardsOpenList.cardsOpened;
+		iS.storeCards = SaveData.cardsStoreList.storeCount;
+		sS.shopUpgradeFlags = SaveData.shopFlagList.setFlags;
+	}
+
+	// Updates the SaveData to have the inventoryStorage info and shopStorage info
+	void updateFile(){
+		// TODO hardcoded saves
+		if (SaveData != null) {
+			SaveData.cardsInfoList.cardsTotal = iS.cardInfoList;
+			SaveData.Balance = iS.getBalance ();
+			SaveData.priceOfPack = iS.priceOfPack;
+			SaveData.cardsOpenList.cardsOpened = iS.cardOpenList;
+			SaveData.cardsStoreList.storeCount = iS.storeCards;
+
+			// TODO fix hardcode dictionary
+			SaveData.shopFlagList.setFlags = sS.shopUpgradeFlags;
+		}
+	}
+
+	void writeToFile(){
+		SaveData.WriteToFile ("catch.gd");
+	}
+
+	void createNewFile(){
+		SaveData = new SaveData ();
+		SaveData.cardsInfoList = new cardInfoList ();
+		SaveData.cardsOpenList = new cardOpenList ();
+		SaveData.shopFlagList = new shopFlagList ();
+		SaveData.cardsStoreList = new cardStoreList ();
+	}
+
+
+	/* // Creates dict from existing 
+	void createDict(){
+		// This makes a new dictionary based on the catch.gd file
+		Dictionary<int, int> newDict = new Dictionary<int, int> ();
+		// Make a new dictionary with 8 possible colours
+		int numColours = 8;
+		for (int i = 0; i < numColours; i++) {
+			newDict [i] = 0;
+		}
+		// For now, since serialization doesn't work with dict, TODO hardcode new dictionary 
+		for (int i = 0; i < SaveData.cardsInfoList.cardsTotal.Count; i++) {
+			// Create new dictionary using the cardInfoList
+			newDict [iS.cardInfoList [i].getCardIndex ()] += 1;
+		}
+		iS.storeCards = newDict; // This is technically updating the dict, which can be in loadDataFromJSON()
+	}*/
+
 }
+

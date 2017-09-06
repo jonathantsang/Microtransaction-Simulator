@@ -30,20 +30,59 @@ public class cardOpenList
 	}
 }
 
+[System.Serializable]
+public class shopFlagList
+{
+	public int testing = 1;
+
+	// TODO fix hardcoded storage
+	// Each index corresponds to a flag and if it is 1, it is on, 0 it is off
+	public List<int> setFlags;
+
+	public shopFlagList() {
+		setFlags = new List<int>();
+		int upgradeAmount = 8;
+		for (int i = 0; i < upgradeAmount; i++) {
+			setFlags.Add (0);
+		}
+
+	}
+}
+
+
+[System.Serializable]
+public class cardStoreList
+{
+	public int testing = 1;
+
+	// TODO fix hardcoded storage
+	public List<int> storeCount;
+
+	public cardStoreList() {
+		storeCount = new List<int> ();
+		int cardTypes = 8;
+		for (int i = 0; i < cardTypes; i++) {
+			storeCount.Add (0);
+		}
+	}
+}
+
 public class SaveData {
 
 	public int DEBUG = 1;
 	public float Balance = 0;
 	public float priceOfPack = 0;
+
 	public cardInfoList cardsInfoList;
 	public cardOpenList cardsOpenList;
+	public shopFlagList shopFlagList;
+	public cardStoreList cardsStoreList;
 
 	public void WriteToFile(string filePath){
 		// Convert the instance ('this') of this class to a JSON string with "pretty print" (nice indenting).
 		string json = JsonUtility.ToJson(this, true);
 		// Write that JSON string to the specified file.
 		File.WriteAllText(filePath, json);
-
 	}
 
 	public static SaveData ReadFromFile(string filePath){

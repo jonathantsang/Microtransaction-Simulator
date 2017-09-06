@@ -52,7 +52,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46167ceba0db4647b2e9be157b383f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Click: {fileID: 8300000, guid: 5a69af840998c49b09a1c5259ca0bb71, type: 3}
+  clickSound: {fileID: 8300000, guid: 5a69af840998c49b09a1c5259ca0bb71, type: 3}
   cashSound: {fileID: 8300000, guid: 61326103e1781404c9795ef68c6d01de, type: 3}
+  shineSound: {fileID: 8300000, guid: 0c5c3e33ae59d40e28e9fa967a61cb67, type: 3}
   audioFiles: []

@@ -2,7 +2,7 @@
 
 # Simple
 
-Plan:
+core:
 - simple like loading bar simulator, trump game
 - lose money and open card packs
 
@@ -27,10 +27,6 @@ start just by opening loot
 - similar to the nba2k card pack
 - display generic backs, then show colours
 - count points
-
-still need:
-- open button add score and get rid of cards
-- graphic that shows the rarity scale
 
 Dates:
 August 14th: 
@@ -116,10 +112,26 @@ Sept 4th:
 - achievements (done)
 - rehaul cardOpenList and cardInfoList (done)
 - combos (done-basic)
+- clean up save and load (done)
 
 Sept 5th:
-- more features
+- persist shopFlags (done)
+- improve the upgrades ( and architect->hangman)
+- adventures and prestiging (write doc specs) (done)
+- flip cards effect
+- shine when hover over cards
+
+Sept 6th:
+- prestiging
+- speedrun->one click button
 - complex combos
+- generic text popup
+
+
+known issues:
+- inventory sometimes not subtracting cards correctly for fuzz or otherwise (fixed)
+- shop flags not saving (fixed)
+- opening partially will fill cardInfoList, but not cardOpenList
 
 upgrades: (8)
 - meaninglessUpgrade 25 - nothing? (done)
@@ -161,7 +173,17 @@ not yet implemented:
 - time well spent (get $1000)
 - tricks are for kids (card trick in shop)
 - lack of content (DLC in DLC)
+- FNG (reach prestige 2)
 
+quests:
+- certain challenges (get 2 red in one pull)
+- complete it and get prestige points
+
+prestige:
+- lower pack cost
+- better odds
+- new rarities
+- new shop items
 
 real extension:
 - each colour card has a use (blue ocean, etc.)

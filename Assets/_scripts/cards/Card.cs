@@ -29,6 +29,7 @@ public class Card : MonoBehaviour {
 	private cardInformationStorage cDS;
 	private totalPointsCounter tPS;
 	private inventoryStorage iS;
+	private audioStorage aS;
 
 	// Effect
 	public ParticleSystem ps;
@@ -75,6 +76,7 @@ public class Card : MonoBehaviour {
 		cDS = GameObject.FindGameObjectWithTag ("cardInformationStorage").GetComponent<cardInformationStorage> ();
 		tPS = GameObject.FindGameObjectWithTag ("counter").GetComponent<totalPointsCounter> ();
 		iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage> ();
+		aS = GameObject.FindGameObjectWithTag ("audioStorage").GetComponent<audioStorage> ();
 
 		// Set the back and front to the correct sprite
 		frontSprite = transform.GetChild (0).GetComponent<SpriteRenderer> ();
@@ -160,6 +162,9 @@ public class Card : MonoBehaviour {
 		// Opening effect
 		if (rarityIndex > 4) {
 			Instantiate (ps, transform);
+			// TODO fix Hardcode shine effect
+			int shineEffect = 2;
+			aS.playAudio (shineEffect);
 		}
 		// Store the card information in the inventory Storage
 		iS.addCard(information);
