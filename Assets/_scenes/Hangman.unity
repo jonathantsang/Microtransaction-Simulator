@@ -565,6 +565,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   words: []
+  solvedSoFar: 
+  usedWords: 
 --- !u!1001 &845413993
 Prefab:
   m_ObjectHideFlags: 0
@@ -692,6 +694,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114150097871554932, guid: 3324c920599994cfc9aa7ec7e4c6484e,
+        type: 2}
+      propertyPath: jingleSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d0fc14d08029941ccbd298737b1ee1ce, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3324c920599994cfc9aa7ec7e4c6484e, type: 2}
   m_IsPrefabParent: 0

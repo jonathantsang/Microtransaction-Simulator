@@ -24,5 +24,8 @@ EditorBuildSettings:
     path: Assets/_scenes/BlankCanvas.unity
     guid: 7101d7e12c1d34976b462f70537bf524
   - enabled: 1
+    path: Assets/_scenes/Hangman.unity
+    guid: fa023c3d7b750436e8afd9e510152f68
+  - enabled: 1
     path: Assets/_scenes/End.unity
     guid: bb49100380ef54326b16aaa4765e06e4

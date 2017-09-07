@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - banner
-  - cardInformationStorage
   - cards
   - counter
   - menu
@@ -22,6 +21,7 @@ TagManager:
   - audioStorage
   - Canvas
   - keyItems
+  - cardInformationHolder
   layers:
   - Default
   - TransparentFX

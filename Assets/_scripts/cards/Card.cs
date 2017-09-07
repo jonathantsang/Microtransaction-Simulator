@@ -26,22 +26,35 @@ public class Card : MonoBehaviour {
 	private SpriteRenderer backSprite;
 	private SpriteRenderer tensDigit;
 	private SpriteRenderer onesDigit;
-	private cardInformationStorage cDS;
+	private cardInformationHolder cIH;
 	private totalPointsCounter tPS;
 	private inventoryStorage iS;
 	private audioStorage aS;
 
 	// Effect
 	public ParticleSystem ps;
+	private GameObject Illuminate;
 
 	// Use this for initialization
 	void Start () {
 		initializeCard ();
+		setIlluminate ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	void OnMouseOver ()
+	{
+		Illuminate.SetActive (true);
+
+	}
+
+	void OnMouseExit ()
+	{
+		Illuminate.SetActive (false);
 	}
 
 	void OnMouseDown(){
@@ -54,26 +67,10 @@ public class Card : MonoBehaviour {
 		}
 	}
 
-	// Get the value and shake if it is 80+
-	void OnMouseOver(){
-		/*
-		if (left && value > 90 && !flipped) {
-			transform.Translate (-0.2f, 0, 0);
-			left = false;
-		} else if (value > 90 && !flipped) {
-			transform.Translate(0.2f,0,0);
-			left = true;
-		}*/
-	}
-
-	void OnMouseExit(){
-		
-	}
-
 	void initializeCard(){
 
-		// Find the cardInformationStorage and totalPointsCounter
-		cDS = GameObject.FindGameObjectWithTag ("cardInformationStorage").GetComponent<cardInformationStorage> ();
+		// Find the cardInformationHolder and totalPointsCounter
+		cIH = GameObject.FindGameObjectWithTag ("cardInformationHolder").GetComponent<cardInformationHolder> ();
 		tPS = GameObject.FindGameObjectWithTag ("counter").GetComponent<totalPointsCounter> ();
 		iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage> ();
 		aS = GameObject.FindGameObjectWithTag ("audioStorage").GetComponent<audioStorage> ();
@@ -89,53 +86,53 @@ public class Card : MonoBehaviour {
 		int chooseRarity = Random.Range(0, 1000) % probability;
 		// Here the different colours have different possibilities
 
-		// cDS.getChance(<number>) gives a THREE digit number out of 999
+		// cIH.getChance(<number>) gives a THREE digit number out of 999
 		rarityIndex = 0;
 		totalValue = 0;
 		// White
-		if (chooseRarity < cDS.getChance(0)) {
+		if (chooseRarity < cIH.getChance(0)) {
 			rarityIndex = 0;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (0, 30));
 			totalValue = colourValues [rarityIndex] + value;
 			// Brown
-		} else if (chooseRarity < cDS.getChance(1)) {
+		} else if (chooseRarity < cIH.getChance(1)) {
 			rarityIndex = 1;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (0, 50));
 			totalValue = colourValues [rarityIndex] + value;
 			// Blue
-		} else if (chooseRarity < cDS.getChance(2)) {
+		} else if (chooseRarity < cIH.getChance(2)) {
 			rarityIndex = 2;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (30, 65));
 			totalValue = colourValues [rarityIndex] + value;
 			// Purple
-		} else if (chooseRarity < cDS.getChance(3)) {
+		} else if (chooseRarity < cIH.getChance(3)) {
 			rarityIndex = 3;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (50, 75));
 			totalValue = colourValues [rarityIndex] + value;
 			// Red
-		} else if (chooseRarity < cDS.getChance(4)) {
+		} else if (chooseRarity < cIH.getChance(4)) {
 			rarityIndex = 4;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (65, 83));
 			totalValue = colourValues [rarityIndex] + value;
 			// Green
-		} else if (chooseRarity < cDS.getChance(5)) {
+		} else if (chooseRarity < cIH.getChance(5)) {
 			rarityIndex = 5;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (75, 90));
 			totalValue = colourValues [rarityIndex] + value;
 			// Turqoise
-		} else if (chooseRarity < cDS.getChance(6)) {
+		} else if (chooseRarity < cIH.getChance(6)) {
 			rarityIndex = 6;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (83, 97));
 			totalValue = colourValues [rarityIndex] + value;
 		// Fuzz
-		} else if (chooseRarity < cDS.getChance(7)) {
+		} else if (chooseRarity < cIH.getChance(7)) {
 			rarityIndex = 7;
 			rarity = rarities [rarityIndex];
 			value = (int)Mathf.Ceil (Random.Range (90, 99));
@@ -143,11 +140,11 @@ public class Card : MonoBehaviour {
 		}
 
 		// Initialize the back and front
-		frontSprite.sprite = cDS.colours [rarityIndex];
-		backSprite.sprite = cDS.back;
+		frontSprite.sprite = cIH.colours [rarityIndex];
+		backSprite.sprite = cIH.back;
 
-		tensDigit.sprite = cDS.numbers[value / 10];
-		onesDigit.sprite = cDS.numbers[value % 10];
+		tensDigit.sprite = cIH.numbers[value / 10];
+		onesDigit.sprite = cIH.numbers[value % 10];
 
 		// Initialize the card's info
 		information = new cardInfo(value, totalValue, rarity, (colour)rarityIndex);
@@ -176,5 +173,18 @@ public class Card : MonoBehaviour {
 
 	public cardInfo getCardInfo(){
 		return information;
+	}
+
+	void setIlluminate(){
+		int IlluminateIndex = 3;
+
+		// Choose from 4 shines
+		int shineIndex = Random.Range(0, cIH.borders.Length);
+		SpriteRenderer IlluminateSprite = transform.GetChild (IlluminateIndex).GetComponent<SpriteRenderer> ();
+		IlluminateSprite.sprite = cIH.borders[shineIndex];
+
+		// Turn on or off Illuminate
+		Illuminate = transform.GetChild(IlluminateIndex).gameObject;
+		Illuminate.SetActive (false);
 	}
 }

@@ -19,7 +19,6 @@ public class playerInput : MonoBehaviour {
 		foreach (char c in Input.inputString) {
 			if (!hC.won && hC.tries > 0) {
 				hC.Input (c);
-				hC.tries--;
 			}
 		}
 	}

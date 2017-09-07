@@ -1,4 +1,4 @@
-OSXStandalone
+WindowsStandalone
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BackButton
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -16,6 +16,7 @@ c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 56bae5348bab949df973134d84f0316a Assembly-CSharp.dll:.inventoryController
 fd3b8a645f2815dc76b7657117146c7d Assembly-CSharp.dll:.shopButton
 38eebd7538e96cbd07be14aaab201abb Assembly-CSharp.dll:.inventorySpriteHolder
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DataService
 422f52bfc179d549fe2b9ef2f597c5e0 Assembly-CSharp.dll:.SellButton
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -109,9 +110,10 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 e2b62fab5fe783bb8bdef36262b7d8bd Assembly-CSharp.dll:.shopController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Blanks
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.winButton
 b37ee07fa302d26b41ebfa62a87160a3 Assembly-CSharp.dll:.checkWon
-17ea805144d743da1f8a07b4e977c760 Assembly-CSharp.dll:.inventoryStorage
+64f6ed0d9b5dd3a4fa8abf62d1e701a8 Assembly-CSharp.dll:.inventoryStorage
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -122,6 +124,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 5aa5cabbcb8bd3b6665beca9208b307f Assembly-CSharp.dll:.OpenButton
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamAchievements
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ClickButton
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.playerInput
 be4a3263102ebb9b2a7eba62b839956f Assembly-CSharp.dll:.Card
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.menuChlseaTransition
 c32f1bb1a778092eda26809a0710e0fa Assembly-CSharp.dll:.quitShopButton
@@ -140,8 +143,9 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+a8048b56205ed9d8def0615b7125ddf9 Assembly-CSharp.dll:.hangmanStorage
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.gameUI
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.shopStorage
+fcad6c31be3c52c16ff03fad50cc9494 Assembly-CSharp.dll:.shopStorage
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.balanceController
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 5f2ad81aa8994e8fbe25d1e57afe6773 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
@@ -150,6 +154,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.clickLogo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.shopUpgrade
 11c86b6d58945955f6d9508093fcbe4f Assembly-CSharp.dll:.avocadoController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.wordsUsed
 c754dbcc6f73cca695e0836764e1c310 Assembly-CSharp.dll:.clickAvocado
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -161,9 +166,9 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BalanceButton
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.shopUpgradeCollider
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.InventoryButton
-a98ea49d65b3f18f2e650b5702690490 Assembly-CSharp.dll:.audioStorage
-6229f8ad489dd41454a471c875e19028 Assembly-CSharp.dll:.cardInformationStorage
+dc4fd51efeeca85b8ede80c8ed1fbe54 Assembly-CSharp.dll:.audioStorage
+762e51125585f15615a82a5ec76bab4b Assembly-CSharp.dll:.cardInformationHolder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.avocadoTextMovement
 47c8cfad6c40bf8c10a63ee886057bbf Assembly-CSharp.dll:.shopHolder
+3e1f2938dc030729d555ad68e50c0db1 Assembly-CSharp.dll:.hangmanController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamManager
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DataService

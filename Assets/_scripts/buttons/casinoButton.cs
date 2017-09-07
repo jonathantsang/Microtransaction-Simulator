@@ -16,6 +16,7 @@ public class casinoButton : ClickButton {
 	}
 
 	override public void buttonEffects() {
-		SceneManager.LoadScene ("Casino");
+		// TODO fix location, casino is now hangman
+		SceneManager.LoadScene ("Hangman");
 	}
 }

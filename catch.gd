@@ -1,6 +1,6 @@
 {
     "DEBUG": 1,
-    "Balance": 14294.15625,
+    "Balance": 6.234609603881836,
     "priceOfPack": 3.990000009536743,
     "cardsInfoList": {
         "testing": 1,
@@ -324,6 +324,71 @@
                 "value": 96,
                 "totalValue": 10096,
                 "rarity": 7
+            },
+            {
+                "value": 55,
+                "totalValue": 1055,
+                "rarity": 3
+            },
+            {
+                "value": 7,
+                "totalValue": 207,
+                "rarity": 1
+            },
+            {
+                "value": 54,
+                "totalValue": 554,
+                "rarity": 2
+            },
+            {
+                "value": 38,
+                "totalValue": 238,
+                "rarity": 1
+            },
+            {
+                "value": 95,
+                "totalValue": 8095,
+                "rarity": 6
+            },
+            {
+                "value": 25,
+                "totalValue": 225,
+                "rarity": 1
+            },
+            {
+                "value": 84,
+                "totalValue": 4084,
+                "rarity": 5
+            },
+            {
+                "value": 57,
+                "totalValue": 557,
+                "rarity": 2
+            },
+            {
+                "value": 84,
+                "totalValue": 4084,
+                "rarity": 5
+            },
+            {
+                "value": 87,
+                "totalValue": 8087,
+                "rarity": 6
+            },
+            {
+                "value": 73,
+                "totalValue": 2073,
+                "rarity": 4
+            },
+            {
+                "value": 81,
+                "totalValue": 4081,
+                "rarity": 5
+            },
+            {
+                "value": 83,
+                "totalValue": 8083,
+                "rarity": 6
             }
         ]
     },
@@ -729,32 +794,111 @@
                         "rarity": 7
                     }
                 ]
+            },
+            {
+                "totalCardOpenValue": 0,
+                "cardsOpened": []
+            },
+            {
+                "totalCardOpenValue": 9094,
+                "cardsOpened": [
+                    {
+                        "value": 54,
+                        "totalValue": 554,
+                        "rarity": 2
+                    },
+                    {
+                        "value": 38,
+                        "totalValue": 238,
+                        "rarity": 1
+                    },
+                    {
+                        "value": 7,
+                        "totalValue": 207,
+                        "rarity": 1
+                    },
+                    {
+                        "value": 95,
+                        "totalValue": 8095,
+                        "rarity": 6
+                    }
+                ]
+            },
+            {
+                "totalCardOpenValue": 8950,
+                "cardsOpened": [
+                    {
+                        "value": 84,
+                        "totalValue": 4084,
+                        "rarity": 5
+                    },
+                    {
+                        "value": 57,
+                        "totalValue": 557,
+                        "rarity": 2
+                    },
+                    {
+                        "value": 25,
+                        "totalValue": 225,
+                        "rarity": 1
+                    },
+                    {
+                        "value": 84,
+                        "totalValue": 4084,
+                        "rarity": 5
+                    }
+                ]
+            },
+            {
+                "totalCardOpenValue": 22324,
+                "cardsOpened": [
+                    {
+                        "value": 73,
+                        "totalValue": 2073,
+                        "rarity": 4
+                    },
+                    {
+                        "value": 87,
+                        "totalValue": 8087,
+                        "rarity": 6
+                    },
+                    {
+                        "value": 81,
+                        "totalValue": 4081,
+                        "rarity": 5
+                    },
+                    {
+                        "value": 83,
+                        "totalValue": 8083,
+                        "rarity": 6
+                    }
+                ]
             }
         ]
     },
     "shopFlagList": {
         "testing": 1,
         "setFlags": [
-            1,
-            1,
-            1,
             0,
-            1,
-            1,
             0,
-            1
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
         ]
     },
     "cardsStoreList": {
         "testing": 1,
         "storeCount": [
             9,
-            11,
-            5,
+            14,
+            7,
+            10,
             9,
             8,
-            5,
-            1,
+            4,
             0
         ]
     }

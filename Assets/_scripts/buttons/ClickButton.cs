@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClickButton : MonoBehaviour {
 
-	audioStorage aS;
+	private audioStorage aS;
 
 	// Use this for initialization
 	protected virtual void Start() {

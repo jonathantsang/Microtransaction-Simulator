@@ -8,7 +8,7 @@ public class hangmanStorage : MonoBehaviour {
 	private string word;
 
 	public string solvedSoFar;
-	private string usedWords;
+	public string usedWords;
 
 	// Use this for initialization
 	void Start () {
@@ -17,10 +17,9 @@ public class hangmanStorage : MonoBehaviour {
 		solvedSoFar = "";
 		usedWords = "";
 
-		words = new List<string> { "phoenix", "aphrodite", "equinox", "salvation", "metamorphosis", "cereal" };
+		words = new List<string> { "phoenix", "aphrodite", "equinox", "salvation", "metamorphosis", "inconceivable", "equestrian", "lycanthropy", "serendepity", "heinous" };
 		int index = Random.Range (0, words.Count);
 		word = words [index];
-		print (word);
 		// prep solvedSoFar
 		for(int i = 0; i < getWordLength(); i++){
 			solvedSoFar += " ";
@@ -57,5 +56,9 @@ public class hangmanStorage : MonoBehaviour {
 			}
 		}
 		solvedSoFar = newSolvedSoFar;
+	}
+
+	public bool checkWon(){
+		return word == solvedSoFar;
 	}
 }

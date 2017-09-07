@@ -31,6 +31,7 @@ public class inventoryStorage : MonoBehaviour {
 		otherFlags["avocado"] = 0;
 		otherFlags ["packsOpened"] = 0;
 		otherFlags ["logo"] = 0;
+		otherFlags ["hangman"] = 0;
 
 
 		storeCards = new List<int> ();
@@ -69,7 +70,8 @@ public class inventoryStorage : MonoBehaviour {
 	}
 
 	public void increaseBalance(int index){
-		Balance += index * 1;
+		// TODO fix rarity
+		Balance += 2^index;
 	}
 
 	public int getPacksOpened(){

@@ -116,18 +116,23 @@ Sept 4th:
 
 Sept 5th:
 - persist shopFlags (done)
-- improve the upgrades (architect->hangman)
+- improve the upgrades (architect->hangman) (partial)
 - adventures and prestiging (write doc specs) (done)
 
-
 Sept 6th:
-- flip cards effect
-- shine when hover over cards
+- finish hangman (done)
+- make rare cards worth more
+- shine when hover over cards (done)
+
+Sept 7th:
+- reset progress
 - prestiging
-- speedrun->one click button
-- complex combos
 - generic text popup
 
+Not sure:
+- flip cards effect
+- speedrun->one click button
+- complex combos
 
 known issues:
 - inventory sometimes not subtracting cards correctly for fuzz or otherwise (fixed)
