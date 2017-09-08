@@ -7,7 +7,7 @@ public class DataService : MonoBehaviour {
 	public static DataService instance;
 
 	float timer = 0;
-	float timeLength = 0.3f;
+	float timeLength = 1f;
 
 	private inventoryStorage iS;
 	private shopStorage sS;

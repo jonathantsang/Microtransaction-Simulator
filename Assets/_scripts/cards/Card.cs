@@ -48,13 +48,15 @@ public class Card : MonoBehaviour {
 
 	void OnMouseOver ()
 	{
-		Illuminate.SetActive (true);
-
+		if (!flipped) {
+			Illuminate.SetActive (true);
+		}
 	}
 
 	void OnMouseExit ()
 	{
 		Illuminate.SetActive (false);
+
 	}
 
 	void OnMouseDown(){
@@ -62,6 +64,8 @@ public class Card : MonoBehaviour {
 		if (!flipped) {
 			flipCard ();
 			flipped = true;
+			// set illuminate to false on flip
+			Illuminate.SetActive (false);
 			// Notify the totalPointsCounter when cards are opened, and if they are opened, total up the score
 			tPS.notify("count");
 		}

@@ -22,6 +22,8 @@ TagManager:
   - Canvas
   - keyItems
   - cardInformationHolder
+  - cardInformationStorage
+  - popupController
   layers:
   - Default
   - TransparentFX

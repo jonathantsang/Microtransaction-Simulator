@@ -7,20 +7,24 @@ public class inventoryStorage : MonoBehaviour {
 	// Stores most of the game's data and variables
 	private float Balance; // Stores the amount
 	public float priceOfPack;
-	public List<cardInfo> cardInfoList;
+
+	public List<cardInfo> cardInfoList;	// This is a list of each card opened
+
+	public List<cardOpen> cardOpenList; // This is a list of cardOpen, which store 4 cards opened at one time
+
 	// Also do cardComboes later
-	public List<cardOpen> cardOpenList;
 
 	// Uses a list to serialize
 	public List<int> storeCards; // Keep track of cards in list and dictionary using key as cardIndex and amount as value
+
 	private Dictionary<string, int> otherFlags;
 
 	// Other information used for achievements
-
 	public static inventoryStorage instance;
 
 	// Use this for initialization
 	void Start () {
+		prepStoreCards ();
 		priceOfPack = 3.99f;
 
 		// Used to keep track which cards were opened together
@@ -30,14 +34,13 @@ public class inventoryStorage : MonoBehaviour {
 		// TODO fix hardcoded strings
 		otherFlags["avocado"] = 0;
 		otherFlags ["packsOpened"] = 0;
-		otherFlags ["logo"] = 0;
 		otherFlags ["hangman"] = 0;
+		otherFlags ["logo"] = 0;
+
+		// Number of times prestiged, don't reset this in lucid
+		otherFlags["lucid"] = 0;
 
 
-		storeCards = new List<int> ();
-		for (int i = 0; i < 8; i++) { // TODO Hardcoded amount
-			storeCards.Add(0);
-		}
 
 		cardInfoList = new List<cardInfo>();
 		// Singleton Behaviour
@@ -53,8 +56,16 @@ public class inventoryStorage : MonoBehaviour {
 		
 	}
 
+	void prepStoreCards(){
+		storeCards = new List<int> ();
+		for (int i = 0; i < 8; i++) { // TODO Hardcoded amount
+			storeCards.Add(0);
+		}
+	}
+
 	public void addCard(cardInfo card){
 		cardInfoList.Add (card);
+		print (card.getCardIndex ());
 		storeCards [card.getCardIndex()] += 1;
 	}
 
@@ -78,6 +89,27 @@ public class inventoryStorage : MonoBehaviour {
 		return otherFlags ["packsOpened"];
 	}
 
+	public void lucidInventory(){
+		print ("lucid");
+		Balance = 0;
+		// TODO fix pricedrop that is hardcoded right now
+		if (priceOfPack - 0.75 < 0) {
+			priceOfPack = 0.5f;
+		} else {
+			priceOfPack -= 0.75f;
+		}
+		cardInfoList = new List<cardInfo> ();
+		cardOpenList = new List<cardOpen> ();
+		prepStoreCards (); // This makes it size 8
+
+		otherFlags["avocado"] = 0;
+		otherFlags ["packsOpened"] = 0;
+		otherFlags ["hangman"] = 0;
+	}
+		
+
+	// Setter and Getters mainly
+
 	public void clickAvocado(){
 		otherFlags ["avocado"] = 1;
 	}
@@ -95,7 +127,7 @@ public class inventoryStorage : MonoBehaviour {
 	}
 
 	public void setFlag(string key){
-		otherFlags [key] = 1;
+		otherFlags [key] += 1;
 	}
 
 	public void changeBalance(float change){

@@ -125,9 +125,13 @@ Sept 6th:
 - shine when hover over cards (done)
 
 Sept 7th:
-- reset progress
-- prestiging
 - generic text popup
+- prestiging
+
+Sept 8th:
+- reset progress
+- quests
+- scouting party?
 
 Not sure:
 - flip cards effect
@@ -135,9 +139,8 @@ Not sure:
 - complex combos
 
 known issues:
-- inventory sometimes not subtracting cards correctly for fuzz or otherwise (fixed)
-- shop flags not saving (fixed)
 - opening partially will fill cardInfoList, but not cardOpenList
+- lucid priceofpack drop is hardcoded to $1 and will go negative
 
 upgrades: (8)
 - meaninglessUpgrade 25 - nothing? (done)
@@ -172,7 +175,7 @@ implemented:
 - against all odds (get more than 24k value in 4 cards)
 
 in progress:
-
+- FNG (prestige once)
 
 not yet implemented:
 - Negative 100 dollars (get -$100)
@@ -198,6 +201,9 @@ real extension:
 - more card types: gold, silver, etc.
 - more upgrades in the shop
 
+fixed:
+- inventory sometimes not subtracting cards correctly for fuzz or otherwise (fixed)
+- shop flags not saving (fixed)
 
 extension:
 - get opening crates by playing simple games
