@@ -24,9 +24,6 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.T)) {
-			iS.changeBalance(1000);
-		}
 		if (Input.GetKey (KeyCode.Escape)) {
 			Application.Quit ();
 		}

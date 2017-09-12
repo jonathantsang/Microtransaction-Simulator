@@ -181,9 +181,15 @@ public class Card : MonoBehaviour {
 
 	void setIlluminate(){
 		int IlluminateIndex = 3;
-
-		// Choose from 4 shines
-		int shineIndex = Random.Range(0, cIH.borders.Length);
+		int shineIndex = 0;
+		// Choose from 4 shines, 0 and 1 are for regular cards 2 for good, 3 for rares
+		if ((int)information.getRarity() < 4) {
+			shineIndex = Random.Range (0, 1);
+		} else if ((int)information.getRarity() < 5) {
+			shineIndex = Random.Range (1, 2);
+		} else {
+			shineIndex = Random.Range (2, 3);
+		}
 		SpriteRenderer IlluminateSprite = transform.GetChild (IlluminateIndex).GetComponent<SpriteRenderer> ();
 		IlluminateSprite.sprite = cIH.borders[shineIndex];
 

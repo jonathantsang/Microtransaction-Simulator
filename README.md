@@ -128,15 +128,24 @@ Sept 7th:
 - generic text popup
 - prestiging
 
-Sept 8th:
-- reset progress
-- quests
-- scouting party?
+Sept 11:
+- save lucid flag (or count)
+- perks of lucid (not visual changes)
+- set illuminate to correct colours based on rarity instead of random (done)
+- win the game achievement (done)
+
+Sept 12:
+- turn off debug (done)
+- fix save data (corruption) (omitted)
+
 
 Not sure:
 - flip cards effect
 - speedrun->one click button
 - complex combos
+- reset progress
+- scouting party?
+- quests
 
 known issues:
 - opening partially will fill cardInfoList, but not cardOpenList

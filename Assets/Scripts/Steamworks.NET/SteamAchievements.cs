@@ -24,7 +24,9 @@ class SteamAchievements : MonoBehaviour {
 		ACH_YEARIS20XX,
 		ACH_RICH,
 		ACH_HOLYMOLY,
-		ACH_AGAINSTALLODDS
+		ACH_AGAINSTALLODDS,
+		ACH_WIN,
+		ACH_WIN2
 	};
 
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
@@ -46,7 +48,9 @@ class SteamAchievements : MonoBehaviour {
 		new Achievement_t(Achievement.ACH_YEARIS20XX, "The Year is 20XX", "2017"),
 		new Achievement_t(Achievement.ACH_RICH, "Riches", "A small loan of 1 million dollars"),
 		new Achievement_t(Achievement.ACH_HOLYMOLY, "Holy Moly", "Unrelated"),
-		new Achievement_t(Achievement.ACH_AGAINSTALLODDS, "Against All Odds", "Take a look at me now")
+		new Achievement_t(Achievement.ACH_AGAINSTALLODDS, "Against All Odds", "Take a look at me now"),
+		new Achievement_t(Achievement.ACH_WIN, "Win the game", "Harder than it looks"),
+		new Achievement_t(Achievement.ACH_WIN2, "Win twice?", "Is this a bug?")
 	};
 
 	// Our GameID
@@ -244,6 +248,16 @@ class SteamAchievements : MonoBehaviour {
 					if (cardOpenInformation.totalCardOpenValue > 10000) {
 						UnlockAchievement (achievement);
 					}
+				}
+				break;
+			case Achievement.ACH_WIN:
+				if (iS.checkFlag ("win") > 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_WIN2:
+				if (iS.checkFlag ("win") > 1){
+					UnlockAchievement (achievement);
 				}
 				break;
 		}

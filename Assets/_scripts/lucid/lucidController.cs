@@ -5,17 +5,22 @@ using UnityEngine;
 public class lucidController : MonoBehaviour {
 	
 	private popupController pC;
+	private inventoryStorage iS;
 
 	// Use this for initialization
 	void Start () {
 		pC = GameObject.FindGameObjectWithTag ("popupController").GetComponent<popupController> ();
-		lucidAnnouncement ();
-		lucidTime ();
+		iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage> ();
+		// lucidAnnouncement ();
+		// lucidTime ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		// Lucid Condition
+		if(iS.getBalance() > 2000){
+			lucidPopups ();
+		}
 	}
 
 	public void lucidAnnouncement(){
@@ -26,5 +31,10 @@ public class lucidController : MonoBehaviour {
 
 	public void lucidTime(){
 		pC.createPopup ("Are you sure you want to lucid?", 1, 1, true);
+	}
+
+	void lucidPopups(){
+		lucidAnnouncement ();
+		lucidTime ();
 	}
 }

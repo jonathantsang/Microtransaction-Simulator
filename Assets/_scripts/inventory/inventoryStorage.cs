@@ -39,6 +39,7 @@ public class inventoryStorage : MonoBehaviour {
 
 		// Number of times prestiged, don't reset this in lucid
 		otherFlags["lucid"] = 0;
+		otherFlags ["win"] = 0;
 
 
 
