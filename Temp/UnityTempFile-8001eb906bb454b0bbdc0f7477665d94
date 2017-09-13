@@ -152,6 +152,7 @@
 'Assets/_scripts/shop/shopUpgrade.cs'
 'Assets/_scripts/shop/shopUpgradeCollider.cs'
 'Assets/_scripts/sounds/audioStorage.cs'
+'Assets/atticButton.cs'
 'Assets/Scripts/Steamworks.NET/SteamAchievements.cs'
 'Assets/Scripts/Steamworks.NET/SteamManager.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'

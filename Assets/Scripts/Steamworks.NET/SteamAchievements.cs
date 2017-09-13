@@ -26,7 +26,8 @@ class SteamAchievements : MonoBehaviour {
 		ACH_HOLYMOLY,
 		ACH_AGAINSTALLODDS,
 		ACH_WIN,
-		ACH_WIN2
+		ACH_WIN2,
+		ACH_BRICK
 	};
 
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
@@ -50,7 +51,8 @@ class SteamAchievements : MonoBehaviour {
 		new Achievement_t(Achievement.ACH_HOLYMOLY, "Holy Moly", "Unrelated"),
 		new Achievement_t(Achievement.ACH_AGAINSTALLODDS, "Against All Odds", "Take a look at me now"),
 		new Achievement_t(Achievement.ACH_WIN, "Win the game", "Harder than it looks"),
-		new Achievement_t(Achievement.ACH_WIN2, "Win twice?", "Is this a bug?")
+		new Achievement_t(Achievement.ACH_WIN2, "Win twice?", "Is this a bug?"),
+		new Achievement_t(Achievement.ACH_BRICK, "Brick your game (intentionally)", "This can't be a mistake")
 	};
 
 	// Our GameID
@@ -257,6 +259,11 @@ class SteamAchievements : MonoBehaviour {
 				break;
 			case Achievement.ACH_WIN2:
 				if (iS.checkFlag ("win") > 1){
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_BRICK:
+				if (iS.checkFlag ("corruption") > 0){
 					UnlockAchievement (achievement);
 				}
 				break;

@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 392}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -106,8 +106,8 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 731
-  m_MinSize: {x: 681, y: 342}
-  m_MaxSize: {x: 12006, y: 8042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 49
 --- !u!114 &6
@@ -130,8 +130,8 @@ MonoBehaviour:
     y: 0
     width: 1096
     height: 731
-  m_MinSize: {x: 404, y: 342}
-  m_MaxSize: {x: 8004, y: 8042}
+  m_MinSize: {x: 406, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 50
 --- !u!114 &7
@@ -154,8 +154,8 @@ MonoBehaviour:
     y: 0
     width: 1096
     height: 460
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
   controlID: 51
 --- !u!114 &8
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 252
     height: 460
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -227,14 +227,14 @@ MonoBehaviour:
     y: 460
     width: 1096
     height: 271
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -404,7 +404,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 92e9faff680dfcff0063fcff4c7afcffcc83fcff861efdfff874fdffce7ffdff4288fdff9e45feffd88cfeff52fbffff06fcffff1afcfffff4ffffff00000000302c0000
+    m_ExpandedIDs: 0a8bffffd88bffff068dffff4c8dffff7c8dffffa48dffffd88dffff0c8effff128effff3c8effff9e93ffff6a94ffff9895ffffde95ffff0e96ffff3696ffff6a96ffff9e96ffffa496ffffce96ffff4c9dffff189effff2c9effff689effff989effffc09efffff49effff229fffff289fffff4a9fffff64a3ffff32a4ffff60a5ffffa6a5ffffd6a5fffffea5ffff32a6ffff66a6ffff6ca6ffff96a6ffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -539,19 +539,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_prefabs/popup
+    - Assets/_scripts/lucid
   m_ViewMode: 1
   m_StartGridSize: 61
   m_LastFolders:
-  - Assets/_prefabs/popup
+  - Assets/_scripts/lucid
   m_LastFoldersGridSize: 61
   m_LastProjectPath: /Users/Jon/GitHub/crate
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 73.43359}
-    m_SelectedIDs: 542e0000
-    m_LastClickedID: 11860
-    m_ExpandedIDs: 0000000010270000d2270000022800003e2800004e2800007c2a0000ffffff7f
+    scrollPos: {x: 0, y: 263.55078}
+    m_SelectedIDs: a6290000
+    m_LastClickedID: 10662
+    m_ExpandedIDs: 000000001e270000e22700001c28000058280000682800009e2a0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -579,7 +579,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000010270000d2270000022800003e2800004e2800007c2a0000
+    m_ExpandedIDs: 000000001e270000e22700001c28000058280000682800009e2a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

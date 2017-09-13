@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\_prefabs\shop\assets\avocadoController.cs" />
      <Compile Include="Assets\_scripts\balance\balanceController.cs" />
+     <Compile Include="Assets\_scripts\buttons\atticButton.cs" />
      <Compile Include="Assets\_scripts\buttons\BackButton.cs" />
      <Compile Include="Assets\_scripts\buttons\BalanceButton.cs" />
      <Compile Include="Assets\_scripts\buttons\casinoButton.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\_scripts\buttons\InventoryButton.cs" />
      <Compile Include="Assets\_scripts\buttons\OpenButton.cs" />
      <Compile Include="Assets\_scripts\buttons\quitShopButton.cs" />
+     <Compile Include="Assets\_scripts\buttons\resetButton.cs" />
      <Compile Include="Assets\_scripts\buttons\SellButton.cs" />
      <Compile Include="Assets\_scripts\buttons\shopButton.cs" />
      <Compile Include="Assets\_scripts\buttons\TropyButton.cs" />

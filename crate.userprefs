@@ -1,25 +1,25 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_scripts/lucid/lucidController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_scripts/save_load/SaveData.cs">
     <Files>
-      <File FileName="Assets/_scripts/logic/GameController.cs" Line="20" Column="1" />
-      <File FileName="Assets/_scripts/cards/Card.cs" Line="67" Column="38" />
+      <File FileName="Assets/_scripts/cards/Card.cs" Line="189" Column="32" />
+      <File FileName="Assets/_scripts/logic/GameController.cs" Line="29" Column="4" />
       <File FileName="Assets/_scripts/logic/totalPointsCounter.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/buttons/BalanceButton.cs" Line="8" Column="2" />
+      <File FileName="Assets/_scripts/buttons/BalanceButton.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/logic/checkWon.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/shop/assets/avocadoTextMovement.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/shop/shopStorage.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/inventory/inventoryStorage.cs" Line="19" Column="2" />
+      <File FileName="Assets/_scripts/inventory/inventoryStorage.cs" Line="20" Column="33" />
       <File FileName="Assets/_scripts/shop/shopController.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/shop/shopUpgradeCollider.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Steamworks.NET/SteamAchievements.cs" Line="107" Column="4" />
+      <File FileName="Assets/_scripts/save_load/DataService.cs" Line="87" Column="57" />
+      <File FileName="Assets/_scripts/save_load/SaveData.cs" Line="46" Column="3" />
+      <File FileName="Assets/Scripts/Steamworks.NET/SteamAchievements.cs" Line="55" Column="105" />
       <File FileName="Assets/_scripts/popup/Popup.cs" Line="20" Column="34" />
       <File FileName="Assets/_scripts/popup/popupController.cs" Line="28" Column="4" />
       <File FileName="Assets/_scripts/popup/clickPopup.cs" Line="23" Column="18" />
-      <File FileName="Assets/_scripts/lucid/lucidController.cs" Line="8" Column="2" />
-      <File FileName="Assets/_scripts/lucid/lucidYesButton.cs" Line="29" Column="78" />
+      <File FileName="Assets/_scripts/lucid/lucidYesButton.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/lucid/lucidNoButton.cs" Line="22" Column="78" />
-      <File FileName="Assets/_scripts/save_load/DataService.cs" Line="10" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

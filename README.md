@@ -137,7 +137,7 @@ Sept 11:
 Sept 12:
 - turn off debug (done)
 - fix save data (corruption) (omitted)
-
+- restart button
 
 Not sure:
 - flip cards effect

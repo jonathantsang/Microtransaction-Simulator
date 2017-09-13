@@ -183,9 +183,9 @@ public class Card : MonoBehaviour {
 		int IlluminateIndex = 3;
 		int shineIndex = 0;
 		// Choose from 4 shines, 0 and 1 are for regular cards 2 for good, 3 for rares
-		if ((int)information.getRarity() < 4) {
+		if ((int)information.getRarity() < 3) {
 			shineIndex = Random.Range (0, 1);
-		} else if ((int)information.getRarity() < 5) {
+		} else if ((int)information.getRarity() < 4) {
 			shineIndex = Random.Range (1, 2);
 		} else {
 			shineIndex = Random.Range (2, 3);

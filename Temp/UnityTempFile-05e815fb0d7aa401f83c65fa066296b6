@@ -6,7 +6,7 @@
 -unsafe
 -optimize
 -r:'Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll'
--r:'/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/Managed/UnityEngine.dll'
+-r:'/Applications/Unity/PlaybackEngines/WindowsStandaloneSupport/Managed/UnityEngine.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/Standalone/UnityEngine.UI.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/Standalone/UnityEngine.Networking.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/Runtime/UnityEngine.Timeline.dll'
@@ -67,10 +67,9 @@
 -define:ENABLE_RMGUI
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_STYLE_SHEETS
--define:UNITY_STANDALONE_OSX
+-define:UNITY_STANDALONE_WIN
 -define:UNITY_STANDALONE
 -define:ENABLE_SUBSTANCE
--define:ENABLE_GAMECENTER
 -define:ENABLE_RUNTIME_GI
 -define:ENABLE_MOVIES
 -define:ENABLE_NETWORK
@@ -80,14 +79,15 @@
 -define:ENABLE_CLOUD_SERVICES_ANALYTICS
 -define:ENABLE_CLOUD_SERVICES_PURCHASING
 -define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
--define:ENABLE_VR
--define:ENABLE_MODULAR_UNITYENGINE_ASSEMBLIES
+-define:ENABLE_EVENT_QUEUE
 -define:ENABLE_CLUSTERINPUT
+-define:ENABLE_VR
 -define:ENABLE_WEBSOCKET_HOST
 -define:ENABLE_MONO
 -define:NET_2_0_SUBSET
 'Assets/_prefabs/shop/assets/avocadoController.cs'
 'Assets/_scripts/balance/balanceController.cs'
+'Assets/_scripts/buttons/atticButton.cs'
 'Assets/_scripts/buttons/BackButton.cs'
 'Assets/_scripts/buttons/BalanceButton.cs'
 'Assets/_scripts/buttons/casinoButton.cs'
@@ -95,6 +95,7 @@
 'Assets/_scripts/buttons/InventoryButton.cs'
 'Assets/_scripts/buttons/OpenButton.cs'
 'Assets/_scripts/buttons/quitShopButton.cs'
+'Assets/_scripts/buttons/resetButton.cs'
 'Assets/_scripts/buttons/SellButton.cs'
 'Assets/_scripts/buttons/shopButton.cs'
 'Assets/_scripts/buttons/TropyButton.cs'

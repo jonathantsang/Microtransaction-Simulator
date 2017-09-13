@@ -49,6 +49,23 @@ public class shopFlagList
 	}
 }
 
+[System.Serializable]
+public class otherFlagList
+{
+	// TODO fix hardcoded storage
+	// Each index corresponds to a flag and if it is 1, it is on, 0 it is off
+	public List<int> setOtherFlags;
+
+	public otherFlagList() {
+		setOtherFlags = new List<int>();
+		int flagAmount = 8; // TODO fix hardcode. Currently only 7 other flags
+		for (int i = 0; i < flagAmount; i++) {
+			setOtherFlags.Add (0);
+		}
+
+	}
+}
+
 
 [System.Serializable]
 public class cardStoreList
@@ -77,6 +94,7 @@ public class SaveData {
 	public cardOpenList cardsOpenList;
 	public shopFlagList shopFlagList;
 	public cardStoreList cardsStoreList;
+	public otherFlagList otherFlagList;
 
 	public void WriteToFile(string filePath){
 		// Convert the instance ('this') of this class to a JSON string with "pretty print" (nice indenting).

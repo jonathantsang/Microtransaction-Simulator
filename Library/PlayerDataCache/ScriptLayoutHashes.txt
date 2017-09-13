@@ -178,3 +178,5 @@ dc4fd51efeeca85b8ede80c8ed1fbe54 Assembly-CSharp.dll:.audioStorage
 47c8cfad6c40bf8c10a63ee886057bbf Assembly-CSharp.dll:.shopHolder
 3e1f2938dc030729d555ad68e50c0db1 Assembly-CSharp.dll:.hangmanController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamManager
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.atticButton
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.resetButton

@@ -17,7 +17,7 @@ public class inventoryStorage : MonoBehaviour {
 	// Uses a list to serialize
 	public List<int> storeCards; // Keep track of cards in list and dictionary using key as cardIndex and amount as value
 
-	private Dictionary<string, int> otherFlags;
+	public Dictionary<string, int> otherFlags;
 
 	// Other information used for achievements
 	public static inventoryStorage instance;
@@ -31,17 +31,7 @@ public class inventoryStorage : MonoBehaviour {
 		cardOpenList = new List<cardOpen> ();
 
 		otherFlags = new Dictionary<string, int>();
-		// TODO fix hardcoded strings
-		otherFlags["avocado"] = 0;
-		otherFlags ["packsOpened"] = 0;
-		otherFlags ["hangman"] = 0;
-		otherFlags ["logo"] = 0;
-
-		// Number of times prestiged, don't reset this in lucid
-		otherFlags["lucid"] = 0;
-		otherFlags ["win"] = 0;
-
-
+		prepOtherFlags ();
 
 		cardInfoList = new List<cardInfo>();
 		// Singleton Behaviour
@@ -64,9 +54,21 @@ public class inventoryStorage : MonoBehaviour {
 		}
 	}
 
+	void prepOtherFlags(){
+		// TODO fix hardcoded strings
+		otherFlags["avocado"] = 0;
+		otherFlags ["packsOpened"] = 0;
+		otherFlags ["hangman"] = 0;
+		otherFlags ["logo"] = 0;
+
+		// Number of times prestiged, don't reset this in lucid
+		otherFlags["lucid"] = 0;
+		otherFlags ["win"] = 0;
+		otherFlags ["corruption"] = 0;
+	}
+
 	public void addCard(cardInfo card){
 		cardInfoList.Add (card);
-		print (card.getCardIndex ());
 		storeCards [card.getCardIndex()] += 1;
 	}
 
@@ -90,23 +92,48 @@ public class inventoryStorage : MonoBehaviour {
 		return otherFlags ["packsOpened"];
 	}
 
+	// Handles lucid perks
 	public void lucidInventory(){
 		print ("lucid");
-		Balance = 0;
 		// TODO fix pricedrop that is hardcoded right now
 		if (priceOfPack - 0.75 < 0) {
 			priceOfPack = 0.5f;
 		} else {
 			priceOfPack -= 0.75f;
 		}
+		clearOtherFlags ();
+		resetProgress ();
+	}
+
+	// Used to reset everything
+	public void resetProgress(){
+		Balance = 0;
 		cardInfoList = new List<cardInfo> ();
 		cardOpenList = new List<cardOpen> ();
+		storeCards = new List<int> ();
 		prepStoreCards (); // This makes it size 8
+		otherFlags = new Dictionary<string, int> ();
+		prepOtherFlags();
+		clearOtherFlags ();
+	}
 
+	// Only used on full reset
+	public void fullReset(){
+		// All progress is wiped except lucid needs to be reset manually and price of pack is reset
+		otherFlags ["lucid"] = 0;
+		priceOfPack = 3.99f;
+	}
+
+	// clears OtherFlags flags to be reset
+	void clearOtherFlags(){
 		otherFlags["avocado"] = 0;
 		otherFlags ["packsOpened"] = 0;
 		otherFlags ["hangman"] = 0;
+		otherFlags ["win"] = 0;
+		otherFlags ["corruption"] = 0;
 	}
+
+
 		
 
 	// Setter and Getters mainly

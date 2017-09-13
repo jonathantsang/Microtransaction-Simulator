@@ -7,7 +7,7 @@ public class DataService : MonoBehaviour {
 	public static DataService instance;
 
 	float timer = 0;
-	float timeLength = 1f;
+	float timeLength = 0.8f;
 
 	private inventoryStorage iS;
 	private shopStorage sS;
@@ -26,13 +26,20 @@ public class DataService : MonoBehaviour {
 		iS = GameObject.FindGameObjectWithTag("inventoryStorage").GetComponent<inventoryStorage>();
 		sS = GameObject.FindGameObjectWithTag("shopStorage").GetComponent<shopStorage>();
 
-		// At the start try to read from the file
-		SaveData = SaveData.ReadFromFile ("catch.gd");
+		try{
+			// At the start try to read from the file
+			SaveData = SaveData.ReadFromFile ("catch.gd");
+		} catch (System.Exception e){
+			Debug.Log ("corruption");
+			createNewFile ();
+			iS.setFlag ("corruption");
+			writeToFile ();
+		}
 		if (SaveData != null) {
 			// This will fail if the object exists, but doesn't have the correct components
-			if (SaveData.cardsInfoList.cardsTotal == null) {
-				Debug.Log ("corruption");
-				createNewFile ();
+			if (SaveData.cardsInfoList == null || SaveData.cardsOpenList == null ||
+				SaveData.cardsStoreList == null || SaveData.shopFlagList == null) {
+
 			} else {
 				Debug.Log ("preloaded");
 				loadDataFromJSON ();
@@ -63,6 +70,12 @@ public class DataService : MonoBehaviour {
 		iS.cardOpenList = SaveData.cardsOpenList.cardsOpened;
 		iS.storeCards = SaveData.cardsStoreList.storeCount;
 		sS.shopUpgradeFlags = SaveData.shopFlagList.setFlags;
+
+		// Other flags needs to be converted from list to dictionary
+		string[] flags = new string[] {"avocado", "packsOpened", "hangman", "logo", "lucid", "win", "corruption"};
+		for (int i = 0; i < flags.Length; i++) {
+			iS.otherFlags [flags [i]] = SaveData.otherFlagList.setOtherFlags [i];
+		}
 	}
 
 	// Updates the SaveData to have the inventoryStorage info and shopStorage info
@@ -77,6 +90,11 @@ public class DataService : MonoBehaviour {
 
 			// TODO fix hardcode dictionary
 			SaveData.shopFlagList.setFlags = sS.shopUpgradeFlags;
+
+			string[] flags = new string[] {"avocado", "packsOpened", "hangman", "logo", "lucid", "win", "corruption"};
+			for (int i = 0; i < flags.Length; i++) {
+				SaveData.otherFlagList.setOtherFlags [i] = iS.otherFlags [flags [i]];
+			}
 		}
 	}
 

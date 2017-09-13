@@ -8,8 +8,6 @@ public class balanceController : MonoBehaviour {
 	private Text balanceText;
 	private inventoryStorage iS;
 
-	float old = 0;
-
 	// Use this for initialization
 	void Start () {
 		balanceText = GameObject.FindGameObjectWithTag ("balance").GetComponent<Text> ();
@@ -24,6 +22,7 @@ public class balanceController : MonoBehaviour {
 
 	void setBalanceText(){
 		float balance = iS.getBalance();
+		balance = Mathf.Round(balance * 100f) / 100f;
 		string balanceString = "$";
 		if (balance < 0) {
 			balanceString = "-$";
@@ -31,6 +30,5 @@ public class balanceController : MonoBehaviour {
 		}
 		balanceString += balance.ToString ();
 		balanceText.text = balanceString;
-		old = iS.getBalance();
 	}
 }
