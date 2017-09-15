@@ -19,7 +19,7 @@ public class shopStorage : MonoBehaviour {
 			Destroy(gameObject);    
 		DontDestroyOnLoad(gameObject);
 
-		const int numberOfUpgrades = 8;
+		const int numberOfUpgrades = 8; // TODO fix hardcode
 		shopUpgradeFlags = new List<int> ();
 		for (int i = 0; i < numberOfUpgrades; i++) {
 			shopUpgradeFlags.Add (0);
@@ -45,6 +45,14 @@ public class shopStorage : MonoBehaviour {
 
 	public void turnOffFlag(int index){
 		shopUpgradeFlags [index] = 0;
+	}
+
+	public void clearShopFlags(){
+		shopUpgradeFlags = new List<int> ();
+		const int numberOfUpgrades = 8; // TODO fix hardcode
+		for (int i = 0; i < numberOfUpgrades; i++) {
+			shopUpgradeFlags.Add (0);
+		}
 	}
 
 }

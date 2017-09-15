@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class winButton : ClickButton {
 
+	inventoryStorage iS;
+
 	// Use this for initialization
 	protected override void Start () {
 		base.Start();
+		iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage> ();
 	}
 	
 	// Update is called once per frame
@@ -16,6 +19,7 @@ public class winButton : ClickButton {
 	}
 
 	override public void buttonEffects(){
+		iS.setFlag ("win");
 		SceneManager.LoadScene ("End");
 	}
 }

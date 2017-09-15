@@ -88,7 +88,7 @@ public class SaveData {
 
 	public int DEBUG = 1;
 	public float Balance = 0;
-	public float priceOfPack = 0;
+	public float priceOfPack = 3.99f;
 
 	public cardInfoList cardsInfoList;
 	public cardOpenList cardsOpenList;

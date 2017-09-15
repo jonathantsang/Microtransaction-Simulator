@@ -19,11 +19,12 @@ public class lucidYesButton : ClickButton {
 
 	override public void buttonEffects(){
 		print ("yes");
-		// Set lucid to 1 more
-		iS.setFlag("lucid");
-
+	
 		// clear shopFlags, cardInfoStorage, and cardOpenStorage
 		iS.lucidInventory();
+
+		// Set lucid to 1 more
+		iS.setFlag("lucid");
 
 		// Destroy the popup
 		GameObject popup = this.transform.parent.transform.parent.transform.parent.gameObject;

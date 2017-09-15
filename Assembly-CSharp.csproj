@@ -89,6 +89,8 @@
      <Compile Include="Assets\_scripts\mainmenu\clickLogo.cs" />
      <Compile Include="Assets\_scripts\mainmenu\mainMenuInput.cs" />
      <Compile Include="Assets\_scripts\mainmenu\menuChlseaTransition.cs" />
+     <Compile Include="Assets\_scripts\mainmenu\quitGameCollider.cs" />
+     <Compile Include="Assets\_scripts\mainmenu\startGameCollider.cs" />
      <Compile Include="Assets\_scripts\opening_effects\OpenEffects.cs" />
      <Compile Include="Assets\_scripts\popup\clickPopup.cs" />
      <Compile Include="Assets\_scripts\popup\Popup.cs" />

@@ -17,7 +17,8 @@ public class hangmanStorage : MonoBehaviour {
 		solvedSoFar = "";
 		usedWords = "";
 
-		words = new List<string> { "phoenix", "aphrodite", "equinox", "salvation", "metamorphosis", "inconceivable", "equestrian", "lycanthropy", "serendepity", "heinous" };
+		words = new List<string> { "armageddon", "phoenix", "adjournment", "equinox", "cemetary", "metamorphosis", "conscience", "equestrian", 
+			"lycanthropy", "serendepity", "heinous", "baccalaureate", "bourgeoisie", "broccoli", "chronological", "inconsistent" };
 		int index = Random.Range (0, words.Count);
 		word = words [index];
 		// prep solvedSoFar

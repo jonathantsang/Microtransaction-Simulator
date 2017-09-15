@@ -22,8 +22,17 @@ public class inventoryStorage : MonoBehaviour {
 	// Other information used for achievements
 	public static inventoryStorage instance;
 
+	private shopStorage sS;
+
+	private bool early;
+
 	// Use this for initialization
 	void Start () {
+		// remove
+		early = true;
+
+		sS = GameObject.FindGameObjectWithTag ("shopStorage").GetComponent<shopStorage> ();
+
 		prepStoreCards ();
 		priceOfPack = 3.99f;
 
@@ -65,6 +74,7 @@ public class inventoryStorage : MonoBehaviour {
 		otherFlags["lucid"] = 0;
 		otherFlags ["win"] = 0;
 		otherFlags ["corruption"] = 0;
+		otherFlags ["hangman"] = 0;
 	}
 
 	public void addCard(cardInfo card){
@@ -85,11 +95,15 @@ public class inventoryStorage : MonoBehaviour {
 
 	public void increaseBalance(int index){
 		// TODO fix rarity
-		Balance += 2^index;
+		float added = Mathf.Pow(2, index);
+		Balance += added;
 	}
 
 	public int getPacksOpened(){
-		return otherFlags ["packsOpened"];
+		if (otherFlags != null) {
+			return otherFlags ["packsOpened"];
+		}
+		return 0;
 	}
 
 	// Handles lucid perks
@@ -113,6 +127,8 @@ public class inventoryStorage : MonoBehaviour {
 		storeCards = new List<int> ();
 		prepStoreCards (); // This makes it size 8
 		otherFlags = new Dictionary<string, int> ();
+
+		sS.clearShopFlags ();
 		prepOtherFlags();
 		clearOtherFlags ();
 	}
@@ -131,15 +147,13 @@ public class inventoryStorage : MonoBehaviour {
 		otherFlags ["hangman"] = 0;
 		otherFlags ["win"] = 0;
 		otherFlags ["corruption"] = 0;
+		otherFlags ["hangman"] = 0;
 	}
-
-
-		
 
 	// Setter and Getters mainly
 
 	public void clickAvocado(){
-		otherFlags ["avocado"] = 1;
+		otherFlags ["avocado"] += 1;
 	}
 
 	public int getAvocadoClicked(){
@@ -174,6 +188,10 @@ public class inventoryStorage : MonoBehaviour {
 
 	public bool canSell(int cardIndex){
 		return storeCards [cardIndex] > 0;
+	}
+
+	public bool getEarly(){
+		return early;
 	}
 }
 

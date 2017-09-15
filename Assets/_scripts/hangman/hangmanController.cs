@@ -18,6 +18,7 @@ public class hangmanController : MonoBehaviour {
 	private Text Blanks;
 	private Text WordsUsed;
 	private audioStorage aS;
+	private inventoryStorage iS;
 
 	// Use this for initialization
 	void Start () {
@@ -27,9 +28,10 @@ public class hangmanController : MonoBehaviour {
 		Blanks = canvas.transform.GetChild (blanksIndex).GetComponent<Text> ();
 		WordsUsed = canvas.transform.GetChild (wordsUsedIndex).GetComponent<Text> ();
 		aS = GameObject.FindGameObjectWithTag ("audioStorage").GetComponent<audioStorage> ();
+		iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage> ();
 
 		// TODO fix hardcode
-		tries = 5; // technically this is the number of "wrong letters" allowed
+		tries = 7; // technically this is the number of "wrong letters" allowed
 		Setup ();
 
 	}
@@ -42,7 +44,6 @@ public class hangmanController : MonoBehaviour {
 	void Setup(){
 		// Set up blanks
 		string blanks = "";
-		print (hS.getWordLength ());
 		for(int i = 0; i < hS.getWordLength(); i++){
 			blanks += "_ ";
 		}
@@ -69,6 +70,8 @@ public class hangmanController : MonoBehaviour {
 			int chimeIndex = 3;
 			aS.playAudio (chimeIndex);
 			// TODO make a win
+			iS.setFlag("hangman");
+			iS.increaseBalance (100);
 		}
 	}
 

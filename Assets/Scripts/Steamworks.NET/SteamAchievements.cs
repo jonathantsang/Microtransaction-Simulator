@@ -27,7 +27,19 @@ class SteamAchievements : MonoBehaviour {
 		ACH_AGAINSTALLODDS,
 		ACH_WIN,
 		ACH_WIN2,
-		ACH_BRICK
+		ACH_BRICK,
+		ACH_FNG,
+		ACH_TRICKS,
+		ACH_SPEED,
+		ACH_DEBT,
+		ACH_DEAD,
+		ACH_MIGHTY,
+		ACH_AMATH,
+		ACH_PMATH,
+		ACH_BROCCOLI,
+		ACH_EARLY,
+		ACH_BEEMOVIE,
+		ACH_FORTYK
 	};
 
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
@@ -52,7 +64,19 @@ class SteamAchievements : MonoBehaviour {
 		new Achievement_t(Achievement.ACH_AGAINSTALLODDS, "Against All Odds", "Take a look at me now"),
 		new Achievement_t(Achievement.ACH_WIN, "Win the game", "Harder than it looks"),
 		new Achievement_t(Achievement.ACH_WIN2, "Win twice?", "Is this a bug?"),
-		new Achievement_t(Achievement.ACH_BRICK, "Brick your game (intentionally)", "This can't be a mistake")
+		new Achievement_t(Achievement.ACH_BRICK, "Brick your game (intentionally)", "This can't be a mistake"),
+		new Achievement_t(Achievement.ACH_FNG, "FNG", "Lucid once"),
+		new Achievement_t(Achievement.ACH_TRICKS, "Tricks are for kids", "yeah"),
+		new Achievement_t(Achievement.ACH_SPEED, "Gotta go fast", "Mania"),
+		new Achievement_t(Achievement.ACH_DEBT, "Debt", "You dug the hole"),
+		new Achievement_t(Achievement.ACH_DEAD, "Dead", "Past the point of no return"),
+		new Achievement_t(Achievement.ACH_MIGHTY, "Might Number 9", "or was it 8?"),
+		new Achievement_t(Achievement.ACH_AMATH, "Apply your knowledge", "coolio"),
+		new Achievement_t(Achievement.ACH_PMATH, "Pure knowledge", "it burns"),
+		new Achievement_t(Achievement.ACH_BROCCOLI, "BROCCOLI", "Eat your green vegetables"),
+		new Achievement_t(Achievement.ACH_EARLY, "Early Adopter", "You're the best!"),
+		new Achievement_t(Achievement.ACH_BEEMOVIE, "A movie about bees", "They're taking all the honey!"),
+		new Achievement_t(Achievement.ACH_FORTYK, "Impossible", "Don't even try it")
 	};
 
 	// Our GameID
@@ -169,7 +193,7 @@ class SteamAchievements : MonoBehaviour {
 				break;
 			case Achievement.ACH_GUACAMOLE:
 				// Check in the inventory storage has the guacamole flag is on
-				if (iS.getAvocadoClicked() == 1) {
+				if (iS.getAvocadoClicked() > 0) {
 					UnlockAchievement (achievement);
 				}
 				break;
@@ -265,6 +289,76 @@ class SteamAchievements : MonoBehaviour {
 			case Achievement.ACH_BRICK:
 				if (iS.checkFlag ("corruption") > 0){
 					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_FNG:
+				if (iS.checkFlag("lucid") > 0){
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_TRICKS:
+				int trickIndex = 1; // TODO fix hardcoded number
+				if (sS.checkFlag(trickIndex) == 1){
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_SPEED:
+				int speedrunIndex = 7; // TODO fix hardcoded number
+				if (sS.checkFlag(speedrunIndex) == 1){
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_DEBT:
+				if (iS.getBalance() < -100){
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_DEAD:
+				if (iS.getBalance() < -1000){
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_MIGHTY:
+				foreach (cardOpen cardOpenInformation in iS.cardOpenList) {
+					if (cardOpenInformation.totalCardOpenValue == 8888) {
+						UnlockAchievement (achievement);
+					}
+				}
+				break;
+			case Achievement.ACH_AMATH:
+				// code
+				if (iS.checkFlag ("hangman") > 3) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_PMATH:
+				// code
+				if (iS.checkFlag ("packsOpened") > 2000) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_BROCCOLI:
+				if (iS.getAvocadoClicked() > 4) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_EARLY:
+				// Manually setting this, not a system.date
+				if (iS.getEarly()) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_BEEMOVIE:
+				if (iS.checkFlag("hangman") > 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_FORTYK:
+				foreach (cardOpen cardOpenInformation in iS.cardOpenList) {
+					// 4 fuzz are needed because 8k * 4 + number is not enough
+					if (cardOpenInformation.totalCardOpenValue > 40000) {
+						UnlockAchievement (achievement);
+					}
 				}
 				break;
 		}

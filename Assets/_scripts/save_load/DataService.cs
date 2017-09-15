@@ -72,7 +72,7 @@ public class DataService : MonoBehaviour {
 		sS.shopUpgradeFlags = SaveData.shopFlagList.setFlags;
 
 		// Other flags needs to be converted from list to dictionary
-		string[] flags = new string[] {"avocado", "packsOpened", "hangman", "logo", "lucid", "win", "corruption"};
+		string[] flags = new string[] {"avocado", "packsOpened", "hangman", "logo", "lucid", "win", "corruption", "hangman"};
 		for (int i = 0; i < flags.Length; i++) {
 			iS.otherFlags [flags [i]] = SaveData.otherFlagList.setOtherFlags [i];
 		}
@@ -91,14 +91,21 @@ public class DataService : MonoBehaviour {
 			// TODO fix hardcode dictionary
 			SaveData.shopFlagList.setFlags = sS.shopUpgradeFlags;
 
-			string[] flags = new string[] {"avocado", "packsOpened", "hangman", "logo", "lucid", "win", "corruption"};
+			string[] flags = new string[] {"avocado", "packsOpened", "hangman", "logo", "lucid", "win", "corruption", "hangman"};
 			for (int i = 0; i < flags.Length; i++) {
+				if (SaveData == null) {
+					createNewFile ();
+				}
+				// This gets the value on or off from otherFlags the Dictionary and saves it to the SaveData otherFlagList int array
 				SaveData.otherFlagList.setOtherFlags [i] = iS.otherFlags [flags [i]];
 			}
 		}
 	}
 
 	void writeToFile(){
+		if (SaveData == null) {
+			createNewFile ();
+		}
 		SaveData.WriteToFile ("catch.gd");
 	}
 
@@ -108,6 +115,7 @@ public class DataService : MonoBehaviour {
 		SaveData.cardsOpenList = new cardOpenList ();
 		SaveData.shopFlagList = new shopFlagList ();
 		SaveData.cardsStoreList = new cardStoreList ();
+		SaveData.otherFlagList = new otherFlagList ();
 	}
 
 

@@ -137,7 +137,67 @@ Sept 11:
 Sept 12:
 - turn off debug (done)
 - fix save data (corruption) (omitted)
-- restart button
+- restart button (done)
+- fix hangman
+- click start game (for the masses who I "fooled" unknowingly)
+- implement meaningless upgrade, card trick, speedrun (done)
+- show how much each card sells for (fix card amounts not right?)
+- debt achievement (done)
+
+Next Build:
+Sept 14:
+Day One DLC Patch
+- save stats should work now (phew...hopefully)
+- removed ESC to quit due to popular demand?
+- fixed guacamole "exploit"
+- achievements should be fixed (FNG, Dead, win game)
+- fixing shrinking buttons and growing when click spammed
+- lucid isn't game breaking (my QA people are fired. AKA me)
+
+Sept 14: // Hi people reading this to get achievements
+- sell all quicker
+future achievements:
+- might number 8
+- Bee Movie
+- AMATH cool math dude
+- PMATH wow
+- Broccoli eat your green veggies
+- early adopter (play the game on release date September 14-15th)
+v1.1:
+- hangman rewards
+- harder to win
+
+Sept 18:
+- lucid rehaul (more graphic)
+- sell all button for speedrun
+- quests with timer
+- clean up inventoryStorage methods
+- harder achievements
+
+achievements:
+- mute
+- anti-mute
+- anti-anti-mute
+- new game++
+- casino royale
+- open 1000 packs
+- open 500 packs
+
+Plan for Future:
+- better lucid perks
+- more achievements/longer game since some people wanted more substance
+- increase shop prices
+- new game++
+- lucid popup in the middle of the screen
+- fix casino, architect, trophyroom
+- get a mute button
+- free to use music
+- obfuscate the code
+
+
+lessons:
+- test it (a week or so everything)
+- game dev is an iterative process
 
 Not sure:
 - flip cards effect
@@ -162,6 +222,7 @@ upgrades: (8)
 - SpeedRunZ 9999 - Speedrun button (fake)
 
 achievements:
+- renaissance man 1776
 
 implemented:
 - first one is free (open a pack)
@@ -182,16 +243,17 @@ implemented:
 - holy moly (get more than 10k value in 4 cards)
 - rich (get $5000)
 - against all odds (get more than 24k value in 4 cards)
+- tricks are for kids (card trick in shop)
+- FNG (reach lucid 2)
+- Negative 100 dollars (get -$100)
+- dead (get -$1000)
 
 in progress:
-- FNG (prestige once)
+
 
 not yet implemented:
-- Negative 100 dollars (get -$100)
-- time well spent (get $1000)
-- tricks are for kids (card trick in shop)
 - lack of content (DLC in DLC)
-- FNG (reach prestige 2)
+
 
 quests:
 - certain challenges (get 2 red in one pull)
