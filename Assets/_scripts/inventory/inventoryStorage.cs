@@ -26,9 +26,18 @@ public class inventoryStorage : MonoBehaviour {
 
 	private bool early;
 
+	public static bool soundOn = true;
+
 	// Use this for initialization
 	void Start () {
-		// remove
+		// Singleton Behaviour
+		if (instance == null)
+			instance = this;
+		else if (instance != this)
+			Destroy(gameObject);    
+		DontDestroyOnLoad(gameObject);
+
+		// remove on September 18th
 		early = true;
 
 		sS = GameObject.FindGameObjectWithTag ("shopStorage").GetComponent<shopStorage> ();
@@ -43,12 +52,7 @@ public class inventoryStorage : MonoBehaviour {
 		prepOtherFlags ();
 
 		cardInfoList = new List<cardInfo>();
-		// Singleton Behaviour
-		if (instance == null)
-			instance = this;
-		else if (instance != this)
-			Destroy(gameObject);    
-		DontDestroyOnLoad(gameObject);
+
 	}
 	
 	// Update is called once per frame
@@ -75,6 +79,7 @@ public class inventoryStorage : MonoBehaviour {
 		otherFlags ["win"] = 0;
 		otherFlags ["corruption"] = 0;
 		otherFlags ["hangman"] = 0;
+		otherFlags ["soundOn"] = 1;
 	}
 
 	public void addCard(cardInfo card){
@@ -148,6 +153,7 @@ public class inventoryStorage : MonoBehaviour {
 		otherFlags ["win"] = 0;
 		otherFlags ["corruption"] = 0;
 		otherFlags ["hangman"] = 0;
+		otherFlags ["soundOn"] = 1;
 	}
 
 	// Setter and Getters mainly
@@ -169,7 +175,12 @@ public class inventoryStorage : MonoBehaviour {
 	}
 
 	public void setFlag(string key){
-		otherFlags [key] += 1;
+		if (key == "soundOn") { // soundOn is the only flag that can be flipped 0 for off, 1 for on
+			print("flipped");
+			otherFlags [key] = Mathf.Abs (otherFlags [key] - 1);
+		} else {
+			otherFlags [key] += 1;
+		}
 	}
 
 	public void changeBalance(float change){

@@ -28,12 +28,12 @@ public class lucidController : MonoBehaviour {
 
 	public void lucidAnnouncement(){
 		// Create this popup first to get it behind the other one
-		pC.createPopup ("Lucid means you restart all upgrades, cards, and cash for cheaper things and goodies", 2, 2, false);
-		pC.createPopup ("You can lucid", 2, 2, false);
+		pC.createPopup ("Lucid means you restart all upgrades, cards, and cash for cheaper things and goodies", 4f, -2.5f, false);
+		pC.createPopup ("You can lucid", 4f, -2.5f, false);
 	}
 
 	public void lucidTime(){
-		pC.createPopup ("Are you sure you want to lucid?", 2, 2, true);
+		pC.createPopup ("Are you sure you want to lucid?", 4f, -2.5f, true);
 	}
 
 	void lucidPopups(){

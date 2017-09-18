@@ -39,7 +39,8 @@ class SteamAchievements : MonoBehaviour {
 		ACH_BROCCOLI,
 		ACH_EARLY,
 		ACH_BEEMOVIE,
-		ACH_FORTYK
+		ACH_FORTYK,
+		ACH_MUTE
 	};
 
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
@@ -76,7 +77,9 @@ class SteamAchievements : MonoBehaviour {
 		new Achievement_t(Achievement.ACH_BROCCOLI, "BROCCOLI", "Eat your green vegetables"),
 		new Achievement_t(Achievement.ACH_EARLY, "Early Adopter", "You're the best!"),
 		new Achievement_t(Achievement.ACH_BEEMOVIE, "A movie about bees", "They're taking all the honey!"),
-		new Achievement_t(Achievement.ACH_FORTYK, "Impossible", "Don't even try it")
+		new Achievement_t(Achievement.ACH_FORTYK, "Impossible", "Don't even try it"),
+		new Achievement_t(Achievement.ACH_MUTE, "Silence is golden", "...")
+
 	};
 
 	// Our GameID
@@ -359,6 +362,11 @@ class SteamAchievements : MonoBehaviour {
 					if (cardOpenInformation.totalCardOpenValue > 40000) {
 						UnlockAchievement (achievement);
 					}
+				}
+				break;
+			case Achievement.ACH_MUTE:
+				if (iS.checkFlag("soundOn") == 0) {
+					UnlockAchievement (achievement);
 				}
 				break;
 		}

@@ -66,12 +66,12 @@ public class hangmanController : MonoBehaviour {
 		}
 		updateText ();
 		if (checkWon ()) {
+			print ("won");
 			won = true;
 			int chimeIndex = 3;
 			aS.playAudio (chimeIndex);
-			// TODO make a win
-			iS.setFlag("hangman");
-			iS.increaseBalance (100);
+			won = true;
+			iS.increaseBalance (10); // Temporary fix to add $1000
 		}
 	}
 
@@ -96,7 +96,7 @@ public class hangmanController : MonoBehaviour {
 		WordsUsed.text = hS.usedWords;
 	}
 
-	bool checkWon(){
+	public bool checkWon(){
 		return hS.checkWon ();
 	}
 }

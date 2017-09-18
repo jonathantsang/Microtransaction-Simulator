@@ -58,7 +58,7 @@ public class otherFlagList
 
 	public otherFlagList() {
 		setOtherFlags = new List<int>();
-		int flagAmount = 8; // TODO fix hardcode. Currently only 7 other flags
+		int flagAmount = 20; // TODO fix hardcode. Currently only 8 other flags
 		for (int i = 0; i < flagAmount; i++) {
 			setOtherFlags.Add (0);
 		}

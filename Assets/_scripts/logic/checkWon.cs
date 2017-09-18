@@ -21,7 +21,7 @@ public class checkWon : MonoBehaviour {
 		if (timer < timeLength) {
 			if (iS.getBalance() > 99999){
 				if (winSpawned == null) {
-					winSpawned = Instantiate (winButton, new Vector2 (0, 0), Quaternion.identity);
+					winSpawned = Instantiate (winButton, new Vector2 (5.5f, -0.5f), Quaternion.identity);
 				}
 			}
 			timer = 0;

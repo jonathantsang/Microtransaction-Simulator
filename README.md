@@ -167,12 +167,30 @@ v1.1:
 - hangman rewards
 - harder to win
 
+Sept 16:
+- back on winning (done)
+- lucid symbol
+- quit button
+
+Sept 17:
+- music
+
 Sept 18:
+- after lucid, fix ui (load openCrate, after lucid to reset)
+- graphics: http://steamcommunity.com/sharedfiles/filedetails/?id=1136624459
+- graphics: http://steamcommunity.com/sharedfiles/filedetails/?id=1136768135
+- investigate back button not appearing in inventory?
+- more colour types
 - lucid rehaul (more graphic)
 - sell all button for speedrun
-- quests with timer
+- fix hangman (should be fixed)
 - clean up inventoryStorage methods
 - harder achievements
+- Allow to quicksell all cards you have with a single click at 10% lower price
+
+lp:
+- quests with timer
+
 
 achievements:
 - mute
@@ -184,6 +202,9 @@ achievements:
 - open 500 packs
 
 Plan for Future:
+
+Explosive Cosmetic Patch 1.2
+
 - better lucid perks
 - more achievements/longer game since some people wanted more substance
 - increase shop prices
@@ -192,6 +213,8 @@ Plan for Future:
 - fix casino, architect, trophyroom
 - get a mute button
 - free to use music
+- horse armor dlc
+- dlc shop
 - obfuscate the code
 
 

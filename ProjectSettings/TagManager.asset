@@ -24,6 +24,7 @@ TagManager:
   - cardInformationHolder
   - cardInformationStorage
   - popupController
+  - soundSymbol
   layers:
   - Default
   - TransparentFX

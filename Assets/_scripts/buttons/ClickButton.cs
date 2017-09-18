@@ -5,11 +5,13 @@ using UnityEngine;
 public class ClickButton : MonoBehaviour {
 
 	private audioStorage aS;
+	private soundSymbol sS;
 	bool big = false;
 
 	// Use this for initialization
 	protected virtual void Start() {
 		aS = GameObject.FindGameObjectWithTag ("audioStorage").GetComponent<audioStorage> ();
+		sS = GameObject.FindGameObjectWithTag ("soundSymbol").GetComponent<soundSymbol> ();
 	}
 	
 	// Update is called once per frame
@@ -21,7 +23,9 @@ public class ClickButton : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		aS.playAudio (0);
+		if (sS.musicOn) {
+			aS.playAudio (0);
+		}
 		if (!big) {
 			StartCoroutine (growClick ());
 		}

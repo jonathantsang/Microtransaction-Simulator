@@ -13,6 +13,7 @@ public class audioStorage : MonoBehaviour {
 	public AudioClip[] audioFiles;
 
 	private AudioSource audioS;
+	private soundSymbol sS;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,7 @@ public class audioStorage : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 
 		audioS = GetComponent<AudioSource> ();
+		sS = GameObject.FindGameObjectWithTag ("soundSymbol").GetComponent<soundSymbol> ();
 		audioFiles = new AudioClip[] {clickSound, cashSound, shineSound, jingleSound};
 	}
 	
@@ -33,10 +35,12 @@ public class audioStorage : MonoBehaviour {
 	}
 
 	public void playAudio(int index){
-		int audioFilesLength = audioFiles.Length;
-		if(index < audioFilesLength && index >= 0){
-			audioS.clip = audioFiles [index];
-			audioS.Play ();
+		if (sS.musicOn) {
+			int audioFilesLength = audioFiles.Length;
+			if (index < audioFilesLength && index >= 0) {
+				audioS.clip = audioFiles [index];
+				audioS.Play ();
+			}
 		}
 	}
 }

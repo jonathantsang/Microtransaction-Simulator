@@ -28,4 +28,16 @@ public class popupController : MonoBehaviour {
 		}
 		newPopup.transform.SetParent(Canvas.transform);
 	}
+
+	public void createPopup(string text, float xPos, float yPos, bool choices){
+		GameObject newPopup = Instantiate(popupPrefab, new Vector2(xPos, yPos), Quaternion.identity);
+		newPopup.GetComponent<Popup>().setText (text);
+		newPopup.GetComponent<Popup> ().choices = choices;
+		// If choices is true, turn off the original main collider
+		if (choices == true) {
+			int mainCollider = 2;
+			newPopup.transform.GetChild (2).gameObject.SetActive (false);
+		}
+		newPopup.transform.SetParent(Canvas.transform);
+	}
 }

@@ -39,7 +39,10 @@ public class DataService : MonoBehaviour {
 			// This will fail if the object exists, but doesn't have the correct components
 			if (SaveData.cardsInfoList == null || SaveData.cardsOpenList == null ||
 				SaveData.cardsStoreList == null || SaveData.shopFlagList == null) {
-
+				Debug.Log ("corruption");
+				createNewFile ();
+				iS.setFlag ("corruption");
+				writeToFile ();
 			} else {
 				Debug.Log ("preloaded");
 				loadDataFromJSON ();
@@ -72,7 +75,15 @@ public class DataService : MonoBehaviour {
 		sS.shopUpgradeFlags = SaveData.shopFlagList.setFlags;
 
 		// Other flags needs to be converted from list to dictionary
-		string[] flags = new string[] {"avocado", "packsOpened", "hangman", "logo", "lucid", "win", "corruption", "hangman"};
+		string[] flags = new string[] {"avocado", "packsOpened", "hangman", "logo", "lucid", "win", "corruption", "hangman", "soundOn"}; 
+		// This may corrupt since we need more size, check for smaller
+		if(flags.Length > SaveData.otherFlagList.setOtherFlags.Count){
+			print ("hard repair");
+			int flagAmount = 12; // TODO fix hardcode. Currently only 8 other flags
+			for (int i = 0; i < flagAmount; i++) {
+				SaveData.otherFlagList.setOtherFlags.Add (0);
+			}	
+		}
 		for (int i = 0; i < flags.Length; i++) {
 			iS.otherFlags [flags [i]] = SaveData.otherFlagList.setOtherFlags [i];
 		}
@@ -91,7 +102,7 @@ public class DataService : MonoBehaviour {
 			// TODO fix hardcode dictionary
 			SaveData.shopFlagList.setFlags = sS.shopUpgradeFlags;
 
-			string[] flags = new string[] {"avocado", "packsOpened", "hangman", "logo", "lucid", "win", "corruption", "hangman"};
+			string[] flags = new string[] {"avocado", "packsOpened", "hangman", "logo", "lucid", "win", "corruption", "hangman", "soundOn"};
 			for (int i = 0; i < flags.Length; i++) {
 				if (SaveData == null) {
 					createNewFile ();

@@ -60,6 +60,7 @@
      <Compile Include="Assets\_scripts\buttons\ClickButton.cs" />
      <Compile Include="Assets\_scripts\buttons\InventoryButton.cs" />
      <Compile Include="Assets\_scripts\buttons\OpenButton.cs" />
+     <Compile Include="Assets\_scripts\buttons\quitButton.cs" />
      <Compile Include="Assets\_scripts\buttons\quitShopButton.cs" />
      <Compile Include="Assets\_scripts\buttons\resetButton.cs" />
      <Compile Include="Assets\_scripts\buttons\SellButton.cs" />
@@ -84,6 +85,7 @@
      <Compile Include="Assets\_scripts\logic\gameUI.cs" />
      <Compile Include="Assets\_scripts\logic\totalPointsCounter.cs" />
      <Compile Include="Assets\_scripts\lucid\lucidController.cs" />
+     <Compile Include="Assets\_scripts\lucid\lucidGraphic.cs" />
      <Compile Include="Assets\_scripts\lucid\lucidNoButton.cs" />
      <Compile Include="Assets\_scripts\lucid\lucidYesButton.cs" />
      <Compile Include="Assets\_scripts\mainmenu\clickLogo.cs" />
@@ -108,6 +110,7 @@
      <Compile Include="Assets\_scripts\shop\shopUpgrade.cs" />
      <Compile Include="Assets\_scripts\shop\shopUpgradeCollider.cs" />
      <Compile Include="Assets\_scripts\sounds\audioStorage.cs" />
+     <Compile Include="Assets\_scripts\sounds\soundSymbol.cs" />
      <Compile Include="Assets\Scripts\Steamworks.NET\SteamAchievements.cs" />
      <Compile Include="Assets\Scripts\Steamworks.NET\SteamManager.cs" />
      <None Include="Assets\Plugins\Steamworks.NET\redist\steam_appid.txt" />
