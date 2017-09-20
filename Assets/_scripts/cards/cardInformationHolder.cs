@@ -55,7 +55,6 @@ public class cardInformationHolder : MonoBehaviour {
 		improvedChances = new int[] {200, 200, 200, 100, 100, 100, 80, 19};
 		compiledImprovedChances = new int [] { 200, 400, 600, 700, 800, 900, 980, 999 };
 
-
 		sS = GameObject.FindGameObjectWithTag ("shopStorage").GetComponent<shopStorage> ();
 
 	}

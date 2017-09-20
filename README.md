@@ -175,25 +175,24 @@ Sept 16:
 Sept 17:
 - music
 
-Sept 18:
-- after lucid, fix ui (load openCrate, after lucid to reset)
+- is that I can't win! I have every upgrade, I've Lucid...ed, and I have over 10,000 gold. I go to the trophy room and BAM only the option to reset. Thanks in advance.
+
+Sept 18-20:
+
+v1.2 SEASON PASS:
+- after lucid, fix ui (load openCrate, after lucid to reset)(done)
 - graphics: http://steamcommunity.com/sharedfiles/filedetails/?id=1136624459
 - graphics: http://steamcommunity.com/sharedfiles/filedetails/?id=1136768135
-- investigate back button not appearing in inventory?
-- more colour types
-- lucid rehaul (more graphic)
-- sell all button for speedrun
-- fix hangman (should be fixed)
+- music loop
 - clean up inventoryStorage methods
 - harder achievements
-- Allow to quicksell all cards you have with a single click at 10% lower price
 
-lp:
-- quests with timer
+Sept 20:
+- sell all (cheapo)
 
-
+Sept 30:
 achievements:
-- mute
+- renaissance man 1776
 - anti-mute
 - anti-anti-mute
 - new game++
@@ -201,9 +200,31 @@ achievements:
 - open 1000 packs
 - open 500 packs
 
+v1.3 LUCID DREAMS:
+- more colour types
+- optimize saves
+- fix lucid popup on shop
+- lucid rehaul (more graphic)
+- sell all (limiting Factor with lucid)
+- cards worth more on lucid
+- more shop stuff (second secret shop for lucid)
+- sell all button for speedrun
+- Allow to quicksell all cards you have with a single click at 30% price
+
+v1.4:
+- new game++
+- quests
+
+lp:
+- quests with timer
+- investigate back button not appearing in inventory?
+- fix hangman and money issue
+
+achievements:
+
 Plan for Future:
 
-Explosive Cosmetic Patch 1.2
+Explosive LUCID Cosmetic Patch 1.4
 
 - better lucid perks
 - more achievements/longer game since some people wanted more substance
@@ -233,6 +254,7 @@ Not sure:
 known issues:
 - opening partially will fill cardInfoList, but not cardOpenList
 - lucid priceofpack drop is hardcoded to $1 and will go negative
+- dataservice crashes in inventory
 
 upgrades: (8)
 - meaninglessUpgrade 25 - nothing? (done)
@@ -245,7 +267,7 @@ upgrades: (8)
 - SpeedRunZ 9999 - Speedrun button (fake)
 
 achievements:
-- renaissance man 1776
+
 
 implemented:
 - first one is free (open a pack)
@@ -270,6 +292,7 @@ implemented:
 - FNG (reach lucid 2)
 - Negative 100 dollars (get -$100)
 - dead (get -$1000)
+- mute
 
 in progress:
 

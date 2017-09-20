@@ -56,7 +56,7 @@ public class DataService : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (timer > timeLength) {
-			updateFile();
+			updateSaveData();
 			// TODO fix later with the dictionary fix hardcoded
 			// SaveData.cards.cardDict = iS.storeCards;
 			writeToFile();
@@ -79,18 +79,23 @@ public class DataService : MonoBehaviour {
 		// This may corrupt since we need more size, check for smaller
 		if(flags.Length > SaveData.otherFlagList.setOtherFlags.Count){
 			print ("hard repair");
-			int flagAmount = 12; // TODO fix hardcode. Currently only 8 other flags
+			int flagAmount = 12; // TODO fix hardcode. Currently more other flags
 			for (int i = 0; i < flagAmount; i++) {
 				SaveData.otherFlagList.setOtherFlags.Add (0);
 			}	
 		}
+		// If any of them are null, create them to save from json
+		if (iS.otherFlags == null || iS.cardOpenList == null || iS.cardOpenList == null) {
+			iS.createData ();
+		}
+		// Set the otherflags
 		for (int i = 0; i < flags.Length; i++) {
 			iS.otherFlags [flags [i]] = SaveData.otherFlagList.setOtherFlags [i];
 		}
 	}
 
 	// Updates the SaveData to have the inventoryStorage info and shopStorage info
-	void updateFile(){
+	void updateSaveData(){
 		// TODO hardcoded saves
 		if (SaveData != null) {
 			SaveData.cardsInfoList.cardsTotal = iS.cardInfoList;
@@ -113,11 +118,18 @@ public class DataService : MonoBehaviour {
 		}
 	}
 
+	// Writes to catch.gd
 	void writeToFile(){
 		if (SaveData == null) {
 			createNewFile ();
 		}
 		SaveData.WriteToFile ("catch.gd");
+	}
+
+	public void forceSave(){
+		print ("force saved");
+		updateSaveData ();
+		writeToFile ();
 	}
 
 	void createNewFile(){

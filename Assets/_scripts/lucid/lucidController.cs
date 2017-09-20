@@ -20,7 +20,7 @@ public class lucidController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Lucid Condition
-		if(iS.getBalance() > 2000 && !appeared){
+		if(iS.getBalance() > 8000 && !appeared){
 			appeared = true;
 			lucidPopups ();
 		}

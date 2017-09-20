@@ -43,14 +43,12 @@ public class soundSymbol : MonoBehaviour {
 	}
 
 	void turnOnMusic(){
-		print ("turn on music");
 		musicOn = true;
 		spriteR.sprite = musicOnSprite;
 		aS.Play ();
 	}
 
 	void turnOffMusic(){
-		print ("turn off music");
 		musicOn = false;
 		spriteR.sprite = musicOffSprite;
 		aS.Pause ();

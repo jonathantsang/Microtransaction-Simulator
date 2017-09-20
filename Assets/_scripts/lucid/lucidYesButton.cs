@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class lucidYesButton : ClickButton {
 
@@ -29,5 +30,8 @@ public class lucidYesButton : ClickButton {
 		// Destroy the popup
 		GameObject popup = this.transform.parent.transform.parent.transform.parent.gameObject;
 		Destroy(popup);
+		// Try out reloading scene
+		print("reload");
+		SceneManager.LoadScene("OpenCrate");
 	}
 }

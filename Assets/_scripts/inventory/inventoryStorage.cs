@@ -6,17 +6,16 @@ public class inventoryStorage : MonoBehaviour {
 
 	// Stores most of the game's data and variables
 	private float Balance; // Stores the amount
-	public float priceOfPack;
+	public float priceOfPack = 3.99f;
+	private float limitingFactor = 0.3f;
 
 	public List<cardInfo> cardInfoList;	// This is a list of each card opened
-
 	public List<cardOpen> cardOpenList; // This is a list of cardOpen, which store 4 cards opened at one time
 
 	// Also do cardComboes later
 
 	// Uses a list to serialize
 	public List<int> storeCards; // Keep track of cards in list and dictionary using key as cardIndex and amount as value
-
 	public Dictionary<string, int> otherFlags;
 
 	// Other information used for achievements
@@ -26,7 +25,7 @@ public class inventoryStorage : MonoBehaviour {
 
 	private bool early;
 
-	public static bool soundOn = true;
+	DataService dS;
 
 	// Use this for initialization
 	void Start () {
@@ -37,27 +36,36 @@ public class inventoryStorage : MonoBehaviour {
 			Destroy(gameObject);    
 		DontDestroyOnLoad(gameObject);
 
-		// remove on September 18th
-		early = true;
+		createData ();
+		// remove on September 19th
+		early = false;
 
 		sS = GameObject.FindGameObjectWithTag ("shopStorage").GetComponent<shopStorage> ();
+		dS = GameObject.FindGameObjectWithTag ("DataService").GetComponent<DataService> ();
 
-		prepStoreCards ();
+
 		priceOfPack = 3.99f;
-
-		// Used to keep track which cards were opened together
-		cardOpenList = new List<cardOpen> ();
-
-		otherFlags = new Dictionary<string, int>();
-		prepOtherFlags ();
-
-		cardInfoList = new List<cardInfo>();
+		limitingFactor = 0.3f;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+	}
+
+	// Link constantly if it cannot do it initially
+	void conditionalLink(){
 		
+	}
+
+	// Cyclic starting so this is called from DataService
+	public void createData(){
+		// Used to keep track which cards were opened together
+		otherFlags = new Dictionary<string, int>();
+		cardInfoList = new List<cardInfo>();
+		cardOpenList = new List<cardOpen> ();
+		prepOtherFlags ();
+		prepStoreCards ();
 	}
 
 	void prepStoreCards(){
@@ -122,6 +130,8 @@ public class inventoryStorage : MonoBehaviour {
 		}
 		clearOtherFlags ();
 		resetProgress ();
+		// This should force the lucid erasing to the savedata when it reloads 
+		dS.forceSave ();
 	}
 
 	// Used to reset everything
@@ -136,6 +146,7 @@ public class inventoryStorage : MonoBehaviour {
 		sS.clearShopFlags ();
 		prepOtherFlags();
 		clearOtherFlags ();
+		print ("cleared");
 	}
 
 	// Only used on full reset
@@ -171,12 +182,15 @@ public class inventoryStorage : MonoBehaviour {
 	}
 
 	public int checkFlag(string key){
-		return otherFlags[key];
+		if(otherFlags != null){
+			return otherFlags [key];
+		} else {
+			return 0;
+		}
 	}
 
 	public void setFlag(string key){
 		if (key == "soundOn") { // soundOn is the only flag that can be flipped 0 for off, 1 for on
-			print("flipped");
 			otherFlags [key] = Mathf.Abs (otherFlags [key] - 1);
 		} else {
 			otherFlags [key] += 1;
@@ -204,5 +218,21 @@ public class inventoryStorage : MonoBehaviour {
 	public bool getEarly(){
 		return early;
 	}
+
+	// get total value for sell all
+	public void sellAll(){
+		int storeCardsLength = storeCards.Count;
+		float total = 0;
+		for (int i = 0; i < storeCardsLength; i++) {
+			// get the total worth of those cards
+			float moneyCalc = storeCards[i] * Mathf.Pow (2, i);
+			// Zero out counts
+			storeCards [i] = 0;
+			// Get the value from cardInformationHolder, and each index of StoreCards to add it up
+			total += moneyCalc;
+		}
+		// You get 30% of what you would get if you did it manually, lucid increases it (implement later)
+		Balance += total * limitingFactor;
+		}
 }
 
