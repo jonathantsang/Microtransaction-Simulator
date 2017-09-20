@@ -190,6 +190,9 @@ v1.2 SEASON PASS:
 Sept 20:
 - sell all (cheapo)
 
+Sept 24:
+- duty of honour
+
 Sept 30:
 achievements:
 - renaissance man 1776
@@ -237,7 +240,6 @@ Explosive LUCID Cosmetic Patch 1.4
 - horse armor dlc
 - dlc shop
 - obfuscate the code
-
 
 lessons:
 - test it (a week or so everything)
