@@ -96,6 +96,9 @@ public class inventoryStorage : MonoBehaviour {
 	}
 
 	public void purchaseCards(){
+		if (priceOfPack < 0.5) {
+			priceOfPack = 2f;
+		}
 		Balance -= priceOfPack;
 		otherFlags ["packsOpened"] += 1;
 	}
@@ -122,16 +125,24 @@ public class inventoryStorage : MonoBehaviour {
 	// Handles lucid perks
 	public void lucidInventory(){
 		print ("lucid");
-		// TODO fix pricedrop that is hardcoded right now
+		// TODO fix pricedrop that is hardcoded right now, check drop works
 		if (priceOfPack - 0.75 < 0) {
 			priceOfPack = 0.5f;
 		} else {
-			priceOfPack -= 0.75f;
+			print ("change price");
+			priceOfPack -= 0.5f;
 		}
+
+		if (priceOfPack < 0.6f) {
+			priceOfPack = 2f;
+		}
+
 		clearOtherFlags ();
 		resetProgress ();
+		setFlag ("lucid"); // This needs to be before so it saves it and forces it on reload
 		// This should force the lucid erasing to the savedata when it reloads 
 		dS.forceSave ();
+		setFlag ("lucid");
 	}
 
 	// Used to reset everything

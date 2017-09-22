@@ -2,31 +2,19 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_scripts/inventory/inventoryStorage.cs">
     <Files>
-      <File FileName="Assets/_scripts/lucid/lucidController.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/buttons/shopButton.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/buttons/resetButton.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/cards/Card.cs" Line="15" Column="80" />
+      <File FileName="Assets/_scripts/cards/Card.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/logic/GameController.cs" Line="1" Column="1" />
       <File FileName="Assets/_scripts/buttons/BalanceButton.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/shop/shopStorage.cs" Line="52" Column="33" />
-      <File FileName="Assets/_scripts/inventory/inventoryStorage.cs" Line="223" Column="8" />
-      <File FileName="Assets/_scripts/shop/shopController.cs" Line="1" Column="1" />
+      <File FileName="Assets/_scripts/shop/shopStorage.cs" Line="1" Column="1" />
+      <File FileName="Assets/_scripts/inventory/inventoryStorage.cs" Line="142" Column="87" />
+      <File FileName="Assets/_scripts/shop/shopController.cs" Line="52" Column="54" />
       <File FileName="Assets/_scripts/shop/shopUpgradeCollider.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/save_load/DataService.cs" Line="113" Column="1" />
-      <File FileName="Assets/_scripts/save_load/SaveData.cs" Line="104" Column="3" />
-      <File FileName="Assets/_scripts/popup/popupController.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/logic/checkWon.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/lucid/lucidGraphic.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/sounds/soundSymbol.cs" Line="52" Column="1" />
-      <File FileName="Assets/_scripts/buttons/ClickButton.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/sounds/audioStorage.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Steamworks.NET/SteamAchievements.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/hangman/hangmanStorage.cs" Line="22" Column="126" />
-      <File FileName="Assets/_scripts/hangman/playerInput.cs" Line="1" Column="1" />
-      <File FileName="Assets/_scripts/lucid/lucidYesButton.cs" Line="11" Column="36" />
-      <File FileName="Assets/sellAllButton.cs" Line="16" Column="3" />
-      <File FileName="Assets/_scripts/cards/cardInformationHolder.cs" Line="44" Column="1" />
-      <File FileName="Assets/_scripts/buttons/OpenButton.cs" Line="7" Column="2" />
+      <File FileName="Assets/_scripts/save_load/DataService.cs" Line="110" Column="84" />
+      <File FileName="Assets/_scripts/save_load/SaveData.cs" Line="87" Column="1" />
+      <File FileName="Assets/_scripts/buttons/sellAllButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/_scripts/buttons/winButton.cs" Line="6" Column="1" />
+      <File FileName="Assets/_scripts/lucid/lucidController.cs" Line="31" Column="47" />
+      <File FileName="Assets/_scripts/lucid/lucidYesButton.cs" Line="21" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

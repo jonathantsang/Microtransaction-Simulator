@@ -19,8 +19,6 @@ public class lucidYesButton : ClickButton {
 	}
 
 	override public void buttonEffects(){
-		print ("yes");
-	
 		// clear shopFlags, cardInfoStorage, and cardOpenStorage
 		iS.lucidInventory();
 

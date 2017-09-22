@@ -190,8 +190,18 @@ v1.2 SEASON PASS:
 Sept 20:
 - sell all (cheapo)
 
+Sept 22:
+- music track rolls again
+- recognize caps in casino
+- optimize save file size
+
 Sept 24:
-- duty of honour
+- duty of honour plan
+- Don't build duty of honour without planning it
+- how to get people to play long term
+- quests with the weapons
+- weapon class
+- open cache pack
 
 Sept 30:
 achievements:
@@ -203,7 +213,7 @@ achievements:
 - open 1000 packs
 - open 500 packs
 
-v1.3 LUCID DREAMS:
+v1.3 LUCID DREAMS (sept 30):
 - more colour types
 - optimize saves
 - fix lucid popup on shop
