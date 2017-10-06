@@ -20,6 +20,7 @@ public class winButton : ClickButton {
 
 	override public void buttonEffects(){
 		iS.setFlag ("win");
+		iS.setBalance(0);
 		SceneManager.LoadScene ("End");
 	}
 }

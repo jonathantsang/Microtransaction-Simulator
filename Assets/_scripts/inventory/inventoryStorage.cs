@@ -43,7 +43,6 @@ public class inventoryStorage : MonoBehaviour {
 		sS = GameObject.FindGameObjectWithTag ("shopStorage").GetComponent<shopStorage> ();
 		dS = GameObject.FindGameObjectWithTag ("DataService").GetComponent<DataService> ();
 
-
 		priceOfPack = 3.99f;
 		limitingFactor = 0.3f;
 

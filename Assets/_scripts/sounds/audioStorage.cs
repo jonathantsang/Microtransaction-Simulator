@@ -35,7 +35,7 @@ public class audioStorage : MonoBehaviour {
 	}
 
 	public void playAudio(int index){
-		if (sS.musicOn) {
+		if (sS.checkMusicOn()) {
 			int audioFilesLength = audioFiles.Length;
 			if (index < audioFilesLength && index >= 0) {
 				audioS.clip = audioFiles [index];

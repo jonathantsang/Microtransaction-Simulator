@@ -37,8 +37,8 @@ public class DataService : MonoBehaviour {
 		}
 		if (SaveData != null) {
 			// This will fail if the object exists, but doesn't have the correct components
-			if (SaveData.cardsInfoList == null || SaveData.cardsOpenList == null ||
-				SaveData.cardsStoreList == null || SaveData.shopFlagList == null) {
+			// Removed SaveData.cardsInfoList == null
+			if (SaveData.cardsOpenList == null || SaveData.cardsStoreList == null || SaveData.shopFlagList == null) {
 				Debug.Log ("corruption");
 				createNewFile ();
 				iS.setFlag ("corruption");
@@ -67,7 +67,7 @@ public class DataService : MonoBehaviour {
 
 	// Stores data from JSON into the inventoryStorage and shopStorage (reverse of updateFile())
 	void loadDataFromJSON(){
-		iS.cardInfoList = SaveData.cardsInfoList.cardsTotal;
+		//iS.cardInfoList = SaveData.cardsInfoList.cardsTotal;
 		iS.setBalance (SaveData.Balance);
 		iS.priceOfPack = SaveData.priceOfPack;
 		iS.cardOpenList = SaveData.cardsOpenList.cardsOpened;
@@ -98,7 +98,7 @@ public class DataService : MonoBehaviour {
 	void updateSaveData(){
 		// TODO hardcoded saves
 		if (SaveData != null) {
-			SaveData.cardsInfoList.cardsTotal = iS.cardInfoList;
+			//SaveData.cardsInfoList.cardsTotal = iS.cardInfoList;
 			SaveData.Balance = iS.getBalance ();
 			SaveData.priceOfPack = iS.priceOfPack;
 			SaveData.cardsOpenList.cardsOpened = iS.cardOpenList;
@@ -134,7 +134,7 @@ public class DataService : MonoBehaviour {
 
 	void createNewFile(){
 		SaveData = new SaveData ();
-		SaveData.cardsInfoList = new cardInfoList ();
+		// SaveData.cardsInfoList = new cardInfoList ();
 		SaveData.cardsOpenList = new cardOpenList ();
 		SaveData.shopFlagList = new shopFlagList ();
 		SaveData.cardsStoreList = new cardStoreList ();

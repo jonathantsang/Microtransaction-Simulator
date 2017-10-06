@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+/*
 [System.Serializable]
 public class cardInfoList
 {
@@ -15,7 +16,7 @@ public class cardInfoList
 	public cardInfoList() {
 		cardsTotal = new List<cardInfo>() { new cardInfo() };
 	}
-}
+}*/
 
 [System.Serializable]
 public class cardOpenList
@@ -90,7 +91,7 @@ public class SaveData {
 	public float Balance = 0;
 	public float priceOfPack = 3.99f;
 
-	public cardInfoList cardsInfoList;
+	//public cardInfoList cardsInfoList;
 	public cardOpenList cardsOpenList;
 	public shopFlagList shopFlagList;
 	public cardStoreList cardsStoreList;

@@ -1,11 +1,7 @@
 {
     "DEBUG": 1,
-    "Balance": 0.0,
-    "priceOfPack": 2.990000009536743,
-    "cardsInfoList": {
-        "testing": 1,
-        "cardsTotal": []
-    },
+    "Balance": 100000000.0,
+    "priceOfPack": 2.490000009536743,
     "cardsOpenList": {
         "testing": 1,
         "cardsOpened": []
@@ -43,7 +39,7 @@
             0,
             0,
             1,
-            0,
+            1,
             0,
             0,
             1,

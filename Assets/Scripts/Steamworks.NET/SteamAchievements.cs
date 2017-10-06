@@ -75,7 +75,7 @@ class SteamAchievements : MonoBehaviour {
 		new Achievement_t(Achievement.ACH_AMATH, "Apply your knowledge", "coolio"),
 		new Achievement_t(Achievement.ACH_PMATH, "Pure knowledge", "it burns"),
 		new Achievement_t(Achievement.ACH_BROCCOLI, "BROCCOLI", "Eat your green vegetables"),
-		new Achievement_t(Achievement.ACH_EARLY, "Early Adopter", "You're the best!"),
+		// new Achievement_t(Achievement.ACH_EARLY, "Early Adopter", "You're the best!"),
 		new Achievement_t(Achievement.ACH_BEEMOVIE, "A movie about bees", "They're taking all the honey!"),
 		new Achievement_t(Achievement.ACH_FORTYK, "Impossible", "Don't even try it"),
 		new Achievement_t(Achievement.ACH_MUTE, "Silence is golden", "...")
@@ -345,12 +345,12 @@ class SteamAchievements : MonoBehaviour {
 					UnlockAchievement (achievement);
 				}
 				break;
-			case Achievement.ACH_EARLY:
+			/*case Achievement.ACH_EARLY:
 				// Manually setting this, not a system.date
 				if (iS.getEarly()) {
 					UnlockAchievement (achievement);
 				}
-				break;
+				break;*/
 			case Achievement.ACH_BEEMOVIE:
 				if (iS.checkFlag("hangman") > 0) {
 					UnlockAchievement (achievement);

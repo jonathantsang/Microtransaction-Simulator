@@ -213,7 +213,7 @@ achievements:
 - open 1000 packs
 - open 500 packs
 
-v1.3 LUCID DREAMS (sept 30):
+v1.3 LUCID DREAMS (oct 9):
 - more colour types
 - optimize saves
 - fix lucid popup on shop
@@ -223,6 +223,7 @@ v1.3 LUCID DREAMS (sept 30):
 - more shop stuff (second secret shop for lucid)
 - sell all button for speedrun
 - Allow to quicksell all cards you have with a single click at 30% price
+- dynamic rarity graph
 
 v1.4:
 - new game++

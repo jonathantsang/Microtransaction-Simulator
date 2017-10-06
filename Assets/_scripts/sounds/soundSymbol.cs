@@ -54,4 +54,8 @@ public class soundSymbol : MonoBehaviour {
 		aS.Pause ();
 	}
 
+	public bool checkMusicOn(){
+		return musicOn;
+	}
+
 }
