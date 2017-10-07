@@ -214,19 +214,25 @@ achievements:
 - open 500 packs
 
 v1.3 LUCID DREAMS (oct 9):
-- more colour types
-- optimize saves
-- fix lucid popup on shop
-- lucid rehaul (more graphic)
+- more colour types (done)
+- optimize saves (done)
+- fix lucid popup on shop (can't)
+- lucid rehaul (more graphic) (doneish)
 - sell all (limiting Factor with lucid)
-- cards worth more on lucid
-- more shop stuff (second secret shop for lucid)
-- sell all button for speedrun
-- Allow to quicksell all cards you have with a single click at 30% price
-- dynamic rarity graph
+- cards worth more on lucid (done?)
+- sell all button for speedrun (done)
+- Allow to quicksell all cards you have with a single click at 30% price (done)
+- dynamic rarity graph (probably not)
+
+quests:
+- timed team
+
+casino:
+- gamble with cards you own
 
 v1.4:
 - new game++
+- more shop stuff (second secret shop for lucid)
 - quests
 
 lp:

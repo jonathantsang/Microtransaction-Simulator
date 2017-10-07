@@ -78,7 +78,7 @@ public class cardStoreList
 
 	public cardStoreList() {
 		storeCount = new List<int> ();
-		int cardTypes = 8;
+		int cardTypes = 12;
 		for (int i = 0; i < cardTypes; i++) {
 			storeCount.Add (0);
 		}

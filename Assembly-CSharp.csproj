@@ -112,6 +112,9 @@
      <Compile Include="Assets\_scripts\shop\shopUpgradeCollider.cs" />
      <Compile Include="Assets\_scripts\sounds\audioStorage.cs" />
      <Compile Include="Assets\_scripts\sounds\soundSymbol.cs" />
+     <Compile Include="Assets\BLButton.cs" />
+     <Compile Include="Assets\chartGraphic.cs" />
+     <Compile Include="Assets\OpenAllButton.cs" />
      <Compile Include="Assets\Scripts\Steamworks.NET\SteamAchievements.cs" />
      <Compile Include="Assets\Scripts\Steamworks.NET\SteamManager.cs" />
      <None Include="Assets\Plugins\Steamworks.NET\redist\steam_appid.txt" />

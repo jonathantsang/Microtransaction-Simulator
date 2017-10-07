@@ -52,7 +52,11 @@ public class totalPointsCounter : MonoBehaviour {
 
 	void countUpScore(){
 		pointsText.text = "0";
-		StartCoroutine (Counter());
+		if (iS.checkFlag ("lucid") > 0) {
+			StartCoroutine (CounterFaster ());
+		} else {
+			StartCoroutine (Counter ());
+		}
 	}
 
 	void addToCardOpenList(){
@@ -79,6 +83,23 @@ public class totalPointsCounter : MonoBehaviour {
 			}
 			pointsText.text = score.ToString();
 			yield return new WaitForSeconds(1/totalPoints);
+		}
+		int cashSound = 1; // TODO hardcoded 1 for cashSound
+		aS.playAudio (cashSound);
+	}
+
+	IEnumerator CounterFaster()
+	{
+		int score = 0;
+		while (score < totalPoints)
+		{
+			if (score + 100 > totalPoints) {
+				score += (totalPoints - score);
+			} else {
+				score += 100;
+			}
+			pointsText.text = score.ToString();
+			yield return new WaitForSeconds(1/(totalPoints*totalPoints*totalPoints*totalPoints));
 		}
 		int cashSound = 1; // TODO hardcoded 1 for cashSound
 		aS.playAudio (cashSound);

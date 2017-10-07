@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114331644647354058}
   m_Layer: 0
   m_Name: cardInformationStorage
-  m_TagString: cardInformationStorage
+  m_TagString: cardInformationHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,11 @@ MonoBehaviour:
   blue: {fileID: 21300000, guid: 2755ed78e2f47418d8d92b3733bb17a3, type: 3}
   brown: {fileID: 21300000, guid: af5dd98c384c7474ea60f578a2bd8a54, type: 3}
   white: {fileID: 21300000, guid: 3fdb6a284654340c7bd771f64ef3e41f, type: 3}
-  back: {fileID: 21300000, guid: 9c5bfa37ed7504cd8b6f081c25029c0b, type: 3}
+  back: {fileID: 21300000, guid: bfcb62af596b5445699f4a410ce318a7, type: 3}
+  shine: {fileID: 21300000, guid: 2147a88f7f1d5401c87722c424b0bb5a, type: 3}
+  pyramid: {fileID: 21300000, guid: 0dfd4cda03afa4b0ab6264f466109b6e, type: 3}
+  wisp: {fileID: 21300000, guid: b8c34871daaad4b19937435dca3dab1b, type: 3}
+  scorch: {fileID: 21300000, guid: 412f1c5ed7a8a43c6baa3823c1d310c8, type: 3}
   colours: []
   zero: {fileID: 21300000, guid: 01f360d88260d48779cc58ac72ffadb8, type: 3}
   one: {fileID: 21300002, guid: 01f360d88260d48779cc58ac72ffadb8, type: 3}
@@ -72,3 +76,16 @@ MonoBehaviour:
   eight: {fileID: 21300016, guid: 01f360d88260d48779cc58ac72ffadb8, type: 3}
   nine: {fileID: 21300018, guid: 01f360d88260d48779cc58ac72ffadb8, type: 3}
   numbers: []
+  bronzeBorder: {fileID: 21300000, guid: 0496f988f51944598a104dfff0d9bece, type: 3}
+  silverBorder: {fileID: 21300000, guid: ec86d8880d3c544a6997c64a2cc324ae, type: 3}
+  goldBorder: {fileID: 21300000, guid: 38592e20a99ab4589acc050d1cc50f98, type: 3}
+  deepBorder: {fileID: 21300000, guid: 882ef21713cca46ba9a14860af3eafc9, type: 3}
+  borders: []
+  chances: 
+  compiledChances: 
+  improvedChances: 
+  compiledImprovedChances: 
+  chancesLucid: 
+  compiledChancesLucid: 
+  improvedChancesLucid: 
+  compiledImprovedChancesLucid: 

@@ -9,7 +9,7 @@ public class inventoryStorage : MonoBehaviour {
 	public float priceOfPack = 3.99f;
 	private float limitingFactor = 0.3f;
 
-	public List<cardInfo> cardInfoList;	// This is a list of each card opened
+	// public List<cardInfo> cardInfoList;	// This is a list of each card opened
 	public List<cardOpen> cardOpenList; // This is a list of cardOpen, which store 4 cards opened at one time
 
 	// Also do cardComboes later
@@ -61,7 +61,7 @@ public class inventoryStorage : MonoBehaviour {
 	public void createData(){
 		// Used to keep track which cards were opened together
 		otherFlags = new Dictionary<string, int>();
-		cardInfoList = new List<cardInfo>();
+		// cardInfoList = new List<cardInfo>();
 		cardOpenList = new List<cardOpen> ();
 		prepOtherFlags ();
 		prepStoreCards ();
@@ -69,7 +69,8 @@ public class inventoryStorage : MonoBehaviour {
 
 	void prepStoreCards(){
 		storeCards = new List<int> ();
-		for (int i = 0; i < 8; i++) { // TODO Hardcoded amount
+		int cardTypes = 12;
+		for (int i = 0; i < cardTypes; i++) { // TODO Hardcoded amount
 			storeCards.Add(0);
 		}
 	}
@@ -90,7 +91,7 @@ public class inventoryStorage : MonoBehaviour {
 	}
 
 	public void addCard(cardInfo card){
-		cardInfoList.Add (card);
+		// cardInfoList.Add (card);
 		storeCards [card.getCardIndex()] += 1;
 	}
 
@@ -108,10 +109,9 @@ public class inventoryStorage : MonoBehaviour {
 		}
 	}
 
-	public void increaseBalance(int index){
+	public void increaseBalance(float amount){
 		// TODO fix rarity
-		float added = Mathf.Pow(2, index);
-		Balance += added;
+		Balance += amount;
 	}
 
 	public int getPacksOpened(){
@@ -147,10 +147,10 @@ public class inventoryStorage : MonoBehaviour {
 	// Used to reset everything
 	public void resetProgress(){
 		Balance = 0;
-		cardInfoList = new List<cardInfo> ();
+		// cardInfoList = new List<cardInfo> ();
 		cardOpenList = new List<cardOpen> ();
 		storeCards = new List<int> ();
-		prepStoreCards (); // This makes it size 8
+		prepStoreCards (); // This makes it size 12
 		otherFlags = new Dictionary<string, int> ();
 
 		sS.clearShopFlags ();
@@ -233,7 +233,8 @@ public class inventoryStorage : MonoBehaviour {
 	public void sellAll(){
 		int storeCardsLength = storeCards.Count;
 		float total = 0;
-		for (int i = 0; i < storeCardsLength; i++) {
+		int regCardsToSell = 8;
+		for (int i = 0; i < regCardsToSell; i++) {
 			// get the total worth of those cards
 			float moneyCalc = storeCards[i] * Mathf.Pow (2, i);
 			// Zero out counts
@@ -243,6 +244,6 @@ public class inventoryStorage : MonoBehaviour {
 		}
 		// You get 30% of what you would get if you did it manually, lucid increases it (implement later)
 		Balance += total * limitingFactor;
-		}
+	}
 }
 

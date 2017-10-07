@@ -25,7 +25,7 @@ public class SellButton : ClickButton {
 		// Sell one of the card type of it
 		if(iS.canSell(cardIndex)){
 			iS.decreaseCardAmount (cardIndex);
-			iS.increaseBalance (cardIndex); // TODO adds a default amount based on rarity
+			iS.increaseBalance (Mathf.Pow(2, cardIndex)); // TODO adds a default amount based on rarity
 			countText.text = iS.storeCards [cardIndex].ToString (); // Hardcode change text of sibling above
 		}
 	}

@@ -71,27 +71,51 @@ public class DataService : MonoBehaviour {
 		iS.setBalance (SaveData.Balance);
 		iS.priceOfPack = SaveData.priceOfPack;
 		iS.cardOpenList = SaveData.cardsOpenList.cardsOpened;
-		iS.storeCards = SaveData.cardsStoreList.storeCount;
 		sS.shopUpgradeFlags = SaveData.shopFlagList.setFlags;
 
 		// Other flags needs to be converted from list to dictionary
 		string[] flags = new string[] {"avocado", "packsOpened", "hangman", "logo", "lucid", "win", "corruption", "hangman", "soundOn"}; 
 		// This may corrupt since we need more size, check for smaller
-		if(flags.Length > SaveData.otherFlagList.setOtherFlags.Count){
-			print ("hard repair");
+		if (flags.Length > SaveData.otherFlagList.setOtherFlags.Count) {
+			print ("hard repair shop flags");
 			int flagAmount = 12; // TODO fix hardcode. Currently more other flags
 			for (int i = 0; i < flagAmount; i++) {
-				SaveData.otherFlagList.setOtherFlags.Add (0);
-			}	
+				if (i > SaveData.otherFlagList.setOtherFlags.Count) {
+					SaveData.otherFlagList.setOtherFlags.Add (0);
+					iS.otherFlags [flags [i]] = 0;
+				} else {
+					iS.otherFlags [flags [i]] = SaveData.cardsStoreList.storeCount [i];
+				}
+			}
+		} else {
+			// Make dictionary
+			for(int i = 0; i < flags.Length; i++){
+				iS.otherFlags [flags [i]] = SaveData.cardsStoreList.storeCount [i];
+			}
 		}
+		// May need to expand card types
+		if(iS.storeCards.Count > SaveData.cardsStoreList.storeCount.Count){
+			print ("hard repair store count");
+			int cardAmount = 12; // TODO fix hardcode. Currently more other flags
+			for (int i = 0; i < cardAmount; i++) {
+				if (i > SaveData.cardsStoreList.storeCount.Count) {
+					SaveData.cardsStoreList.storeCount.Add (0);
+					iS.storeCards [i] = 0;
+				} else {
+					iS.storeCards [i] = SaveData.cardsStoreList.storeCount [i];
+				}
+
+			}	
+		} else {
+			iS.storeCards = SaveData.cardsStoreList.storeCount;
+		}
+
 		// If any of them are null, create them to save from json
 		if (iS.otherFlags == null || iS.cardOpenList == null || iS.cardOpenList == null) {
+			
 			iS.createData ();
 		}
-		// Set the otherflags
-		for (int i = 0; i < flags.Length; i++) {
-			iS.otherFlags [flags [i]] = SaveData.otherFlagList.setOtherFlags [i];
-		}
+
 	}
 
 	// Updates the SaveData to have the inventoryStorage info and shopStorage info
