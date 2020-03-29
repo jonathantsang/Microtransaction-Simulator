@@ -142,6 +142,9 @@ class SteamAchievements : MonoBehaviour {
 		if (!SteamManager.Initialized)
 			return;
 
+		TimeSpan count = DateTime.Now.Subtract(idleTimeStart);
+		// print("idle so far for " + count.Hours.ToString() + " hours " + count.Minutes.ToString() + " minutes " + count.Seconds.ToString() + " seconds");
+
 		if (!m_bRequestedStats) {
 			// Is Steam Loaded? if no, can't get stats, done
 			if (!SteamManager.Initialized) {
