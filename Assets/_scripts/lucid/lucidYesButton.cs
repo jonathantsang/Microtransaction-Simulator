@@ -30,6 +30,7 @@ public class lucidYesButton : ClickButton {
 		Destroy(popup);
 		// Try out reloading scene
 		print("reload");
+
 		SceneManager.LoadScene("OpenCrate");
 	}
 }

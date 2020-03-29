@@ -16,6 +16,7 @@ public class shopController : MonoBehaviour {
 	private shopStorage sS;
 	public GameObject casinoButton;
 	public GameObject trophyButton;
+	public GameObject openallButton;
 
 	// Use this for initialization
 	void Start () {
@@ -63,6 +64,7 @@ public class shopController : MonoBehaviour {
 	public void applyUpgrades(){
 		checkCasino ();
 		checkTrophy ();
+		checkSpeedRun ();
 	}
 
 	void checkCasino(){
@@ -77,6 +79,13 @@ public class shopController : MonoBehaviour {
 		int tropyShopUpgradeIndex = 5;
 		if(sS.checkFlag(tropyShopUpgradeIndex) == 1){
 			Instantiate (trophyButton, new Vector2 (5.5f, 1f), Quaternion.identity);
+		}
+	}
+
+	void checkSpeedRun(){
+		int speedrunUpgradeIndex = 7;
+		if(sS.checkFlag(speedrunUpgradeIndex) == 1){
+			Instantiate (openallButton, new Vector2 (2.5f, -0.5f), Quaternion.identity);
 		}
 	}
 }

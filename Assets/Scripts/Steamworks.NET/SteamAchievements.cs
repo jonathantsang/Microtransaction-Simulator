@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.ComponentModel;
+using System;
 using Steamworks;
 
 // This is a port of StatsAndAchievements.cpp from SpaceWar, the official Steamworks Example.
@@ -40,7 +41,8 @@ class SteamAchievements : MonoBehaviour {
 		ACH_EARLY,
 		ACH_BEEMOVIE,
 		ACH_FORTYK,
-		ACH_MUTE
+		ACH_MUTE,
+		ACH_QUARANTINE
 	};
 
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
@@ -78,8 +80,8 @@ class SteamAchievements : MonoBehaviour {
 		// new Achievement_t(Achievement.ACH_EARLY, "Early Adopter", "You're the best!"),
 		new Achievement_t(Achievement.ACH_BEEMOVIE, "A movie about bees", "They're taking all the honey!"),
 		new Achievement_t(Achievement.ACH_FORTYK, "Impossible", "Don't even try it"),
-		new Achievement_t(Achievement.ACH_MUTE, "Silence is golden", "...")
-
+		new Achievement_t(Achievement.ACH_MUTE, "Silence is golden", "..."),
+		new Achievement_t(Achievement.ACH_QUARANTINE, "quarantine", "literally idle the game for 4 hours. Stay at home and don't spread the coronavirus.")
 	};
 
 	// Our GameID
@@ -111,9 +113,15 @@ class SteamAchievements : MonoBehaviour {
 	// shop storage with the shop data
 	shopStorage sS;
 
+	// Used in idle achievement
+	private DateTime idleTimeStart;
+
 	void OnEnable() {
 		if (!SteamManager.Initialized)
 			return;
+
+		idleTimeStart = DateTime.Now;
+		print("time start" + idleTimeStart.ToString());
 
 		// Cache the GameID for use in the Callbacks
 		m_GameID = new CGameID(SteamUtils.GetAppID());
@@ -366,6 +374,11 @@ class SteamAchievements : MonoBehaviour {
 				break;
 			case Achievement.ACH_MUTE:
 				if (iS.checkFlag("soundOn") == 0) {
+					UnlockAchievement (achievement);
+				}
+				break;
+			case Achievement.ACH_QUARANTINE:
+				if (DateTime.Now.Subtract(idleTimeStart).Hours >= 4) {
 					UnlockAchievement (achievement);
 				}
 				break;

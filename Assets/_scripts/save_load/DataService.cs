@@ -12,7 +12,7 @@ public class DataService : MonoBehaviour {
 	private inventoryStorage iS;
 	private shopStorage sS;
 
-	public SaveData SaveData { get; private set; }
+	public SaveData SaveData;
 
 	// Use this for initialization
 	void Start () {
@@ -79,6 +79,10 @@ public class DataService : MonoBehaviour {
 		if (flags.Length > SaveData.otherFlagList.setOtherFlags.Count) {
 			print ("hard repair shop flags");
 			int flagAmount = 12; // TODO fix hardcode. Currently more other flags
+
+			iS.otherFlags = new Dictionary<string, int>();
+			SaveData = SaveData.ReadFromFile ("catch.gd");
+
 			for (int i = 0; i < flagAmount; i++) {
 				if (i > SaveData.otherFlagList.setOtherFlags.Count) {
 					SaveData.otherFlagList.setOtherFlags.Add (0);
@@ -89,10 +93,13 @@ public class DataService : MonoBehaviour {
 			}
 		} else {
 			// Make dictionary
+			print("reload into dict");
 			for(int i = 0; i < flags.Length; i++){
-				iS.otherFlags [flags [i]] = SaveData.cardsStoreList.storeCount [i];
+				// print (flags [i] + " is " + SaveData.cardsStoreList.storeCount [i]);
+				iS.otherFlags [flags [i]] = SaveData.otherFlagList.setOtherFlags [i];
 			}
 		}
+			
 		// May need to expand card types
 		if(iS.storeCards.Count > SaveData.cardsStoreList.storeCount.Count){
 			print ("hard repair store count");
@@ -107,15 +114,13 @@ public class DataService : MonoBehaviour {
 
 			}	
 		} else {
+			print("reload storeCards");
 			iS.storeCards = SaveData.cardsStoreList.storeCount;
 		}
-
 		// If any of them are null, create them to save from json
 		if (iS.otherFlags == null || iS.cardOpenList == null || iS.cardOpenList == null) {
-			
 			iS.createData ();
 		}
-
 	}
 
 	// Updates the SaveData to have the inventoryStorage info and shopStorage info
@@ -135,6 +140,9 @@ public class DataService : MonoBehaviour {
 			for (int i = 0; i < flags.Length; i++) {
 				if (SaveData == null) {
 					createNewFile ();
+				} else if (iS == null) {
+					iS = GameObject.FindGameObjectWithTag ("inventoryStorage").GetComponent<inventoryStorage> ();
+					iS.otherFlags = new Dictionary<string, int> ();
 				}
 				// This gets the value on or off from otherFlags the Dictionary and saves it to the SaveData otherFlagList int array
 				SaveData.otherFlagList.setOtherFlags [i] = iS.otherFlags [flags [i]];
@@ -163,6 +171,11 @@ public class DataService : MonoBehaviour {
 		SaveData.shopFlagList = new shopFlagList ();
 		SaveData.cardsStoreList = new cardStoreList ();
 		SaveData.otherFlagList = new otherFlagList ();
+	}
+
+	// Used when sell all button is used
+	public void clearCardOpenList(){
+		SaveData.cardsOpenList.clearCardOpenList ();
 	}
 
 

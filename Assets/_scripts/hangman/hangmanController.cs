@@ -71,7 +71,7 @@ public class hangmanController : MonoBehaviour {
 			int chimeIndex = 3;
 			aS.playAudio (chimeIndex);
 			won = true;
-			iS.increaseBalance (10); // Temporary fix to add $1000
+			iS.increaseBalance (300); // Should now only add $300
 		}
 	}
 

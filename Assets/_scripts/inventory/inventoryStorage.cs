@@ -50,11 +50,16 @@ public class inventoryStorage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		conditionalLink ();
 	}
+
 
 	// Link constantly if it cannot do it initially
 	void conditionalLink(){
-		
+		if(dS == null){
+			// has to find it
+			dS = GameObject.FindGameObjectWithTag ("DataService").GetComponent<DataService> ();
+		}
 	}
 
 	// Cyclic starting so this is called from DataService
@@ -76,6 +81,7 @@ public class inventoryStorage : MonoBehaviour {
 	}
 
 	void prepOtherFlags(){
+		otherFlags = new Dictionary<string, int>();
 		// TODO fix hardcoded strings
 		otherFlags["avocado"] = 0;
 		otherFlags ["packsOpened"] = 0;
@@ -110,7 +116,6 @@ public class inventoryStorage : MonoBehaviour {
 	}
 
 	public void increaseBalance(float amount){
-		// TODO fix rarity
 		Balance += amount;
 	}
 
@@ -140,8 +145,13 @@ public class inventoryStorage : MonoBehaviour {
 		resetProgress ();
 		setFlag ("lucid"); // This needs to be before so it saves it and forces it on reload
 		// This should force the lucid erasing to the savedata when it reloads 
+		if(dS == null){
+			// has to find it
+			dS = GameObject.FindGameObjectWithTag ("DataService").GetComponent<DataService> ();
+		}
 		dS.forceSave ();
 		setFlag ("lucid");
+		print ("completeLucid");
 	}
 
 	// Used to reset everything
@@ -202,6 +212,9 @@ public class inventoryStorage : MonoBehaviour {
 	public void setFlag(string key){
 		if (key == "soundOn") { // soundOn is the only flag that can be flipped 0 for off, 1 for on
 			otherFlags [key] = Mathf.Abs (otherFlags [key] - 1);
+		} else if (key == "lucid") {
+			print ("added l");
+			otherFlags [key] += 1;
 		} else {
 			otherFlags [key] += 1;
 		}
@@ -244,6 +257,12 @@ public class inventoryStorage : MonoBehaviour {
 		}
 		// You get 30% of what you would get if you did it manually, lucid increases it (implement later)
 		Balance += total * limitingFactor;
+
+		// Clear cardsOpenList in the catch.gd
+		if(dS == null){
+			dS = GameObject.FindGameObjectWithTag ("DataService").GetComponent<DataService> ();
+		}
+		dS.clearCardOpenList();
 	}
 }
 

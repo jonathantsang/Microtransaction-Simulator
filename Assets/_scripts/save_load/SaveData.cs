@@ -29,6 +29,10 @@ public class cardOpenList
 	public cardOpenList() {
 		cardsOpened = new List<cardOpen>() { new cardOpen() };
 	}
+
+	public void clearCardOpenList(){
+		cardsOpened.Clear();
+	}
 }
 
 [System.Serializable]

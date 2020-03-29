@@ -37,7 +37,9 @@ public class Card : MonoBehaviour {
 	private audioStorage aS;
 
 	// Effect
-	public ParticleSystem ps;
+	public ParticleSystem blueEffect;
+	public ParticleSystem yellowEffect;
+	public ParticleSystem purpleEffect;
 	private GameObject Illuminate;
 
 	// Use this for initialization
@@ -68,16 +70,12 @@ public class Card : MonoBehaviour {
 		// Reveal the card
 		if (!flipped) {
 			flipCard ();
-			flipped = true;
 			// set illuminate to false on flip
 			Illuminate.SetActive (false);
-			// Notify the totalPointsCounter when cards are opened, and if they are opened, total up the score
-			tPS.notify("count");
 		}
 	}
 
 	void initializeCard(){
-
 		// Find the cardInformationHolder and totalPointsCounter
 		cIH = GameObject.FindGameObjectWithTag ("cardInformationHolder").GetComponent<cardInformationHolder> ();
 		tPS = GameObject.FindGameObjectWithTag ("counter").GetComponent<totalPointsCounter> ();
@@ -101,7 +99,9 @@ public class Card : MonoBehaviour {
 		}
 	}
 
-	void flipCard(){
+	// public to let the openall button open them all
+	public void flipCard(){
+		flipped = true;
 		// make a separate function that swaps the sprites and the numbers as well
 		frontSprite.sortingLayerName = "foreground";
 		backSprite.sortingLayerName = "background";
@@ -109,14 +109,26 @@ public class Card : MonoBehaviour {
 		tensDigit.sortingLayerName = "foreground";
 		onesDigit.sortingLayerName = "foreground";
 		// Opening effect
-		if (rarityIndex > 4) {
-			Instantiate (ps, transform);
+		if (rarityIndex > 3) {
+			Instantiate (blueEffect, transform);
+			// TODO fix Hardcode shine effect
+			int shineEffect = 2;
+			aS.playAudio (shineEffect);
+		} else if (rarityIndex > 5) {
+			Instantiate (yellowEffect, transform);
+			// TODO fix Hardcode shine effect
+			int shineEffect = 2;
+			aS.playAudio (shineEffect);
+		} else if (rarityIndex > 8) {
+			Instantiate (purpleEffect, transform);
 			// TODO fix Hardcode shine effect
 			int shineEffect = 2;
 			aS.playAudio (shineEffect);
 		}
 		// Store the card information in the inventory Storage
 		iS.addCard(information);
+		// Notify the totalPointsCounter when cards are opened, and if they are opened, total up the score
+		tPS.notify("count");
 	}
 
 	private string getRarity(){
@@ -232,80 +244,78 @@ public class Card : MonoBehaviour {
 		// chooseRarity is a number from 0 - 9999
 		// Compares with cardInfoHolder (cIH) to see which colour that rng is
 		// get the rarity from the rarities index and sets the value, and total value
-
-		print (chooseRarity);
-
+	
 		// White
 		if (chooseRarity < cIH.getChanceLucid(0)) {
 			rarityIndex = 0;
 			rarity = raritiesLucid [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (0, 100));
+			value = (int)Mathf.Ceil (Random.Range (0, 30));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 			// Brown
 		} else if (chooseRarity < cIH.getChanceLucid(1)) {
 			rarityIndex = 1;
 			rarity = raritiesLucid [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (100, 200));
+			value = (int)Mathf.Ceil (Random.Range (0, 50));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 			// Blue
 		} else if (chooseRarity < cIH.getChanceLucid(2)) {
 			rarityIndex = 2;
 			rarity = raritiesLucid [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (200, 300));
+			value = (int)Mathf.Ceil (Random.Range (30, 65));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 			// Purple
 		} else if (chooseRarity < cIH.getChanceLucid(3)) {
 			rarityIndex = 3;
 			rarity = raritiesLucid [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (300, 400));
+			value = (int)Mathf.Ceil (Random.Range (50, 75));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 			// Red
 		} else if (chooseRarity < cIH.getChanceLucid(4)) {
 			rarityIndex = 4;
 			rarity = rarities [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (400, 500));
+			value = (int)Mathf.Ceil (Random.Range (65, 83));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 			// Green
 		} else if (chooseRarity < cIH.getChanceLucid(5)) {
 			rarityIndex = 5;
 			rarity = raritiesLucid [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (500, 600));
+			value = (int)Mathf.Ceil (Random.Range (75, 90));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 			// Turqoise
 		} else if (chooseRarity < cIH.getChanceLucid(6)) {
 			rarityIndex = 6;
 			rarity = raritiesLucid [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (600, 700));
+			value = (int)Mathf.Ceil (Random.Range (83, 97));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 			// Fuzz
 		} else if (chooseRarity < cIH.getChanceLucid(7)) {
 			rarityIndex = 7;
 			rarity = raritiesLucid [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (700, 800));
+			value = (int)Mathf.Ceil (Random.Range (90, 99));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 			// Shine
 		} else if (chooseRarity < cIH.getChanceLucid(8)) {
 			rarityIndex = 8;
 			rarity = raritiesLucid [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (800, 900));
+			value = (int)Mathf.Ceil (Random.Range (100, 400));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 			// Pyramid
 		} else if (chooseRarity < cIH.getChanceLucid(9)) {
 			rarityIndex = 9;
 			rarity = raritiesLucid [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (900, 1000));
+			value = (int)Mathf.Ceil (Random.Range (200, 700));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 			// Wisp
 		} else if (chooseRarity < cIH.getChanceLucid(10)) {
 			rarityIndex = 10;
 			rarity = raritiesLucid [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (950, 1000));
+			value = (int)Mathf.Ceil (Random.Range (500, 800));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 			// Scorch
 		} else if (chooseRarity < cIH.getChanceLucid(10)) {
 			rarityIndex = 11;
 			rarity = raritiesLucid [rarityIndex];
-			value = (int)Mathf.Ceil (Random.Range (975, 1000));
+			value = (int)Mathf.Ceil (Random.Range (800, 1000));
 			totalValue = colourValuesLucid [rarityIndex] + value;
 		}
 
@@ -316,7 +326,6 @@ public class Card : MonoBehaviour {
 		backSprite.sprite = cIH.back;
 
 		// More complicated since it is now a 3 digit potentially (can be 0-3 digits)
-		print (value);
 		if (value / 100 != 0) {
 			hundredsDigit.sprite = cIH.numbers [value / 100];
 		}
